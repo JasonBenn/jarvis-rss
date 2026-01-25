@@ -74,14 +74,26 @@ export async function enrichFeed(feedUrl: string): Promise<string> {
       const itemArray = Array.isArray(items) ? items : [items];
 
       for (const item of itemArray) {
-        const link = item.link;
-        if (link) {
-          // Enrich description
-          item.description = enrichDescription(item.description, link);
+        const originalLink = item.link;
+        if (originalLink) {
+          // Replace link with archive.today URL (so "Open" goes to archive)
+          item.link = getArchiveTodayUrl(originalLink);
 
-          // Also enrich content:encoded if present (Readwise prefers this field)
+          // Add original link to description for reference
+          const originalLinkHtml = `<p><a href="${originalLink}">[Original]</a></p>`;
+          let desc = item.description || "";
+          if (typeof desc === "object" && (desc as any).__cdata) {
+            desc = (desc as any).__cdata;
+          }
+          item.description = { __cdata: desc ? `${desc}\n${originalLinkHtml}` : originalLinkHtml };
+
+          // Also update content:encoded if present
           if (item["content:encoded"]) {
-            item["content:encoded"] = enrichDescription(item["content:encoded"], link);
+            let content = item["content:encoded"];
+            if (typeof content === "object" && (content as any).__cdata) {
+              content = (content as any).__cdata;
+            }
+            item["content:encoded"] = { __cdata: `${content}\n${originalLinkHtml}` };
           }
         }
       }
@@ -92,6 +104,15 @@ export async function enrichFeed(feedUrl: string): Promise<string> {
     // Add note that this is an enriched feed
     if (channel.description) {
       channel.description = `[Enriched by jarvis-rss] ${channel.description}`;
+    }
+
+    // Add feed image if not present
+    if (!channel.image) {
+      channel.image = {
+        url: "https://rss.jasonbenn.com/icon.png",
+        title: channel.title || "jarvis-rss",
+        link: channel.link || "https://rss.jasonbenn.com",
+      };
     }
   }
 

@@ -128,6 +128,19 @@ app.get("/feeds.opml", async (c) => {
   }
 });
 
+// Serve feed icon (simple RSS icon SVG)
+app.get("/icon.png", (c) => {
+  // Redirect to a simple RSS icon - using a data URI SVG converted to show as image
+  // For a proper icon, you'd serve an actual PNG file
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+    <rect width="100" height="100" rx="20" fill="#FF6B35"/>
+    <circle cx="25" cy="75" r="10" fill="white"/>
+    <path d="M25 45 a30 30 0 0 1 30 30" stroke="white" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M25 20 a55 55 0 0 1 55 55" stroke="white" stroke-width="10" fill="none" stroke-linecap="round"/>
+  </svg>`;
+  return c.body(svg, 200, { "Content-Type": "image/svg+xml" });
+});
+
 // Root - show API info
 app.get("/", (c) => {
   return c.json({

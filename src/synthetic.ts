@@ -134,6 +134,7 @@ export function generateSyntheticRSS(
     feedLinks: {
       rss: `https://rss.jasonbenn.com/synthetic/${slug}`,
     },
+    image: "https://rss.jasonbenn.com/icon.png",
   });
 
   // Only include items whose published date has passed
