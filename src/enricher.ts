@@ -11,6 +11,7 @@ const builderOptions = {
   ignoreAttributes: false,
   attributeNamePrefix: "@_",
   format: true,
+  cdataPropName: "__cdata",
 };
 
 interface RSSItem {
@@ -23,23 +24,27 @@ interface RSSItem {
 }
 
 function getArchiveTodayUrl(url: string): string {
-  // archive.today accepts URLs directly
-  return `https://archive.today/${encodeURIComponent(url)}`;
+  // archive.today accepts raw URLs directly (no encoding needed)
+  return `https://archive.today/${url}`;
 }
 
 function enrichDescription(
   originalDescription: string | undefined,
   articleUrl: string
-): string {
+): { __cdata: string } {
   const archiveLink = getArchiveTodayUrl(articleUrl);
   const archiveHtml = `<p><a href="${archiveLink}">[Archive link]</a></p>`;
 
-  if (!originalDescription) {
-    return archiveHtml;
+  // Extract content from CDATA if present
+  let content = originalDescription || "";
+  if (typeof content === "object" && (content as any).__cdata) {
+    content = (content as any).__cdata;
   }
 
-  // Append archive link to the description
-  return `${originalDescription}\n${archiveHtml}`;
+  const enriched = content ? `${content}\n${archiveHtml}` : archiveHtml;
+
+  // Return as CDATA to prevent XML escaping
+  return { __cdata: enriched };
 }
 
 export async function enrichFeed(feedUrl: string): Promise<string> {

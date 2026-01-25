@@ -7,7 +7,7 @@
     "dev": "bun run --watch src/index.ts",
     "start": "bun run src/index.ts",
     "cli": "bun run src/cli.ts",
-    "opml": "bun run src/cli.ts opml",
+    "opml": "bun run src/cli.ts opml > ~/Downloads/jarvis-rss.opml",
     "feeds:list": "bun run src/cli.ts list",
     "feeds:validate": "bun run src/cli.ts validate",
     "feeds:categories": "bun run src/cli.ts categories",
