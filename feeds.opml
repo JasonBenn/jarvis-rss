@@ -18,8 +18,8 @@
         author=""
         frequency="daily"
         vibe="Establishment foreign policy analysis, US-centric"
-        paywalled="true"
-        enrichedUrl="https://rss.jasonbenn.com/feed/foreign-affairs"
+        paywalled="false"
+        notes="RSS includes full article text - no enrichment needed"
       />
 
       <outline
@@ -50,18 +50,6 @@
 
       <outline
         type="rss"
-        text="Stratechery"
-        xmlUrl="https://stratechery.com/feed/"
-        htmlUrl="https://stratechery.com"
-        author="Ben Thompson"
-        frequency="3-4/week"
-        vibe="Tech industry strategy, platform dynamics, aggregation theory"
-        paywalled="true"
-        enrichedUrl="https://rss.jasonbenn.com/feed/stratechery"
-      />
-
-      <outline
-        type="rss"
         text="Platformer"
         xmlUrl="https://www.platformer.news/rss/"
         htmlUrl="https://www.platformer.news"
@@ -69,6 +57,22 @@
         frequency="3-4/week"
         vibe="Tech platforms, content moderation, social media industry"
         paywalled="false"
+      />
+
+    </outline>
+
+    <outline text="Fix" title="Fix">
+
+      <outline
+        type="rss"
+        text="Stratechery"
+        xmlUrl="https://stratechery.com/feed/"
+        htmlUrl="https://stratechery.com"
+        author="Ben Thompson"
+        frequency="3-4/week"
+        vibe="Tech industry strategy, platform dynamics, aggregation theory"
+        paywalled="true"
+        notes="Archive.today unreliable - paywalled posts only have teasers, archives often missing or still paywalled. Free posts have full content in RSS. Consider subscribing or using original feed."
       />
 
     </outline>
