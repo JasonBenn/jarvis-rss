@@ -76,7 +76,13 @@ export async function enrichFeed(feedUrl: string): Promise<string> {
       for (const item of itemArray) {
         const link = item.link;
         if (link) {
+          // Enrich description
           item.description = enrichDescription(item.description, link);
+
+          // Also enrich content:encoded if present (Readwise prefers this field)
+          if (item["content:encoded"]) {
+            item["content:encoded"] = enrichDescription(item["content:encoded"], link);
+          }
         }
       }
 

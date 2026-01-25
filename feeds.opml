@@ -18,8 +18,20 @@
         author=""
         frequency="daily"
         vibe="Establishment foreign policy analysis, US-centric"
-        paywalled="false"
-        notes="RSS includes full article text - no enrichment needed"
+        paywalled="true"
+        enrichedUrl="https://rss.jasonbenn.com/feed/foreign-affairs"
+      />
+
+      <outline
+        type="rss"
+        text="The Economist"
+        xmlUrl="https://www.economist.com/the-world-this-week/rss.xml"
+        htmlUrl="https://www.economist.com"
+        author=""
+        frequency="weekly"
+        vibe="Global news and analysis, business, finance, science"
+        paywalled="true"
+        enrichedUrl="https://rss.jasonbenn.com/feed/the-economist"
       />
 
       <outline
@@ -30,17 +42,6 @@
         author=""
         frequency="daily"
         vibe="Defense and national security, practitioner-focused"
-        paywalled="false"
-      />
-
-      <outline
-        type="rss"
-        text="Lawfare"
-        xmlUrl="https://www.lawfaremedia.org/feed"
-        htmlUrl="https://www.lawfaremedia.org"
-        author=""
-        frequency="daily"
-        vibe="National security law and policy"
         paywalled="false"
       />
 
@@ -73,83 +74,6 @@
         vibe="Tech industry strategy, platform dynamics, aggregation theory"
         paywalled="true"
         notes="Archive.today unreliable - paywalled posts only have teasers, archives often missing or still paywalled. Free posts have full content in RSS. Consider subscribing or using original feed."
-      />
-
-    </outline>
-
-    <outline text="Rationalist" title="Rationalist">
-
-      <outline
-        type="rss"
-        text="Astral Codex Ten"
-        xmlUrl="https://www.astralcodexten.com/feed"
-        htmlUrl="https://www.astralcodexten.com"
-        author="Scott Alexander"
-        frequency="2-3/week"
-        vibe="Rationalist essays on psychology, medicine, AI, culture. Very high signal."
-        paywalled="false"
-      />
-
-      <outline
-        type="synthetic"
-        text="CS Lewis - Great Essays"
-        xmlUrl="https://rss.jasonbenn.com/synthetic/cs-lewis-essays"
-        author="CS Lewis"
-        frequency="monthly"
-        vibe="Curated CS Lewis essays released one per month"
-        syntheticFile="cs-lewis-essays.md"
-      />
-
-    </outline>
-
-    <outline text="Economics" title="Economics">
-
-      <outline
-        type="rss"
-        text="Construction Physics"
-        xmlUrl="https://www.construction-physics.com/feed"
-        htmlUrl="https://www.construction-physics.com"
-        author="Brian Potter"
-        frequency="weekly"
-        vibe="How physical things get built, infrastructure, industrial policy"
-        paywalled="false"
-      />
-
-      <outline
-        type="rss"
-        text="Net Interest"
-        xmlUrl="https://www.netinterest.co/feed"
-        htmlUrl="https://www.netinterest.co"
-        author="Marc Rubinstein"
-        frequency="weekly"
-        vibe="Financial sector deep dives, banking, fintech"
-        paywalled="false"
-      />
-
-    </outline>
-
-    <outline text="YouTube" title="YouTube">
-
-      <outline
-        type="rss"
-        text="Veritasium"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA"
-        htmlUrl="https://www.youtube.com/@veritasium"
-        author="Derek Muller"
-        frequency="2-3/month"
-        vibe="High production science explainers"
-        paywalled="false"
-      />
-
-      <outline
-        type="rss"
-        text="3Blue1Brown"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw"
-        htmlUrl="https://www.youtube.com/@3blue1brown"
-        author="Grant Sanderson"
-        frequency="monthly"
-        vibe="Beautiful math visualizations and explanations"
-        paywalled="false"
       />
 
     </outline>
