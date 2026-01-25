@@ -1,0 +1,26 @@
+{
+  "name": "jarvis-rss",
+  "module": "src/index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "cli": "bun run src/cli.ts",
+    "feeds:list": "bun run src/cli.ts list",
+    "feeds:validate": "bun run src/cli.ts validate",
+    "feeds:categories": "bun run src/cli.ts categories",
+    "feeds:synthetic": "bun run src/cli.ts synthetic"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.3.3",
+    "feed": "^5.2.0",
+    "hono": "^4.11.5"
+  }
+}

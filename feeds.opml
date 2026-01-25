@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Jason's RSS Feeds</title>
+    <dateModified>2026-01-25T20:00:00Z</dateModified>
+    <ownerName>Jason</ownerName>
+    <enricherUrl>https://rss.jasonbenn.com</enricherUrl>
+  </head>
+  <body>
+
+    <outline text="Geopolitics" title="Geopolitics">
+
+      <outline
+        type="rss"
+        text="Foreign Affairs"
+        xmlUrl="https://www.foreignaffairs.com/rss.xml"
+        htmlUrl="https://www.foreignaffairs.com"
+        author=""
+        frequency="daily"
+        vibe="Establishment foreign policy analysis, US-centric"
+        paywalled="true"
+        enrichedUrl="https://rss.jasonbenn.com/feed/foreign-affairs"
+      />
+
+      <outline
+        type="rss"
+        text="War on the Rocks"
+        xmlUrl="https://warontherocks.com/feed/"
+        htmlUrl="https://warontherocks.com"
+        author=""
+        frequency="daily"
+        vibe="Defense and national security, practitioner-focused"
+        paywalled="false"
+      />
+
+      <outline
+        type="rss"
+        text="Lawfare"
+        xmlUrl="https://www.lawfaremedia.org/feed"
+        htmlUrl="https://www.lawfaremedia.org"
+        author=""
+        frequency="daily"
+        vibe="National security law and policy"
+        paywalled="false"
+      />
+
+    </outline>
+
+    <outline text="Tech Strategy" title="Tech Strategy">
+
+      <outline
+        type="rss"
+        text="Stratechery"
+        xmlUrl="https://stratechery.com/feed/"
+        htmlUrl="https://stratechery.com"
+        author="Ben Thompson"
+        frequency="3-4/week"
+        vibe="Tech industry strategy, platform dynamics, aggregation theory"
+        paywalled="true"
+        enrichedUrl="https://rss.jasonbenn.com/feed/stratechery"
+      />
+
+      <outline
+        type="rss"
+        text="Platformer"
+        xmlUrl="https://www.platformer.news/rss/"
+        htmlUrl="https://www.platformer.news"
+        author="Casey Newton"
+        frequency="3-4/week"
+        vibe="Tech platforms, content moderation, social media industry"
+        paywalled="false"
+      />
+
+    </outline>
+
+    <outline text="Rationalist" title="Rationalist">
+
+      <outline
+        type="rss"
+        text="Astral Codex Ten"
+        xmlUrl="https://www.astralcodexten.com/feed"
+        htmlUrl="https://www.astralcodexten.com"
+        author="Scott Alexander"
+        frequency="2-3/week"
+        vibe="Rationalist essays on psychology, medicine, AI, culture. Very high signal."
+        paywalled="false"
+      />
+
+      <outline
+        type="synthetic"
+        text="CS Lewis - Great Essays"
+        xmlUrl="https://rss.jasonbenn.com/synthetic/cs-lewis-essays"
+        author="CS Lewis"
+        frequency="monthly"
+        vibe="Curated CS Lewis essays released one per month"
+        syntheticFile="cs-lewis-essays.md"
+      />
+
+    </outline>
+
+    <outline text="Economics" title="Economics">
+
+      <outline
+        type="rss"
+        text="Construction Physics"
+        xmlUrl="https://www.construction-physics.com/feed"
+        htmlUrl="https://www.construction-physics.com"
+        author="Brian Potter"
+        frequency="weekly"
+        vibe="How physical things get built, infrastructure, industrial policy"
+        paywalled="false"
+      />
+
+      <outline
+        type="rss"
+        text="Net Interest"
+        xmlUrl="https://www.netinterest.co/feed"
+        htmlUrl="https://www.netinterest.co"
+        author="Marc Rubinstein"
+        frequency="weekly"
+        vibe="Financial sector deep dives, banking, fintech"
+        paywalled="false"
+      />
+
+    </outline>
+
+    <outline text="YouTube" title="YouTube">
+
+      <outline
+        type="rss"
+        text="Veritasium"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA"
+        htmlUrl="https://www.youtube.com/@veritasium"
+        author="Derek Muller"
+        frequency="2-3/month"
+        vibe="High production science explainers"
+        paywalled="false"
+      />
+
+      <outline
+        type="rss"
+        text="3Blue1Brown"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw"
+        htmlUrl="https://www.youtube.com/@3blue1brown"
+        author="Grant Sanderson"
+        frequency="monthly"
+        vibe="Beautiful math visualizations and explanations"
+        paywalled="false"
+      />
+
+    </outline>
+
+    <outline text="Synthetic" title="Synthetic">
+
+      <outline
+        type="synthetic"
+        text="GK Chesterton - Essays"
+        xmlUrl="https://rss.jasonbenn.com/synthetic/gk-chesterton"
+        author="GK Chesterton"
+        frequency="monthly"
+        vibe="Wit, paradox, and Christian apologetics"
+        syntheticFile="gk-chesterton.md"
+      />
+
+      <outline
+        type="synthetic"
+        text="On True Friendship"
+        xmlUrl="https://rss.jasonbenn.com/synthetic/true-friendship"
+        author="Various"
+        frequency="biweekly"
+        vibe="Great essays on the nature of friendship across history"
+        syntheticFile="true-friendship.md"
+      />
+
+    </outline>
+
+  </body>
+</opml>
