@@ -11,16 +11,27 @@ function usage() {
 jarvis-rss CLI
 
 Commands:
-  list              List all feeds in a table
+  list              List all feeds with URLs
+  opml              Output the OPML file
   validate          Validate OPML and synthetic files
   categories        List feed categories
   synthetic         List synthetic feeds and their items
 
 Examples:
-  bun run cli list
-  bun run cli validate
-  bun run cli synthetic
+  bun run feeds:list
+  bun run opml
+  bun run feeds:validate
 `);
+}
+
+async function outputOpml() {
+  try {
+    const content = fs.readFileSync("feeds.opml", "utf8");
+    console.log(content);
+  } catch (error) {
+    console.error("Failed to read feeds.opml:", error);
+    process.exit(1);
+  }
 }
 
 async function listFeeds() {
@@ -179,6 +190,9 @@ async function listSynthetic() {
 switch (command) {
   case "list":
     await listFeeds();
+    break;
+  case "opml":
+    await outputOpml();
     break;
   case "validate":
     await validate();

@@ -114,15 +114,24 @@ export function slugify(text: string): string {
     .replace(/^-|-$/g, "");
 }
 
+const BASE_URL = "https://rss.jasonbenn.com";
+
+export function getFeedUrl(feed: FeedOutline): string {
+  if (feed.type === "synthetic") {
+    const slug = feed.syntheticFile?.replace(".md", "") || slugify(feed.text);
+    return `${BASE_URL}/synthetic/${slug}`;
+  }
+  if (feed.enrichedUrl) {
+    return feed.enrichedUrl;
+  }
+  return feed.xmlUrl || "";
+}
+
 export function feedsToTable(feeds: FeedOutline[]): string {
-  const header = ["Category", "Name", "Type", "Frequency", "Paywalled", "Author"];
+  const header = ["Name", "URL"];
   const rows = feeds.map((f) => [
-    f.category || "",
     f.text,
-    f.type,
-    f.frequency || "",
-    f.paywalled === "true" ? "Yes" : "No",
-    f.author || "",
+    getFeedUrl(f),
   ]);
 
   // Calculate column widths
