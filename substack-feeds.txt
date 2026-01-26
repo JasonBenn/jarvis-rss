@@ -1,0 +1,232 @@
+# Substack Subscriptions - Extracted 2026-01-25
+# Format: feed_url | name | homepage
+
+https://www.moremyself.xyz/feed | becoming | more myself | https://www.moremyself.xyz
+https://jointhecommons.substack.com/feed | The Commons | https://jointhecommons.substack.com
+https://delusional.substack.com/feed | Delusional | https://delusional.substack.com
+https://meaningsociety.substack.com/feed | Meaning Society | https://meaningsociety.substack.com
+https://jasmi.news/feed | @jasmine's substack | https://jasmi.news
+https://saffron.substack.com/feed | @saffron | https://saffron.substack.com
+https://carlyvalancy.substack.com/feed | a good omen | https://carlyvalancy.substack.com
+https://aletteraday.substack.com/feed | A Letter a Day | https://aletteraday.substack.com
+https://a16zamericandynamism.substack.com/feed | a16z American Dynamism | https://a16zamericandynamism.substack.com
+https://www.aarthiandsriram.com/feed | The Aarthi and Sriram Show | https://www.aarthiandsriram.com
+https://news.manifold.markets/feed | Above The Fold | https://news.manifold.markets
+https://www.afterbabel.com/feed | After Babel | https://www.afterbabel.com
+https://www.ageofinvention.xyz/feed | Age of Invention | https://www.ageofinvention.xyz
+https://www.normaltech.ai/feed | AI as Normal Technology | https://www.normaltech.ai
+https://blog.ai-futures.org/feed | AI Futures Project | https://blog.ai-futures.org
+https://aimaker.substack.com/feed | The AI Maker | https://aimaker.substack.com
+https://www.aipanic.news/feed | AI PANIC | https://www.aipanic.news
+https://newsletter.safe.ai/feed | AI Safety Newsletter | https://newsletter.safe.ai
+https://altered.substack.com/feed | Altered | https://altered.substack.com
+https://amateurgods.substack.com/feed | Amateur Gods | https://amateurgods.substack.com
+https://davidlang.substack.com/feed | Amateur Technology | https://davidlang.substack.com
+https://www.anarchonomicon.com/feed | Anarchonomicon | https://www.anarchonomicon.com
+https://blog.andrewyang.com/feed | Andrew Yang Newsletter | https://blog.andrewyang.com
+https://andymasley.substack.com/feed | Andy Masley | https://andymasley.substack.com
+https://anneselke.substack.com/feed | Anne selke | https://anneselke.substack.com
+https://approachwithalacrity.substack.com/feed | Approach with Alacrity | https://approachwithalacrity.substack.com
+https://www.theargumentmag.com/feed | The Argument | https://www.theargumentmag.com
+https://www.artificialintelligencemadesimple.com/feed | Artificial Intelligence Made Simple | https://www.artificialintelligencemadesimple.com
+https://asimovaddendum.substack.com/feed | Asimov's Addendum | https://asimovaddendum.substack.com
+https://www.ask-polly.com/feed | Ask Polly | https://www.ask-polly.com
+https://www.astralcodexten.com/feed | Astral Codex Ten | https://www.astralcodexten.com
+https://autopoesis.substack.com/feed | Autopoiesis | https://autopoesis.substack.com
+https://necessities.substack.com/feed | Baer Necessities | https://necessities.substack.com
+https://www.bensouthwood.co.uk/feed | Baldwin | https://www.bensouthwood.co.uk
+https://barnacles.substack.com/feed | Barnacles | https://barnacles.substack.com
+https://barrcast.substack.com/feed | The Barrcast | https://barrcast.substack.com
+https://creatoreconomy.so/feed | Behind the Craft | https://creatoreconomy.so
+https://bestdressed.substack.com/feed | Best Dressed | https://bestdressed.substack.com
+https://www.bestofecontwitter.com/feed | Best of Econtwitter | https://www.bestofecontwitter.com
+https://www.bigtechnology.com/feed | Big Technology | https://www.bigtechnology.com
+https://bonnieyu.substack.com/feed | Bonnie Yu | https://bonnieyu.substack.com
+https://www.avabear.xyz/feed | bookbear express | https://www.avabear.xyz
+https://www.booritney.com/feed | booritney | https://www.booritney.com
+https://boultonwatt.substack.com/feed | Boulton & Watt | https://boultonwatt.substack.com
+https://buildingoptimism.substack.com/feed | Building Optimism | https://buildingoptimism.substack.com
+https://www.thebulwark.com/feed | The Bulwark | https://www.thebulwark.com
+https://blog.bytebytego.com/feed | ByteByteGo Newsletter | https://blog.bytebytego.com
+https://www.cartoonshateher.com/feed | Cartoons Hate Her | https://www.cartoonshateher.com
+https://michaeljburry.substack.com/feed | Cassandra Unchained | https://michaeljburry.substack.com
+https://www.chalmermagne.com/feed | Chalmermagne | https://www.chalmermagne.com
+https://itscharlibb.substack.com/feed | charli's substack | https://itscharlibb.substack.com
+https://cheaperthandivorce.substack.com/feed | Cheaper Than Divorce | https://cheaperthandivorce.substack.com
+https://chinai.substack.com/feed | ChinAI Newsletter | https://chinai.substack.com
+https://www.chinatalk.media/feed | ChinaTalk | https://www.chinatalk.media
+https://chrispainter.substack.com/feed | Chris Painter's Newsletter | https://chrispainter.substack.com
+https://blog.cip.org/feed | Collective Intelligence Project | https://blog.cip.org
+https://afraw.substack.com/feed | Concurrent | https://afraw.substack.com
+https://www.conspicuouscognition.com/feed | Conspicuous Cognition | https://www.conspicuouscognition.com
+https://lucagattonicelli.substack.com/feed | Cornerstone | https://lucagattonicelli.substack.com
+https://claireberlinski.substack.com/feed | The Cosmopolitan Globalist | https://claireberlinski.substack.com
+https://blog.cosmos-institute.org/feed | Cosmos Institute | https://blog.cosmos-institute.org
+https://courtyardurbanist.com/feed | Courtyard Urbanist | https://courtyardurbanist.com
+https://rickrubin.substack.com/feed | The Creative Act | https://rickrubin.substack.com
+https://theculturalromantic.substack.com/feed | The Cultural Romantic | https://theculturalromantic.substack.com
+https://annehelen.substack.com/feed | Culture Study | https://annehelen.substack.com
+https://grantbels.substack.com/feed | cypress and barbells | https://grantbels.substack.com
+https://dadexplains.substack.com/feed | Dad Explains | https://dadexplains.substack.com
+https://newsletter.danielpaleka.com/feed | Daniel Paleka's Newsletter | https://newsletter.danielpaleka.com
+https://danielkokotajlo.substack.com/feed | Daniel's Substack | https://danielkokotajlo.substack.com
+https://davebarry.substack.com/feed | Dave Barry's Substack | https://davebarry.substack.com
+https://daveshap.substack.com/feed | David Shapiro's Substack | https://daveshap.substack.com
+https://www.derekthompson.org/feed | Derek Thompson | https://www.derekthompson.org
+https://psychoftech.substack.com/feed | Designing Tomorrow | https://psychoftech.substack.com
+https://vonzu.substack.com/feed | Devon's wanderings | https://vonzu.substack.com
+https://dialecticpod.substack.com/feed | Dialectic | https://dialecticpod.substack.com
+https://dominiccummings.substack.com/feed | Dominic Cummings substack | https://dominiccummings.substack.com
+https://thezvi.substack.com/feed | Don't Worry About the Vase | https://thezvi.substack.com
+https://www.dwarkesh.com/feed | Dwarkesh Podcast | https://www.dwarkesh.com
+https://zinnia01.substack.com/feed | e-girl esoterica | https://zinnia01.substack.com
+https://www.economicforces.xyz/feed | Economic Forces | https://www.economicforces.xyz
+https://lisakholostenko.substack.com/feed | Empty Calories | https://lisakholostenko.substack.com
+https://epochai.substack.com/feed | Epoch AI | https://epochai.substack.com
+https://www.henrikkarlsson.xyz/feed | Escaping Flatland | https://www.henrikkarlsson.xyz
+https://www.essentialtechnology.blog/feed | Essential Technology | https://www.essentialtechnology.blog
+https://ethanhein.substack.com/feed | Ethan teaches you music | https://ethanhein.substack.com
+https://artificialintelligenceact.substack.com/feed | The EU AI Act Newsletter | https://artificialintelligenceact.substack.com
+https://eurydicelives.substack.com/feed | Eurydice Lives | https://eurydicelives.substack.com
+https://experiencemachines.substack.com/feed | Experience Machines | https://experiencemachines.substack.com
+https://www.exponentialview.co/feed | Exponential View | https://www.exponentialview.co
+https://fakepixels.substack.com/feed | Fakepixels | https://fakepixels.substack.com
+https://feelingmachines.substack.com/feed | Feeling Machines | https://feelingmachines.substack.com
+https://feelingtones.substack.com/feed | Feeling Tones | https://feelingtones.substack.com
+https://www.getflack.com/feed | Flack | https://www.getflack.com
+https://newsletter.forethought.org/feed | ForeWord | https://newsletter.forethought.org
+https://manifund.substack.com/feed | The Fox Says | https://manifund.substack.com
+https://amandango.substack.com/feed | Fractal Cafe | https://amandango.substack.com
+https://frameproblems.substack.com/feed | Frame Problems | https://frameproblems.substack.com
+https://ftav.substack.com/feed | FT Alphaville | https://ftav.substack.com
+https://anielsen.substack.com/feed | Further Vision | https://anielsen.substack.com
+https://johnrobb.substack.com/feed | Global Guerrillas | https://johnrobb.substack.com
+https://bengoldhaber.substack.com/feed | Gold Takes | https://bengoldhaber.substack.com
+https://goodanger.substack.com/feed | The Good Father | https://goodanger.substack.com
+https://graceblakeley.substack.com/feed | Grace Blakeley | https://graceblakeley.substack.com
+https://thegradientpub.substack.com/feed | The Gradient | https://thegradientpub.substack.com
+https://graymirror.substack.com/feed | Gray Mirror | https://graymirror.substack.com
+https://report.growsf.org/feed | GrowSF | https://report.growsf.org
+https://hollyelmore.substack.com/feed | Holly Elmore | https://hollyelmore.substack.com
+https://homeeconomics.substack.com/feed | Home Economics | https://homeeconomics.substack.com
+https://newsletter.ofthebrave.org/feed | Home of the Brave | https://newsletter.ofthebrave.org
+https://www.markkoyama.com/feed | How the World Became Rich | https://www.markkoyama.com
+https://asterainstitute.substack.com/feed | Human Readable | https://asterainstitute.substack.com
+https://instituteforprogress.substack.com/feed | IFP | https://instituteforprogress.substack.com
+https://andrewblevins.substack.com/feed | Immediacy | https://andrewblevins.substack.com
+https://theelegantway.substack.com/feed | The InnerNet Of Elegance | https://theelegantway.substack.com
+https://www.interconnects.ai/feed | Interconnects AI | https://www.interconnects.ai
+https://jessicaocean.substack.com/feed | Jessica Ocean | https://jessicaocean.substack.com
+https://joecarlsmith.substack.com/feed | Joe Carlsmith's Substack | https://joecarlsmith.substack.com
+https://thejoycezhang.substack.com/feed | Joyce's Dating Playbook | https://thejoycezhang.substack.com
+https://justinreynolds.substack.com/feed | Justin's Substack | https://justinreynolds.substack.com
+https://kanjun.substack.com/feed | Kanjectures | https://kanjun.substack.com
+https://lalachimera.com/feed | La La Chimera | https://lalachimera.com
+https://leatherandsilk.substack.com/feed | Leather & Silk | https://leatherandsilk.substack.com
+https://www.lennysnewsletter.com/feed | Lenny's Newsletter | https://www.lennysnewsletter.com
+https://lessfoolish.substack.com/feed | Less Foolish | https://lessfoolish.substack.com
+https://www.gettheleverage.com/feed | The Leverage | https://www.gettheleverage.com
+https://chrislakin.blog/feed | Locally Optimal | https://chrislakin.blog
+https://alyssaatkins.substack.com/feed | Love and Growth with Alyssa | https://alyssaatkins.substack.com
+https://lukedrago.substack.com/feed | Luke Drago | https://lukedrago.substack.com
+https://lynettebye.substack.com/feed | Lynette Bye | https://lynettebye.substack.com
+https://mackenziesharp.substack.com/feed | Mackenzie's Substack | https://mackenziesharp.substack.com
+https://yourpublicuniversalfriend.substack.com/feed | Madeleine Song | https://yourpublicuniversalfriend.substack.com
+https://ethanding.substack.com/feed | mandates | https://ethanding.substack.com
+https://map.simonsarris.com/feed | The Map is Mostly Water | https://map.simonsarris.com
+https://pmarca.substack.com/feed | Marc Andreessen Substack | https://pmarca.substack.com
+https://www.maximum-progress.com/feed | Maximum Progress | https://www.maximum-progress.com
+https://meaningalignment.substack.com/feed | Meaning Alignment Institute | https://meaningalignment.substack.com
+https://michaelnielsen1.substack.com/feed | Michael Nielsen | https://michaelnielsen1.substack.com
+https://michaelnielsenupdates.substack.com/feed | Michael Nielsen Updates | https://michaelnielsenupdates.substack.com
+https://milesbrundage.substack.com/feed | Miles's Substack | https://milesbrundage.substack.com
+https://milky.substack.com/feed | Milky | https://milky.substack.com
+https://musingmind.substack.com/feed | Mind Matters | https://musingmind.substack.com
+https://mishaglouberman.substack.com/feed | Misha's Substack | https://mishaglouberman.substack.com
+https://newsletter.mlsafety.org/feed | ML Safety Newsletter | https://newsletter.mlsafety.org
+https://nayafia.substack.com/feed | Monomythical | https://nayafia.substack.com
+https://moralinfra.substack.com/feed | Moral Infrastructure | https://moralinfra.substack.com
+https://substack.morereasonable.com/feed | More Reasonable | https://substack.morereasonable.com
+https://morphicreverie.substack.com/feed | morphic reverie | https://morphicreverie.substack.com
+https://aligned.substack.com/feed | Musings on the Alignment Problem | https://aligned.substack.com
+https://nanransohoff.substack.com/feed | Nan's Substack | https://nanransohoff.substack.com
+https://www.narrativeark.xyz/feed | Narrative Ark | https://www.narrativeark.xyz
+https://neall.substack.com/feed | Neall's Canvas | https://neall.substack.com
+https://newyorker.substack.com/feed | The New Yorker | https://newyorker.substack.com
+https://nextplayso.substack.com/feed | next play | https://nextplayso.substack.com
+https://www.nosetgauge.com/feed | No Set Gauge | https://www.nosetgauge.com
+https://www.noahpinion.blog/feed | Noahpinion | https://www.noahpinion.blog
+https://nothinghuman.substack.com/feed | Nothing Human | https://nothinghuman.substack.com
+https://www.nuclearbarbarians.com/feed | Nuclear Barbarians | https://www.nuclearbarbarians.com
+https://samkriss.substack.com/feed | Numb at the Lodge | https://samkriss.substack.com
+https://www.obsolete.pub/feed | Obsolete | https://www.obsolete.pub
+https://oliverburkeman.substack.com/feed | Oliver Burkeman | https://oliverburkeman.substack.com
+https://www.oneusefulthing.org/feed | One Useful Thing | https://www.oneusefulthing.org
+https://www.overcomingbias.com/feed | Overcoming Bias | https://www.overcomingbias.com
+https://paulkrugman.substack.com/feed | Paul Krugman | https://paulkrugman.substack.com
+https://www.persuasion.community/feed | Persuasion | https://www.persuasion.community
+https://petebuttigieg.substack.com/feed | Pete Buttigieg's Substack | https://petebuttigieg.substack.com
+https://www.planned-obsolescence.org/feed | Planned Obsolescence | https://www.planned-obsolescence.org
+https://pmamtraveller.substack.com/feed | pmamtraveller | https://pmamtraveller.substack.com
+https://turntrout.substack.com/feed | The Pond | https://turntrout.substack.com
+https://peterwildeford.substack.com/feed | The Power Law | https://peterwildeford.substack.com
+https://newsletter.pragmaticengineer.com/feed | The Pragmatic Engineer | https://newsletter.pragmaticengineer.com
+https://www.prinzai.com/feed | prinz | https://www.prinzai.com
+https://www.programmablemutter.com/feed | Programmable Mutter | https://www.programmablemutter.com
+https://www.therandomwalk.co/feed | Random Walk | https://www.therandomwalk.co
+https://alexw.substack.com/feed | Rational in the Fullness of Time | https://alexw.substack.com
+https://www.razibkhan.com/feed | Razib Khan's Unsupervised Learning | https://www.razibkhan.com
+https://www.therebuild.pub/feed | The Rebuild | https://www.therebuild.pub
+https://www.recomendo.com/feed | Recomendo | https://www.recomendo.com
+https://blog.redwoodresearch.org/feed | Redwood Research blog | https://blog.redwoodresearch.org
+https://eugenewei.substack.com/feed | Remains of the Day | https://eugenewei.substack.com
+https://resobscura.substack.com/feed | Res Obscura | https://resobscura.substack.com
+https://residualthoughts.substack.com/feed | Residual Thoughts | https://residualthoughts.substack.com
+https://helentoner.substack.com/feed | Rising Tide | https://helentoner.substack.com
+https://roonscape.ai/feed | roon's blog | https://roonscape.ai
+https://www.rosiecampbell.xyz/feed | Rosie Campbell | https://www.rosiecampbell.xyz
+https://sarahconstantin.substack.com/feed | Rough Diamonds | https://sarahconstantin.substack.com
+https://loweryant.substack.com/feed | Ryan's Substack | https://loweryant.substack.com
+https://angelic50.substack.com/feed | Sandra parker | https://angelic50.substack.com
+https://sashachapin.substack.com/feed | Sasha's Newsletter | https://sashachapin.substack.com
+https://sciencefictionspod.substack.com/feed | The Science Fictions Podcast | https://sciencefictionspod.substack.com
+https://seanmcclure.substack.com/feed | Sean McClure | https://seanmcclure.substack.com
+https://marykateandsmashley.substack.com/feed | Search Terms | https://marykateandsmashley.substack.com
+https://www.secondperson.dating/feed | Second Person | https://www.secondperson.dating
+https://secondthoughts.ai/feed | Second Thoughts | https://secondthoughts.ai
+https://www.seekingtribe.com/feed | Seeking Tribe | https://www.seekingtribe.com
+https://newsletter.semianalysis.com/feed | SemiAnalysis | https://newsletter.semianalysis.com
+https://blog.sentinel-team.org/feed | Sentinel Global Risks Watch | https://blog.sentinel-team.org
+https://sfcontemplarium.substack.com/feed | SF Contemplarium Newsletter | https://sfcontemplarium.substack.com
+https://theshadowedarchive.substack.com/feed | The Shadowed Archive | https://theshadowedarchive.substack.com
+https://shreyasaiyer.substack.com/feed | Shreyas's Substack | https://shreyasaiyer.substack.com
+https://skincontact.substack.com/feed | skin contact | https://skincontact.substack.com
+https://www.slowboring.com/feed | Slow Boring | https://www.slowboring.com
+https://sluts.substack.com/feed | SlutStack | https://sluts.substack.com
+https://softpower.press/feed | Soft Power | https://softpower.press
+https://fchollet.substack.com/feed | Sparks in the Wind | https://fchollet.substack.com
+https://blog.spec.tech/feed | Spectech Newsletter | https://blog.spec.tech
+https://annadallara.substack.com/feed | Speculative | https://annadallara.substack.com
+https://www.strangepilgrims.com/feed | Strange Pilgrims | https://www.strangepilgrims.com
+https://supernuclear.substack.com/feed | Supernuclear | https://supernuclear.substack.com
+https://thesisdriven.substack.com/feed | Thesis Driven | https://thesisdriven.substack.com
+https://thinkgirlinstitute.substack.com/feed | Thinkgirl's Substack | https://thinkgirlinstitute.substack.com
+https://jdahl.substack.com/feed | Thoughts + Things from Jackson Dahl | https://jdahl.substack.com
+https://writing.antonleicht.me/feed | Threading the Needle | https://writing.antonleicht.me
+https://sub.thursdai.news/feed | ThursdAI | https://sub.thursdai.news
+https://www.tracingwoodgrains.com/feed | Tracing Woodgrains | https://www.tracingwoodgrains.com
+https://www.transformernews.ai/feed | Transformer | https://www.transformernews.ai
+https://unchartedterritories.tomaspueyo.com/feed | Uncharted Territories | https://unchartedterritories.tomaspueyo.com
+https://www.understandingai.org/feed | Understanding AI | https://www.understandingai.org
+https://untangled.substack.com/feed | Untangled with Charley Johnson | https://untangled.substack.com
+https://benjaminschneider.substack.com/feed | The Urban Condition | https://benjaminschneider.substack.com
+https://usefulfictions.substack.com/feed | Useful Fictions | https://usefulfictions.substack.com
+https://velvetnoise.substack.com/feed | velvet noise | https://velvetnoise.substack.com
+https://williamrsaunders.substack.com/feed | William's Substack | https://williamrsaunders.substack.com
+https://worktopia.substack.com/feed | Working Assumptions | https://worktopia.substack.com
+https://www.worksinprogress.news/feed | The Works in Progress Newsletter | https://www.worksinprogress.news
+https://worldspiritsockpuppet.substack.com/feed | world spirit sock stack | https://worldspiritsockpuppet.substack.com
+https://www.edwest.co.uk/feed | Wrong Side of History | https://www.edwest.co.uk
+https://audreyhorne.substack.com/feed | X's Audrey Horne | https://audreyhorne.substack.com
+https://writing.yaschamounk.com/feed | Yascha Mounk | https://writing.yaschamounk.com
+https://rawandferal.substack.com/feed | raw and feral | https://rawandferal.substack.com
