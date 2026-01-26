@@ -154,7 +154,8 @@ export async function enrichFeed(feedUrl: string, siteUrl?: string): Promise<str
 
       for (const item of itemArray) {
         const originalLink = item.link;
-        if (originalLink) {
+        // Skip if already an archive URL (prevents double-encoding on re-enrichment)
+        if (originalLink && !originalLink.includes('rss.jasonbenn.com/archive')) {
           // Replace link with archive.today URL (so "Open" goes to archive)
           item.link = getArchiveTodayUrl(originalLink);
 

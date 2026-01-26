@@ -156,3 +156,84 @@ export function findFeedBySlug(
 ): FeedOutline | undefined {
   return feeds.find((f) => slugify(f.text) === slug);
 }
+
+/**
+ * Generate OPML 2.0 XML from a list of feeds.
+ * Groups feeds by category and only includes categories that have feeds.
+ */
+export function generateOPML(feeds: FeedOutline[], title: string = "RSS Feeds"): string {
+  // Group feeds by category
+  const feedsByCategory = new Map<string, FeedOutline[]>();
+  for (const feed of feeds) {
+    const cat = feed.category || "Uncategorized";
+    if (!feedsByCategory.has(cat)) {
+      feedsByCategory.set(cat, []);
+    }
+    feedsByCategory.get(cat)!.push(feed);
+  }
+
+  // Build feed outline attributes
+  const feedToAttrs = (feed: FeedOutline): string => {
+    const attrs: string[] = [];
+    attrs.push(`type="${feed.type}"`);
+    attrs.push(`text="${escapeXml(feed.text)}"`);
+    if (feed.xmlUrl) attrs.push(`xmlUrl="${escapeXml(feed.xmlUrl)}"`);
+    if (feed.sourceUrl) attrs.push(`sourceUrl="${escapeXml(feed.sourceUrl)}"`);
+    if (feed.htmlUrl) attrs.push(`htmlUrl="${escapeXml(feed.htmlUrl)}"`);
+    if (feed.author) attrs.push(`author="${escapeXml(feed.author)}"`);
+    if (feed.frequency) attrs.push(`frequency="${escapeXml(feed.frequency)}"`);
+    if (feed.vibe) attrs.push(`vibe="${escapeXml(feed.vibe)}"`);
+    if (feed.syntheticFile) attrs.push(`syntheticFile="${escapeXml(feed.syntheticFile)}"`);
+    return attrs.join(" ");
+  };
+
+  // Build XML
+  const lines: string[] = [];
+  lines.push('<?xml version="1.0" encoding="UTF-8"?>');
+  lines.push('<opml version="2.0">');
+  lines.push("  <head>");
+  lines.push(`    <title>${escapeXml(title)}</title>`);
+  lines.push(`    <dateModified>${new Date().toISOString()}</dateModified>`);
+  lines.push("  </head>");
+  lines.push("  <body>");
+
+  for (const [category, categoryFeeds] of feedsByCategory) {
+    lines.push(`    <outline text="${escapeXml(category)}" title="${escapeXml(category)}">`);
+    for (const feed of categoryFeeds) {
+      lines.push(`      <outline ${feedToAttrs(feed)} />`);
+    }
+    lines.push("    </outline>");
+  }
+
+  lines.push("  </body>");
+  lines.push("</opml>");
+
+  return lines.join("\n");
+}
+
+function escapeXml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+/**
+ * Extract all xmlUrl values from an OPML file.
+ */
+export function extractFeedUrls(filePath: string): Set<string> {
+  const urls = new Set<string>();
+  try {
+    const { feeds } = parseOPML(filePath);
+    for (const feed of feeds) {
+      if (feed.xmlUrl) {
+        urls.add(feed.xmlUrl);
+      }
+    }
+  } catch {
+    // File might not exist or be invalid, return empty set
+  }
+  return urls;
+}

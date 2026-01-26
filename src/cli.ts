@@ -1,10 +1,13 @@
 #!/usr/bin/env bun
 import * as fs from "fs";
 import * as path from "path";
-import { parseOPML, feedsToTable, slugify } from "./opml";
+import { parseOPML, feedsToTable, slugify, generateOPML, extractFeedUrls } from "./opml";
 import { parseSyntheticFile, listSyntheticFeeds } from "./synthetic";
 
 const command = process.argv[2];
+
+const EXPORTS_DIR = "exports";
+const DOWNLOADS_PATH = path.join(process.env.HOME || "~", "Downloads", "feeds.opml");
 
 function usage() {
   console.log(`
@@ -12,7 +15,7 @@ jarvis-rss CLI
 
 Commands:
   list              List all feeds with URLs
-  opml              Output the OPML file
+  opml              Export new feeds to OPML (incremental)
   validate          Validate OPML and synthetic files
   categories        List feed categories
   synthetic         List synthetic feeds and their items
@@ -24,12 +27,54 @@ Examples:
 `);
 }
 
-async function outputOpml() {
+async function exportOpml() {
   try {
-    const content = fs.readFileSync("feeds.opml", "utf8");
-    console.log(content);
+    // Read current feeds
+    const { feeds } = parseOPML("feeds.opml");
+
+    // Ensure exports directory exists
+    if (!fs.existsSync(EXPORTS_DIR)) {
+      fs.mkdirSync(EXPORTS_DIR);
+    }
+
+    // Collect all previously exported URLs
+    const exportedUrls = new Set<string>();
+    const exportFiles = fs.readdirSync(EXPORTS_DIR).filter(f => f.endsWith(".opml"));
+    for (const file of exportFiles) {
+      const urls = extractFeedUrls(path.join(EXPORTS_DIR, file));
+      for (const url of urls) {
+        exportedUrls.add(url);
+      }
+    }
+
+    // Filter to only new feeds (those not previously exported)
+    const newFeeds = feeds.filter(feed => feed.xmlUrl && !exportedUrls.has(feed.xmlUrl));
+
+    if (newFeeds.length === 0) {
+      console.log("No new feeds to export.");
+      console.log(`Previously exported: ${exportedUrls.size} feeds across ${exportFiles.length} files`);
+      return;
+    }
+
+    // Generate OPML with only new feeds
+    const opmlContent = generateOPML(newFeeds, "New RSS Feeds Export");
+
+    // Save to exports directory with dated filename
+    const today = new Date().toISOString().split("T")[0];
+    const exportPath = path.join(EXPORTS_DIR, `${today}.opml`);
+    fs.writeFileSync(exportPath, opmlContent);
+
+    // Copy to Downloads
+    fs.writeFileSync(DOWNLOADS_PATH, opmlContent);
+
+    console.log(`Exported ${newFeeds.length} new feed(s):`);
+    for (const feed of newFeeds) {
+      console.log(`  - ${feed.text}`);
+    }
+    console.log(`\nSaved to: ${exportPath}`);
+    console.log(`Copied to: ${DOWNLOADS_PATH}`);
   } catch (error) {
-    console.error("Failed to read feeds.opml:", error);
+    console.error("Failed to export OPML:", error);
     process.exit(1);
   }
 }
@@ -193,7 +238,7 @@ switch (command) {
     await listFeeds();
     break;
   case "opml":
-    await outputOpml();
+    await exportOpml();
     break;
   case "validate":
     await validate();

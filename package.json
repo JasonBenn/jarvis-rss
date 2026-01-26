@@ -7,7 +7,7 @@
     "dev": "bun run --watch src/index.ts",
     "start": "bun run src/index.ts",
     "feeds": "bun run src/cli.ts list",
-    "opml": "cp feeds.opml ~/Downloads/feeds.opml && echo 'Exported to ~/Downloads/feeds.opml'"
+    "opml": "bun run src/cli.ts opml"
   },
   "devDependencies": {
     "@types/bun": "latest"

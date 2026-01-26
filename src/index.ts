@@ -173,6 +173,7 @@ app.get("/preview", async (c) => {
     .join("\n");
 
   let feedContent = "";
+  let rawFeedXml = "";
 
   if (slug || feedUrl) {
     try {
@@ -186,8 +187,9 @@ app.get("/preview", async (c) => {
             rssText = generateSyntheticRSS(
               feed.syntheticFile?.replace(".md", "") || slug
             );
-          } else if (feed.xmlUrl) {
-            rssText = await enrichFeedCached(feed.xmlUrl);
+          } else if (feed.sourceUrl || feed.xmlUrl) {
+            const sourceUrl = feed.sourceUrl || feed.xmlUrl;
+            rssText = await enrichFeedCached(sourceUrl, feed.htmlUrl);
           }
         } else {
           // Try as synthetic feed directly
@@ -203,6 +205,7 @@ app.get("/preview", async (c) => {
       }
 
       if (rssText) {
+        rawFeedXml = rssText;
         // Parse RSS and render as HTML
         const { XMLParser } = await import("fast-xml-parser");
         const parser = new XMLParser({
@@ -267,9 +270,8 @@ app.get("/preview", async (c) => {
     body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
     .controls { background: #f5f5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
     .controls form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-    select, input, button { padding: 8px 12px; font-size: 14px; }
+    select, button { padding: 8px 12px; font-size: 14px; }
     select { min-width: 200px; }
-    input[type="text"] { flex: 1; min-width: 200px; }
     button { background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; }
     button:hover { background: #e55a2b; }
     article { border-bottom: 1px solid #eee; padding: 15px 0; }
@@ -289,18 +291,48 @@ app.get("/preview", async (c) => {
   <h1>RSS Feed Preview</h1>
   <div class="controls">
     <form method="get">
-      <select name="slug">
+      <select name="slug" onchange="this.form.submit()">
         <option value="">-- Select a feed --</option>
         ${feedOptions}
       </select>
-      <span>or</span>
-      <input type="text" name="url" placeholder="Enter feed URL" value="${feedUrl || ""}">
-      <button type="submit">Load Feed</button>
+      ${slug ? `<button type="button" onclick="copyFeedUrl()">Copy Feed URL</button>` : ""}
+      ${rawFeedXml ? `<button type="button" onclick="toggleRaw()">View Raw</button>` : ""}
     </form>
   </div>
   <div id="feed-content">
-    ${feedContent || "<p>Select a feed or enter a URL to preview.</p>"}
+    ${feedContent || "<p>Select a feed to preview.</p>"}
   </div>
+  ${slug ? `
+  <script>
+    function copyFeedUrl() {
+      const url = window.location.origin + '/feed/${slug}';
+      navigator.clipboard.writeText(url).then(() => {
+        const btn = document.querySelector('button[onclick="copyFeedUrl()"]');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy Feed URL', 2000);
+      });
+    }
+  </script>
+  ` : ""}
+  ${rawFeedXml ? `
+  <pre id="raw-feed" style="display: none; background: #f5f5f5; padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 12px; white-space: pre-wrap; word-break: break-word;">${rawFeedXml.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")}</pre>
+  <script>
+    function toggleRaw() {
+      const feedContent = document.getElementById('feed-content');
+      const rawFeed = document.getElementById('raw-feed');
+      const btn = document.querySelector('button[onclick="toggleRaw()"]');
+      if (rawFeed.style.display === 'none') {
+        rawFeed.style.display = 'block';
+        feedContent.style.display = 'none';
+        btn.textContent = 'View Parsed';
+      } else {
+        rawFeed.style.display = 'none';
+        feedContent.style.display = 'block';
+        btn.textContent = 'View Raw';
+      }
+    }
+  </script>
+  ` : ""}
 </body>
 </html>`;
 
