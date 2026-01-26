@@ -1,3 +1,1562 @@
     <outline text="YouTube" title="YouTube">
+      <outline
+        type="rss"
+        text="3Blue1Brown"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYO_jab_esuFRV4b17AJtAw"
+        htmlUrl="https://www.youtube.com/@3blue1brown"
+      />
 
+      <outline
+        type="rss"
+        text="30 Second Drum Lessons"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtzjlXAq5eTQuCTUXvZz9Eg"
+        htmlUrl="https://www.youtube.com/@30SecondDrumLessons"
+      />
+
+      <outline
+        type="rss"
+        text="Adam McDonald"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFex0az211xl6U8dav4-beTg"
+        htmlUrl="https://www.youtube.com/@AdamMc192"
+      />
+
+      <outline
+        type="rss"
+        text="Ahmad Bazzi"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgC1d4JZ1Fz4t8MWLJD464w"
+        htmlUrl="https://www.youtube.com/@AhmadBazzi"
+      />
+
+      <outline
+        type="rss"
+        text="AI Explained"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNJ1Ymd5yFuUPtn21xtRbbw"
+        htmlUrl="https://www.youtube.com/@aiexplained-official"
+      />
+
+      <outline
+        type="rss"
+        text="ailaughatmyownjokes"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_ID-A3YnSQXCwyIcCs9QFw"
+        htmlUrl="https://www.youtube.com/@ailaughatmyownjokes"
+      />
+
+      <outline
+        type="rss"
+        text="Airtable"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHH6_KYYWUYaWzD5CPNQ6ng"
+        htmlUrl="https://www.youtube.com/@AirtableApp"
+      />
+
+      <outline
+        type="rss"
+        text="Akiyuki Brick Channel"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCJJNQIhS15ypcHqDfEPNXg"
+        htmlUrl="https://www.youtube.com/@akiyuky"
+      />
+
+      <outline
+        type="rss"
+        text="All About AI"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR9j1jqqB5Rse69wjUnbYwA"
+        htmlUrl="https://www.youtube.com/@AllAboutAI"
+      />
+
+      <outline
+        type="rss"
+        text="All-In Podcast"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFESLZhusAkFfsNsApnjF_Cg"
+        htmlUrl="https://www.youtube.com/@allin"
+      />
+
+      <outline
+        type="rss"
+        text="Andrej Karpathy"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXUPKJO5MZQN11PqgIvyuvQ"
+        htmlUrl="https://www.youtube.com/@AndrejKarpathy"
+      />
+
+      <outline
+        type="rss"
+        text="Andrew Huberman"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2D2CMWXMOVWx7giW1n3LIg"
+        htmlUrl="https://www.youtube.com/@hubermanlab"
+      />
+
+      <outline
+        type="rss"
+        text="Andrew Millison"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgb_TbreMgfDdLKkr4yYJHw"
+        htmlUrl="https://www.youtube.com/@amillison"
+      />
+
+      <outline
+        type="rss"
+        text="Andy Matuschak"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqee1D1ICeF1hhfy4YKyJhg"
+        htmlUrl="https://www.youtube.com/@andy_matuschak"
+      />
+
+      <outline
+        type="rss"
+        text="Anthropic"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrDwWp7EBBv4NwvScIpBDOA"
+        htmlUrl="https://www.youtube.com/@anthropic-ai"
+      />
+
+      <outline
+        type="rss"
+        text="Austen Alexander TV"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0KI9ocfuIS0clEug0uO7UQ"
+        htmlUrl="https://www.youtube.com/@AustenAlexanderTV"
+      />
+
+      <outline
+        type="rss"
+        text="Authentic Revolution"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFlIIENaFtDUbcVggXrocFzA"
+        htmlUrl="https://www.youtube.com/@AuthRev"
+      />
+
+      <outline
+        type="rss"
+        text="Beast Philanthropy"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFAiLfjNXkNv24uhpzUgPa6A"
+        htmlUrl="https://www.youtube.com/@BeastPhilanthropy"
+      />
+
+      <outline
+        type="rss"
+        text="Ben Katz"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJp2fjVH_P2el67ZwoLFsPA"
+        htmlUrl="https://www.youtube.com/@BenKatz"
+      />
+
+      <outline
+        type="rss"
+        text="Ben Prunty"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFnaJfD5zehhKm1KIjUw8PJg"
+        htmlUrl="https://www.youtube.com/@BenPrunty"
+      />
+
+      <outline
+        type="rss"
+        text="Bisqwit"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFKTehwyGCKF-b2wo0RKwrcg"
+        htmlUrl="https://www.youtube.com/@Bisqwit"
+      />
+
+      <outline
+        type="rss"
+        text="BPS.space"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFILl8ozWuxnFYXIe2svjHhg"
+        htmlUrl="https://www.youtube.com/@BPSspace"
+      />
+
+      <outline
+        type="rss"
+        text="Brendan Miller"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwKvgFP7gsNdlBQWOXq_fIg"
+        htmlUrl="https://www.youtube.com/@BrendanMillerExplains"
+      />
+
+      <outline
+        type="rss"
+        text="Brian Douglas"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFq0imsn84ShAe9PBOFnoIrg"
+        htmlUrl="https://www.youtube.com/@BrianBDouglas"
+      />
+
+      <outline
+        type="rss"
+        text="Brick Technology"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUuvZ0skL2WYZ3rhPMZbfdA"
+        htmlUrl="https://www.youtube.com/@BrickTechnology"
+      />
+
+      <outline
+        type="rss"
+        text="Bryan Johnson"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFnRVL1-HJnXWB_Xi2dAoTcg"
+        htmlUrl="https://www.youtube.com/@BryanJohnson"
+      />
+
+      <outline
+        type="rss"
+        text="CGP Grey"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2C_jShtL725hvbm1arSV9w"
+        htmlUrl="https://www.youtube.com/@CGPGrey"
+      />
+
+      <outline
+        type="rss"
+        text="Channel 5 with Andrew Callaghan"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-AQKm7HUNMmxjdS371MSwg"
+        htmlUrl="https://www.youtube.com/@Channel5YouTube"
+      />
+
+      <outline
+        type="rss"
+        text="Charisma on Command"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFU_W0oE_ock8bWKjALiGs8Q"
+        htmlUrl="https://www.youtube.com/@Charismaoncommand"
+      />
+
+      <outline
+        type="rss"
+        text="Chat with data"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFoCXmH6_qMcQhASx82ufy_Q"
+        htmlUrl="https://www.youtube.com/@chatwithdata"
+      />
+
+      <outline
+        type="rss"
+        text="Chris Turner"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFw62Qa74SJ4NCdWG3jw7Dfw"
+        htmlUrl="https://www.youtube.com/@ChrisPJTurner"
+      />
+
+      <outline
+        type="rss"
+        text="Code Fiction"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvPPXcl5dJiBgRKGTA8inPA"
+        htmlUrl="https://www.youtube.com/@codefiction7"
+      />
+
+      <outline
+        type="rss"
+        text="Coliving Code"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWeCRX1V3e1e3MmqlXHqFGg"
+        htmlUrl="https://www.youtube.com/@TheColivingCode"
+      />
+
+      <outline
+        type="rss"
+        text="Comedy Central Stand-Up"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtw7q4SyOeoCwM1i_3x8lDg"
+        htmlUrl="https://www.youtube.com/@standup"
+      />
+
+      <outline
+        type="rss"
+        text="Comedy Dynamics"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDUhp92NhqVc0K3jSmWhgvA"
+        htmlUrl="https://www.youtube.com/@comedydynamics"
+      />
+
+      <outline
+        type="rss"
+        text="Connor Shorten"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHB9VepY6kYvZjj0Bgxnpbw"
+        htmlUrl="https://www.youtube.com/@connor-shorten"
+      />
+
+      <outline
+        type="rss"
+        text="Cooperative AI Foundation"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFfxGvOUKp6usfpgtL57zUeQ"
+        htmlUrl="https://www.youtube.com/@CooperativeAIFoundation"
+      />
+
+      <outline
+        type="rss"
+        text="Corridor Crew"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSpFnDQr88xCZ80N-X7t0nQ"
+        htmlUrl="https://www.youtube.com/@CorridorCrew"
+      />
+
+      <outline
+        type="rss"
+        text="CortexFutura Tools"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuXhchCm68JSgkKWZFqd0NA"
+        htmlUrl="https://www.youtube.com/@cortexfuturatools"
+      />
+
+      <outline
+        type="rss"
+        text="Couple Things"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqgZ385qTieVI4sXdD2OsxQ"
+        htmlUrl="https://www.youtube.com/@couplethings1807"
+      />
+
+      <outline
+        type="rss"
+        text="Creative Dates"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5GupaLcZhrD40-RmxrSaoA"
+        htmlUrl="https://www.youtube.com/@CreativeDates"
+      />
+
+      <outline
+        type="rss"
+        text="CS153 Infra at Scale"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0YBJCRIt4kA2jZ7siTGMyQ"
+        htmlUrl="https://www.youtube.com/@CS153InfraTeam"
+      />
+
+      <outline
+        type="rss"
+        text="Curran Kelleher"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSwd_9jyX4YtDYm9p9MxQqw"
+        htmlUrl="https://www.youtube.com/@currankelleher"
+      />
+
+      <outline
+        type="rss"
+        text="Daily Drum Lesson"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvlMCem-X4YjD_JMgGXm7YQ"
+        htmlUrl="https://www.youtube.com/@DailyDrumLesson"
+      />
+
+      <outline
+        type="rss"
+        text="Dan Csokmei Drummer"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXsZlzbAFnPoSYEU8Uv9COw"
+        htmlUrl="https://www.youtube.com/@Daniel19800616"
+      />
+
+      <outline
+        type="rss"
+        text="Don't Tell Comedy"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7MgijK9WL_EqCo1juUERwg"
+        htmlUrl="https://www.youtube.com/@DontTellComedy"
+      />
+
+      <outline
+        type="rss"
+        text="Drew on the Kit"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-R1DgH24eS5faUlO4RH8nQ"
+        htmlUrl="https://www.youtube.com/@drewonthekit"
+      />
+
+      <outline
+        type="rss"
+        text="Dropout"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFPDXXXJj9nax0fr0Wfc048g"
+        htmlUrl="https://www.youtube.com/@dropout"
+      />
+
+      <outline
+        type="rss"
+        text="DRUMDEX"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFzWBspFXaesJaWSXM27anuQ"
+        htmlUrl="https://www.youtube.com/@drumdex"
+      />
+
+      <outline
+        type="rss"
+        text="Drumeo"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBiJBaDaM3K6vPVggLhTyWA"
+        htmlUrl="https://www.youtube.com/@DrumeoOfficial"
+      />
+
+      <outline
+        type="rss"
+        text="Dry Bar Comedy"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvlVuntLjdURVD3b3Hx7kxw"
+        htmlUrl="https://www.youtube.com/@DryBarComedy"
+      />
+
+      <outline
+        type="rss"
+        text="Dwarkesh Patel"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXl4i9dYBrFOabk0xGmbkRA"
+        htmlUrl="https://www.youtube.com/@DwarkeshPatel"
+      />
+
+      <outline
+        type="rss"
+        text="Dylan Tallchief"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIu2Fj4x_VMn2dgSB1bFyQA"
+        htmlUrl="https://www.youtube.com/@DylanTallchief"
+      />
+
+      <outline
+        type="rss"
+        text="East Wind Community (Sumner's Unofficial Archives)"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuDxOs6jXvH63pinOVpypHA"
+        htmlUrl="https://www.youtube.com/@EastWindCommunity1973"
+      />
+
+      <outline
+        type="rss"
+        text="El Estepario Siberiano"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFskD50ri3723Tk1SkS-qAIA"
+        htmlUrl="https://www.youtube.com/@ElEsteparioSiberiano"
+      />
+
+      <outline
+        type="rss"
+        text="Elliott Jin"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1usQRXYR9cGjsxaTYYOUVg"
+        htmlUrl="https://www.youtube.com/@robot-dreams"
+      />
+
+      <outline
+        type="rss"
+        text="EnterTheDojoShow"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxrd1I7wmE2chwpoqD4DSTA"
+        htmlUrl="https://www.youtube.com/@EnterTheDojoShow"
+      />
+
+      <outline
+        type="rss"
+        text="Eric Weinstein"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR85PW_B_7_Aisx5vNS7Gjw"
+        htmlUrl="https://www.youtube.com/@EricWeinsteinPhD"
+      />
+
+      <outline
+        type="rss"
+        text="Fix This Build That"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHYSw4XKO_q1GaChw5pxa-w"
+        htmlUrl="https://www.youtube.com/@Fixthisbuildthat"
+      />
+
+      <outline
+        type="rss"
+        text="Forgotten Flicks"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFn4HO6CmDzFtouPrDwHk91Q"
+        htmlUrl="https://www.youtube.com/@ForgottenFlicks"
+      />
+
+      <outline
+        type="rss"
+        text="Frame Problems"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNJeGFWrst9jevwCe0T7rcw"
+        htmlUrl="https://www.youtube.com/@frameproblems5164"
+      />
+
+      <outline
+        type="rss"
+        text="Frank Yang"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuWsua1_gQ0inbBTqxmYuIQ"
+        htmlUrl="https://www.youtube.com/@frankyang"
+      />
+
+      <outline
+        type="rss"
+        text="Futurepedia"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_RovKmk0OCbuZjA8f08opw"
+        htmlUrl="https://www.youtube.com/@futurepedia_io"
+      />
+
+      <outline
+        type="rss"
+        text="Fäascht Bänkler"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFL5hubpwMTSNIXK2h6r-pog"
+        htmlUrl="https://www.youtube.com/@faeaschtbaenkler"
+      />
+
+      <outline
+        type="rss"
+        text="Game Changer Shorts"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTcw8GqWQlFcc6ioeJQOMAQ"
+        htmlUrl="https://www.youtube.com/@GameChangerShorts"
+      />
+
+      <outline
+        type="rss"
+        text="Garry Tan"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIBgYfDjtWlbJhg--Z4sOgQ"
+        htmlUrl="https://www.youtube.com/@GarryTan"
+      />
+
+      <outline
+        type="rss"
+        text="george hotz archive"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwgKmJM4ZJQRJ-U5NjvR2dg"
+        htmlUrl="https://www.youtube.com/@geohotarchive"
+      />
+
+      <outline
+        type="rss"
+        text="Girlfriend Reviews"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2eEGT06FrWFU6VBnPOR9lg"
+        htmlUrl="https://www.youtube.com/@GirlfriendReviews"
+      />
+
+      <outline
+        type="rss"
+        text="Google DeepMind"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFP7jMXSY2xbc3KCAE0MHQ-A"
+        htmlUrl="https://www.youtube.com/@googledeepmind"
+      />
+
+      <outline
+        type="rss"
+        text="gotyemusic"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFFC9LamNMmLioW643VZ40OA"
+        htmlUrl="https://www.youtube.com/@gotye"
+      />
+
+      <outline
+        type="rss"
+        text="Greylock"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZ7x7yDBbEFCGztD8BYvRhA"
+        htmlUrl="https://www.youtube.com/@GreylockVC"
+      />
+
+      <outline
+        type="rss"
+        text="Hapa Family"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDs6BiaaXKiPy28wNpyUpoQ"
+        htmlUrl="https://www.youtube.com/@HapaFamily"
+      />
+
+      <outline
+        type="rss"
+        text="Heidi Priebe"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqX3KQWXJll7_6orfHFuqBQ"
+        htmlUrl="https://www.youtube.com/@heidipriebe1"
+      />
+
+      <outline
+        type="rss"
+        text="Hello Interview - SWE Interview Preparation"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3kf-QFT6FZzDk9JsPg8Svg"
+        htmlUrl="https://www.youtube.com/@hello_interview"
+      />
+
+      <outline
+        type="rss"
+        text="hemlocke springs"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqO_Qz4No-tNuAQ0TyDe9Dg"
+        htmlUrl="https://www.youtube.com/@hemlockespringsmusic"
+      />
+
+      <outline
+        type="rss"
+        text="Instadailydrum"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFKoR2jUl6fxjbpkV9l8lEBA"
+        htmlUrl="https://www.youtube.com/@Instadailydrum"
+      />
+
+      <outline
+        type="rss"
+        text="Isaiah Shinn"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWcgkavzhwoahTIx9pDqLQA"
+        htmlUrl="https://www.youtube.com/@DirectorIsaiah"
+      />
+
+      <outline
+        type="rss"
+        text="Jacob Acrobat"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbPCFx0uSIuwPQzcy66A1uQ"
+        htmlUrl="https://www.youtube.com/@jacobacrobat8303"
+      />
+
+      <outline
+        type="rss"
+        text="Jacob Collier"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtmY49Zn4l0RMJnTWfV7Wsg"
+        htmlUrl="https://www.youtube.com/@jacobcollier"
+      />
+
+      <outline
+        type="rss"
+        text="James Bruton"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUbDcUPed50Y_7KmfCXKohA"
+        htmlUrl="https://www.youtube.com/@jamesbruton"
+      />
+
+      <outline
+        type="rss"
+        text="James Gurney"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTIoOLzT1jbxAcPW99xn0zQ"
+        htmlUrl="https://www.youtube.com/@JamesGurney"
+      />
+
+      <outline
+        type="rss"
+        text="Jay and Mark"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbbQalJ4OaC0oQ0AqRaOJ9g"
+        htmlUrl="https://www.youtube.com/@JayForeman"
+      />
+
+      <outline
+        type="rss"
+        text="Jer Cooper"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuCxEb9dzU18Nf2_2lHXxXA"
+        htmlUrl="https://www.youtube.com/@jercooper"
+      />
+
+      <outline
+        type="rss"
+        text="Jocelyn Stericker"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZ3mDLgCpLNj_fZezPhoH-Q"
+        htmlUrl="https://www.youtube.com/@JocelynStericker"
+      />
+
+      <outline
+        type="rss"
+        text="Joe Edelman"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqCJdCaawuGflUtkqmhv8tw"
+        htmlUrl="https://www.youtube.com/@edelwax"
+      />
+
+      <outline
+        type="rss"
+        text="Joe Hudson | Art of Accomplishment"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFK3IN-E6f2bXdNFNOp7esOA"
+        htmlUrl="https://www.youtube.com/@ArtofAccomplishment"
+      />
+
+      <outline
+        type="rss"
+        text="Joke WRLD"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGVVGdMcWxF0KW4mCrmiNCQ"
+        htmlUrl="https://www.youtube.com/@JokeWRLD"
+      />
+
+      <outline
+        type="rss"
+        text="Jungle4eva"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR4a2QKvUuLvLGA6M5MM2ew"
+        htmlUrl="https://www.youtube.com/@jungle4eva"
+      />
+
+      <outline
+        type="rss"
+        text="Kat Stickler"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFjOGvbEdCbzb4iUCHLMj7xw"
+        htmlUrl="https://www.youtube.com/@katstickler5757"
+      />
+
+      <outline
+        type="rss"
+        text="Keenan Crane"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIAmdxvgfnIEZnyQSiqgVgQ"
+        htmlUrl="https://www.youtube.com/@keenancrane"
+      />
+
+      <outline
+        type="rss"
+        text="kelogsloops"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_9ObjTaq4kIvuVCJgHPPRw"
+        htmlUrl="https://www.youtube.com/@kelogsloops"
+      />
+
+      <outline
+        type="rss"
+        text="Ken &amp; Bryn"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDPPfrCYMXon-KCSRfKymTQ"
+        htmlUrl="https://www.youtube.com/@kenandbryn"
+      />
+
+      <outline
+        type="rss"
+        text="Kendrick Lamar"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3lBXcrKFnFAFkfVk5WuKcQ"
+        htmlUrl="https://www.youtube.com/@kendricklamar"
+      />
+
+      <outline
+        type="rss"
+        text="Key &amp; Peele"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdN4aXTrHAtfgbVG9HjBmxQ"
+        htmlUrl="https://www.youtube.com/@KeyAndPeele"
+      />
+
+      <outline
+        type="rss"
+        text="Kirby Ferguson"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFu-3YlvaBS4bsya-1eFi62w"
+        htmlUrl="https://www.youtube.com/@KirbyFerguson"
+      />
+
+      <outline
+        type="rss"
+        text="KNOWER MUSIC"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFaEKhXcW7dY65JoQB6fGhxg"
+        htmlUrl="https://www.youtube.com/@LOUISGENEVIEVE"
+      />
+
+      <outline
+        type="rss"
+        text="Kris Temmerman"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUdunfSS-4CyZsIhICtgr6A"
+        htmlUrl="https://www.youtube.com/@KrisTemmermanNP"
+      />
+
+      <outline
+        type="rss"
+        text="Kurt Builds"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbrDYPCDkZ9eiOWCYSDzgCQ"
+        htmlUrl="https://www.youtube.com/@KurtBuilds"
+      />
+
+      <outline
+        type="rss"
+        text="Kurzgesagt – In a Nutshell"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsXVk37bltHxD1rDPwtNM8Q"
+        htmlUrl="https://www.youtube.com/@kurzgesagt"
+      />
+
+      <outline
+        type="rss"
+        text="Kye Smith"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZU86cQ3D96DKkTf9B0GG_A"
+        htmlUrl="https://www.youtube.com/@KyeSmith"
+      />
+
+      <outline
+        type="rss"
+        text="Kylan Gibbs"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXqJh2-X-FoYCdVeNQVITtg"
+        htmlUrl="https://www.youtube.com/@kylangibbs4552"
+      />
+
+      <outline
+        type="rss"
+        text="KYLE HANAGAMI"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGzGbfhdFsjP1yfJUEpSvWg"
+        htmlUrl="https://www.youtube.com/@kylehanagami"
+      />
+
+      <outline
+        type="rss"
+        text="Lars Christensen"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFo29kn3d9ziFUZGZ50VKvWA"
+        htmlUrl="https://www.youtube.com/@cadcamstuff"
+      />
+
+      <outline
+        type="rss"
+        text="Lex Fridman"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSHZKyawb77ixDdsGog4iWA"
+        htmlUrl="https://www.youtube.com/@lexfridman"
+      />
+
+      <outline
+        type="rss"
+        text="louiscolemusic"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrgACV046xX2A9ljab3u43g"
+        htmlUrl="https://www.youtube.com/@louiscolemusic"
+      />
+
+      <outline
+        type="rss"
+        text="Low Level"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6biysICWOJ-C3P4Tyeggzg"
+        htmlUrl="https://www.youtube.com/@LowLevelTV"
+      />
+
+      <outline
+        type="rss"
+        text="Machine Learning Dojo"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXvHuBMbgJw67i5vrMBBobA"
+        htmlUrl="https://www.youtube.com/@machinelearningdojo"
+      />
+
+      <outline
+        type="rss"
+        text="Machine Learning Street Talk"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFMLtBahI5DMrt0NPvDSoIRQ"
+        htmlUrl="https://www.youtube.com/@MachineLearningStreetTalk"
+      />
+
+      <outline
+        type="rss"
+        text="Made with Layers (Thomas Sanladerer)"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFb8Rde3uRL1ohROUVg46h1A"
+        htmlUrl="https://www.youtube.com/@MadeWithLayers"
+      />
+
+      <outline
+        type="rss"
+        text="Make Some Noise"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSoJcY9wS0_L2yWOTWJWV5Q"
+        htmlUrl="https://www.youtube.com/@MakeSomeNoiseDO"
+      />
+
+      <outline
+        type="rss"
+        text="Marcus House"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBNHHEoiSF8pcLgqLKVugOw"
+        htmlUrl="https://www.youtube.com/@MarcusHouse"
+      />
+
+      <outline
+        type="rss"
+        text="Mark J Kohler"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHYeaAH3D-wzQyDiXndSfMA"
+        htmlUrl="https://www.youtube.com/@MarkJKohler"
+      />
+
+      <outline
+        type="rss"
+        text="Massage Sloth"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZLFp_VnVGZGtntS7PD8d-w"
+        htmlUrl="https://www.youtube.com/@MassageSloth"
+      />
+
+      <outline
+        type="rss"
+        text="Massage Therapeutics"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIz9EejzYLjwffJCcN-qIJw"
+        htmlUrl="https://www.youtube.com/@MassageTherapeutics915"
+      />
+
+      <outline
+        type="rss"
+        text="Matt Rife"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2mKA8JTOCeodl9bEK7w42Q"
+        htmlUrl="https://www.youtube.com/@MattRifeComedy"
+      />
+
+      <outline
+        type="rss"
+        text="Matthew Berman"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFawZsQWqfGSbCI5yjkdVkTA"
+        htmlUrl="https://www.youtube.com/@matthew_berman"
+      />
+
+      <outline
+        type="rss"
+        text="Matthew Broussard"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXmGv-nIy80LINFCNzxz4_g"
+        htmlUrl="https://www.youtube.com/@mondaypunday"
+      />
+
+      <outline
+        type="rss"
+        text="Max Deutsch"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJ6m2kvAUYAAOPOle69hOqw"
+        htmlUrl="https://www.youtube.com/@discoveryfilmz"
+      />
+
+      <outline
+        type="rss"
+        text="Meghan &amp; Jack"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFG0EsX9WUDVaN3EC4LjRZuQ"
+        htmlUrl="https://www.youtube.com/@meghanandjack"
+      />
+
+      <outline
+        type="rss"
+        text="Memeable Data"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZcBeMQLxvjhsW3PEYXuiAA"
+        htmlUrl="https://www.youtube.com/@memeabledata"
+      />
+
+      <outline
+        type="rss"
+        text="Michael Houck"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFH3Pc6A20J47Nzc41JG4xRQ"
+        htmlUrl="https://www.youtube.com/@callmehouck"
+      />
+
+      <outline
+        type="rss"
+        text="Mike Johnston"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-g2PhDGnFibudkgkWhZj3w"
+        htmlUrl="https://www.youtube.com/@mikeslessons"
+      />
+
+      <outline
+        type="rss"
+        text="Mikey on Drums"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdrT2I0Jdskpo9NuMzVAnJw"
+        htmlUrl="https://www.youtube.com/@mikey-on-drums"
+      />
+
+      <outline
+        type="rss"
+        text="mildlyoverfitted"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYBSjwkGTK06NnDnFsOcR7g"
+        htmlUrl="https://www.youtube.com/@mildlyoverfitted"
+      />
+
+      <outline
+        type="rss"
+        text="Moment of Zen"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFY0OE_54Viqx_qtXuh-85VA"
+        htmlUrl="https://www.youtube.com/@MomentofZenPodcast"
+      />
+
+      <outline
+        type="rss"
+        text="Motif Land"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxKuMnZveLVEXZCVzglSa0A"
+        htmlUrl="https://www.youtube.com/@motifland"
+      />
+
+      <outline
+        type="rss"
+        text="MovementbyDavid"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFM2ra7Od2jliHB9TLPKt76w"
+        htmlUrl="https://www.youtube.com/@MovementbyDavid"
+      />
+
+      <outline
+        type="rss"
+        text="MrToucan Explains Memes"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1SZ-1Ydb7Ri6zEOF0CcwrA"
+        htmlUrl="https://www.youtube.com/@MrToucan"
+      />
+
+      <outline
+        type="rss"
+        text="My Little Thought Tree"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYtu3JxrpI1XjNn-B_HqW4Q"
+        htmlUrl="https://www.youtube.com/@mylittlethoughttree"
+      />
+
+      <outline
+        type="rss"
+        text="Myq Kaplan"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyqrJXaKnwxKe1RGClfUsKw"
+        htmlUrl="https://www.youtube.com/@myqkaplan"
+      />
+
+      <outline
+        type="rss"
+        text="NateMuellerDrums"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFv4Zh_lYLdzoNaXXsQLKSpA"
+        htmlUrl="https://www.youtube.com/@natemuellerdrums"
+      />
+
+      <outline
+        type="rss"
+        text="Neel Nanda"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBMJ0D-omcRay8dh4QT0doQ"
+        htmlUrl="https://www.youtube.com/@neelnanda2469"
+      />
+
+      <outline
+        type="rss"
+        text="Netflix Is A Joke"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFObk_g1hQBy0RKKriVX_zOQ"
+        htmlUrl="https://www.youtube.com/@netflixisajoke"
+      />
+
+      <outline
+        type="rss"
+        text="Neura Pod – Neuralink"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDukC60SYLlPwdU9CWPGx9Q"
+        htmlUrl="https://www.youtube.com/@NeuraPod"
+      />
+
+      <outline
+        type="rss"
+        text="New Money"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvSXMi2LebwJEM1s4bz5IBA"
+        htmlUrl="https://www.youtube.com/@NewMoneyYouTube"
+      />
+
+      <outline
+        type="rss"
+        text="NewLimit"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-RGRa9pxgnIGVptxGpnlWw"
+        htmlUrl="https://www.youtube.com/@NewLimit"
+      />
+
+      <outline
+        type="rss"
+        text="NextUp Comedy"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFRJ7zqodlxSCMQXvW6pcZow"
+        htmlUrl="https://www.youtube.com/@nextupcomedy"
+      />
+
+      <outline
+        type="rss"
+        text="Noah Smith"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFAzXGOuFCFs2Sm6sYxwXbCQ"
+        htmlUrl="https://www.youtube.com/@noahsmith9834"
+      />
+
+      <outline
+        type="rss"
+        text="Nobel Prize"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-V6odR7HzLCuqjYeowPjLA"
+        htmlUrl="https://www.youtube.com/@NobelPrize"
+      />
+
+      <outline
+        type="rss"
+        text="Normalized Nerd"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7Fs-Fdpe0I8GYg3lboEuXw"
+        htmlUrl="https://www.youtube.com/@NormalizedNerd"
+      />
+
+      <outline
+        type="rss"
+        text="Not Shane Gillis"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFoYvkV85-JBiluifoJkyXGw"
+        htmlUrl="https://www.youtube.com/@NotShaneGillis"
+      />
+
+      <outline
+        type="rss"
+        text="OpenAI"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXZCJLdBC09xxGZ6gcdrc6A"
+        htmlUrl="https://www.youtube.com/@OpenAI"
+      />
+
+      <outline
+        type="rss"
+        text="Ozzy Man Reviews"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFeE3lj6pLX_gCd0Yvns517Q"
+        htmlUrl="https://www.youtube.com/@ozzymanreviews"
+      />
+
+      <outline
+        type="rss"
+        text="Paul Millerd"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFofS_FvauuHc-x6mq7yz6nA"
+        htmlUrl="https://www.youtube.com/@PaulMillerd"
+      />
+
+      <outline
+        type="rss"
+        text="Pete Buttigieg"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxauM3N4Nb47HG6PuDMh0Ow"
+        htmlUrl="https://www.youtube.com/@petebuttigieg"
+      />
+
+      <outline
+        type="rss"
+        text="Peter Draws"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGtGTAa-xarr2HrEKRgRUHQ"
+        htmlUrl="https://www.youtube.com/@peter_draws"
+      />
+
+      <outline
+        type="rss"
+        text="Pieter Abbeel"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF88M-XNc4BlzJVJvOyiHZDQ"
+        htmlUrl="https://www.youtube.com/@PieterAbbeel"
+      />
+
+      <outline
+        type="rss"
+        text="Praha Drums Official"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5VNN4Xo4QYnssBsJy3nAAg"
+        htmlUrl="https://www.youtube.com/@prahadrumsofficial"
+      />
+
+      <outline
+        type="rss"
+        text="pwnisher"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWIfzAYHyNSyHmT2AO-54yg"
+        htmlUrl="https://www.youtube.com/@pwnisher"
+      />
+
+      <outline
+        type="rss"
+        text="Rachel Thomas"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_pSCYWbMn4JcsxbWOzkgEQ"
+        htmlUrl="https://www.youtube.com/@math-rachel"
+      />
+
+      <outline
+        type="rss"
+        text="Rafael Silva"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTVy4t9W7Bi-xFThz1cemWA"
+        htmlUrl="https://www.youtube.com/@rafaelsilvadrums"
+      />
+
+      <outline
+        type="rss"
+        text="Ralphthebaker"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF97xgHJNoWDJ5zwplALb-Dw"
+        htmlUrl="https://www.youtube.com/@Ralphthebaker"
+      />
+
+      <outline
+        type="rss"
+        text="Rational Animations"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgqt1RE0k0MIr0LoyJRy2lg"
+        htmlUrl="https://www.youtube.com/@RationalAnimations"
+      />
+
+      <outline
+        type="rss"
+        text="RattlemBones"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFfx3LfWIbEoW4WGGzXluepQ"
+        htmlUrl="https://www.youtube.com/@rattlembones7470"
+      />
+
+      <outline
+        type="rss"
+        text="raviramamoorthi"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFMXu0keYU3ZLR-aTNUJcRSQ"
+        htmlUrl="https://www.youtube.com/@raviramamoorthi"
+      />
+
+      <outline
+        type="rss"
+        text="Rebel Wisdom Clips"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFunObm5lmNlB9EM35AzIp0Q"
+        htmlUrl="https://www.youtube.com/@rebelwisdomclips9137"
+      />
+
+      <outline
+        type="rss"
+        text="Red Nomster"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsL5NeOXmY09AmfU2ftbRNA"
+        htmlUrl="https://www.youtube.com/@RedNomster"
+      />
+
+      <outline
+        type="rss"
+        text="Reuben Gingrich"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFipVSWiaLKnVErvc9Fd6HTw"
+        htmlUrl="https://www.youtube.com/@ReubenGingrich"
+      />
+
+      <outline
+        type="rss"
+        text="Rick Glassman"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYCGsNTvYxfkPkfQopRMP7w"
+        htmlUrl="https://www.youtube.com/@rickglassman"
+      />
+
+      <outline
+        type="rss"
+        text="Riff Sesh"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFmb8E8KiLlc3vNF7FJyQvUw"
+        htmlUrl="https://www.youtube.com/@RiffSesh"
+      />
+
+      <outline
+        type="rss"
+        text="Rob Burbea Talks"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSts1JOKBgI2HcExVBN-M1g"
+        htmlUrl="https://www.youtube.com/@boubabuddha"
+      />
+
+      <outline
+        type="rss"
+        text="Robby Cuthbert Design"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFlSlskhz1gnpxfazRs1ZBGA"
+        htmlUrl="https://www.youtube.com/@robbycuthbertdesign3451"
+      />
+
+      <outline
+        type="rss"
+        text="Rupert Spira"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxXWjjtATq3OM545gMh9PUg"
+        htmlUrl="https://www.youtube.com/@rupertspira"
+      />
+
+      <outline
+        type="rss"
+        text="Sabine Hossenfelder"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1yNl2E66ZzKApQdRuTQ4tw"
+        htmlUrl="https://www.youtube.com/@SabineHossenfelder"
+      />
+
+      <outline
+        type="rss"
+        text="Salvatore Ganacci"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyseFvMP4mZVlU5iEEbAamA"
+        htmlUrl="https://www.youtube.com/@TheSalvatoreGanacci"
+      />
+
+      <outline
+        type="rss"
+        text="Sam Harris"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNAxrHudMfdzNi6NxruKPLw"
+        htmlUrl="https://www.youtube.com/@samharrisorg"
+      />
+
+      <outline
+        type="rss"
+        text="Sam Morril"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTrOYaMDI7QiPnRzwWdYK6Q"
+        htmlUrl="https://www.youtube.com/@sammorril"
+      />
+
+      <outline
+        type="rss"
+        text="Saturday Night Live"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqFzWxSCi39LnW1JKFR3efg"
+        htmlUrl="https://www.youtube.com/@SaturdayNightLive"
+      />
+
+      <outline
+        type="rss"
+        text="Sean Millea"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFE1IEyq_JisUvzgoaHnQ9dg"
+        htmlUrl="https://www.youtube.com/@SeanMillea"
+      />
+
+      <outline
+        type="rss"
+        text="Sheena Melwani"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCm4EdCTj3hVbDYPAI1FHtA"
+        htmlUrl="https://www.youtube.com/@SheenaMelwani"
+      />
+
+      <outline
+        type="rss"
+        text="Shiatsu Shane - ASMR Massage"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsfQYrPtmnrVQdrBl_K_Ldw"
+        htmlUrl="https://www.youtube.com/@ShiatsuShane"
+      />
+
+      <outline
+        type="rss"
+        text="Shoot From The Hip"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3JVlyuEqD9B7VaQp7FSkIQ"
+        htmlUrl="https://www.youtube.com/@shootimpro"
+      />
+
+      <outline
+        type="rss"
+        text="Shu Omi"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF525q2RIufHjnaHOuIUFY9A"
+        htmlUrl="https://www.youtube.com/@ShuOmi_Official"
+      />
+
+      <outline
+        type="rss"
+        text="Simone Giertz"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3KEoMzNz8eYnwBC34RaKCQ"
+        htmlUrl="https://www.youtube.com/@simonegiertz"
+      />
+
+      <outline
+        type="rss"
+        text="Siros Vaziri"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0TPhd3Z-gxJtA0nZ1lfTYA"
+        htmlUrl="https://www.youtube.com/@sirosvaziri"
+      />
+
+      <outline
+        type="rss"
+        text="Smartypants"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFpIUcvK7fZMbhFOU13AtVqQ"
+        htmlUrl="https://www.youtube.com/@smartypantsdropout"
+      />
+
+      <outline
+        type="rss"
+        text="Soulfire"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCATgA9q9w0Fwvj0IoS2_3w"
+        htmlUrl="https://www.youtube.com/@soulfire2317"
+      />
+
+      <outline
+        type="rss"
+        text="Stas Fedechkin"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2VHrRKhUWtZw7Wq69_Irbg"
+        htmlUrl="https://www.youtube.com/@Mindful.Attachment.Coaching"
+      />
+
+      <outline
+        type="rss"
+        text="Stephen Clark"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFO3hCh7DsvuBO9mKp4YrtWg"
+        htmlUrl="https://www.youtube.com/@thenonglamorousdrummer"
+      />
+
+      <outline
+        type="rss"
+        text="Strength Side"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF9BNGVGr_lvbn3d23ckuVOA"
+        htmlUrl="https://www.youtube.com/@Strengthside"
+      />
+
+      <outline
+        type="rss"
+        text="Studying With Alex"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUdkjbeIFea0qUSgwR1CUOg"
+        htmlUrl="https://www.youtube.com/@StudyingWithAlex"
+      />
+
+      <outline
+        type="rss"
+        text="SubwayTakes with Kareem Rahma"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYLf5YEC59GX69au3yb1-KQ"
+        htmlUrl="https://www.youtube.com/@SubwayTakes"
+      />
+
+      <outline
+        type="rss"
+        text="SysDesign Meetup"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF59wf9NCMAwWDsu5CY3PqnQ"
+        htmlUrl="https://www.youtube.com/@dimakorolev"
+      />
+
+      <outline
+        type="rss"
+        text="Taylor Tomlinson"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYIEv9W7RmdpvFkHX7IEmyg"
+        htmlUrl="https://www.youtube.com/@taylortomlinsoncomedy"
+      />
+
+      <outline
+        type="rss"
+        text="Tech Dummies - Narendra Lakshmana Gowda"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFn1XnDWhsLS5URXTi5wtFTA"
+        htmlUrl="https://www.youtube.com/@TechDummiesNarendraL"
+      />
+
+      <outline
+        type="rss"
+        text="TED"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFAuUUnT6oDeKwE6v1NGQxug"
+        htmlUrl="https://www.youtube.com/@TED"
+      />
+
+      <outline
+        type="rss"
+        text="TEDx Talks"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsT0YIqwnpJCM-mx7-gSA4Q"
+        htmlUrl="https://www.youtube.com/@TEDx"
+      />
+
+      <outline
+        type="rss"
+        text="The Basement Yard"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_a6c3KLo9reMOqn2pbvMqg"
+        htmlUrl="https://www.youtube.com/@TheBasementYard"
+      />
+
+      <outline
+        type="rss"
+        text="The Daily Show"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwWhs_6x42TyRM4Wstoq8HA"
+        htmlUrl="https://www.youtube.com/@TheDailyShow"
+      />
+
+      <outline
+        type="rss"
+        text="The Diary Of A CEO"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGq-a57w-aPwyi3pW7XLiHw"
+        htmlUrl="https://www.youtube.com/@TheDiaryOfACEO"
+      />
+
+      <outline
+        type="rss"
+        text="The Dor Brothers"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNMK68M-Al4hRUcew07TnUA"
+        htmlUrl="https://www.youtube.com/@thedorbrothers"
+      />
+
+      <outline
+        type="rss"
+        text="The Economist"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0p5jTq6Xx_DosDFxVXnWaQ"
+        htmlUrl="https://www.youtube.com/@TheEconomist"
+      />
+
+      <outline
+        type="rss"
+        text="The Hacks Of Life"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFv751BnNvZshrvTU64khOww"
+        htmlUrl="https://www.youtube.com/@TheHacksOfLife"
+      />
+
+      <outline
+        type="rss"
+        text="The Ready State"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFnnB4zDBqZHhQ4uLTAX8eYA"
+        htmlUrl="https://www.youtube.com/@TheReadyState"
+      />
+
+      <outline
+        type="rss"
+        text="The Slow Mo Guys"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUK0HBIBWgM2c4vsPhkYY4w"
+        htmlUrl="https://www.youtube.com/@theslowmoguys"
+      />
+
+      <outline
+        type="rss"
+        text="The Stoa"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFfI5jzpoUbwP4wkmQ6ZNqbA"
+        htmlUrl="https://www.youtube.com/@thestoa"
+      />
+
+      <outline
+        type="rss"
+        text="Thomas Currier"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwCULTWvNkdmOY3fnyzA9rg"
+        htmlUrl="https://www.youtube.com/@tomcurrier4410"
+      />
+
+      <outline
+        type="rss"
+        text="Tom Brown"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6Z9KzsYcVI3r2e28rU6eOQ"
+        htmlUrl="https://www.youtube.com/@tombrown5109"
+      />
+
+      <outline
+        type="rss"
+        text="Tom Cardy"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW7AGm8JSBEEew61dJIgl_A"
+        htmlUrl="https://www.youtube.com/@tomcardy1"
+      />
+
+      <outline
+        type="rss"
+        text="Tom Merrick"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFU0DZhN-8KFLYO6beSaYljg"
+        htmlUrl="https://www.youtube.com/@BodyweightWarrior"
+      />
+
+      <outline
+        type="rss"
+        text="Track Star*"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGwyQM5eQOTxoeHOZaMwzSg"
+        htmlUrl="https://www.youtube.com/@track-star-show"
+      />
+
+      <outline
+        type="rss"
+        text="Trip Vest"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxywcWIP9aSoNaUYpyYX1YQ"
+        htmlUrl="https://www.youtube.com/@tripish"
+      />
+
+      <outline
+        type="rss"
+        text="Two Minute Papers"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbfYPyITQ-7l4upoX8nvctg"
+        htmlUrl="https://www.youtube.com/@TwoMinutePapers"
+      />
+
+      <outline
+        type="rss"
+        text="uThermal"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF--TKxqP8xJNymgrLe-thhA"
+        htmlUrl="https://www.youtube.com/@uThermal"
+      />
+
+      <outline
+        type="rss"
+        text="Valve"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFg0FSqPeiGD_lIiPaaAehQg"
+        htmlUrl="https://www.youtube.com/@Valve"
+      />
+
+      <outline
+        type="rss"
+        text="visa"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5S2d3Ue7wHn3PghiclcCqA"
+        htmlUrl="https://www.youtube.com/@visakanv"
+      />
+
+      <outline
+        type="rss"
+        text="vonnart"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFed6my5Hq9PBnBXkMLYwwVw"
+        htmlUrl="https://www.youtube.com/@vonnart"
+      />
+
+      <outline
+        type="rss"
+        text="Watercolor Kanta Harusaki &amp; Yoko Harusaki"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFMYkm2w7pmc4wwJ1Ruq7n1A"
+        htmlUrl="https://www.youtube.com/@watercolor-"
+      />
+
+      <outline
+        type="rss"
+        text="Web of Stories - Life Stories of Remarkable People"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrN1lcGgsCB9axGjZjpOqiQ"
+        htmlUrl="https://www.youtube.com/@webofstories"
+      />
+
+      <outline
+        type="rss"
+        text="Weights &amp; Biases"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBp3w4DCEC64FZr4k9ROxig"
+        htmlUrl="https://www.youtube.com/@WeightsBiases"
+      />
+
+      <outline
+        type="rss"
+        text="WelcomeAIOverlords"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxw9_WYmLqlj5PyXu2AWU_g"
+        htmlUrl="https://www.youtube.com/@welcomeaioverlords"
+      />
+
+      <outline
+        type="rss"
+        text="Wendover Productions"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF9RM-iSvTu1uPJb8X5yp3EQ"
+        htmlUrl="https://www.youtube.com/@Wendoverproductions"
+      />
+
+      <outline
+        type="rss"
+        text="What's AI by Louis-François Bouchard"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUzGQrN-lyyc0BWTYoJM_Sg"
+        htmlUrl="https://www.youtube.com/@WhatsAI"
+      />
+
+      <outline
+        type="rss"
+        text="Whitney Cummings"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZa3lYPi8caXYxl5DeIzJgg"
+        htmlUrl="https://www.youtube.com/@whitneycummings"
+      />
+
+      <outline
+        type="rss"
+        text="Whose Line Is It Anyway?"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFKg_ZFByYTINckLG76cjUEg"
+        htmlUrl="https://www.youtube.com/@WhoseLineIsItAnyway"
+      />
+
+      <outline
+        type="rss"
+        text="Wingfoil, Kitefoil &amp; Kitesurf College"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2AvhQhxmgRpM32IYE5qkOA"
+        htmlUrl="https://www.youtube.com/@kitesurfcollege"
+      />
+
+      <outline
+        type="rss"
+        text="Wintergatan"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFcXhhVwCT6_WqjkEniejRJQ"
+        htmlUrl="https://www.youtube.com/@Wintergatan"
+      />
+
+      <outline
+        type="rss"
+        text="WorkoutsbyDavid"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHXq-U2JbG2ArFRuv8jY4gA"
+        htmlUrl="https://www.youtube.com/@WorkoutsbyDavid"
+      />
+
+      <outline
+        type="rss"
+        text="Yannic Kilcher"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZHmQk67mSJgfCCTn7xBfew"
+        htmlUrl="https://www.youtube.com/@YannicKilcher"
+      />
+
+      <outline
+        type="rss"
+        text="Yannic Out Of Distribution"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHmD-oSpV0sNfAUnpYpj8KA"
+        htmlUrl="https://www.youtube.com/@yannicoutofdistribution6787"
+      />
+
+      <outline
+        type="rss"
+        text="ZackGrooves"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW7LtGizqathWM2mUKYAx_g"
+        htmlUrl="https://www.youtube.com/@ZackGrooves"
+      />
+
+      <outline
+        type="rss"
+        text="Zeihan on Geopolitics"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsy9I56PY3IngCf_VGjunMQ"
+        htmlUrl="https://www.youtube.com/@ZeihanonGeopolitics"
+      />
+
+      <outline
+        type="rss"
+        text="Ziwe"
+        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFY3L5on78KPyltbhEyiLDmA"
+        htmlUrl="https://www.youtube.com/@ziwe"
+      />
     </outline>

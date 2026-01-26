@@ -1,1 +1,1563 @@
-[]
+[
+  {
+    "name": "3Blue1Brown",
+    "handle": "@3blue1brown",
+    "channelId": "UCYO_jab_esuFRV4b17AJtAw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYO_jab_esuFRV4b17AJtAw",
+    "htmlUrl": "https://www.youtube.com/@3blue1brown"
+  },
+  {
+    "name": "30 Second Drum Lessons",
+    "handle": "@30SecondDrumLessons",
+    "channelId": "UCtzjlXAq5eTQuCTUXvZz9Eg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtzjlXAq5eTQuCTUXvZz9Eg",
+    "htmlUrl": "https://www.youtube.com/@30SecondDrumLessons"
+  },
+  {
+    "name": "Adam McDonald",
+    "handle": "@AdamMc192",
+    "channelId": "UCex0az211xl6U8dav4-beTg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFex0az211xl6U8dav4-beTg",
+    "htmlUrl": "https://www.youtube.com/@AdamMc192"
+  },
+  {
+    "name": "Ahmad Bazzi",
+    "handle": "@AhmadBazzi",
+    "channelId": "UCgC1d4JZ1Fz4t8MWLJD464w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgC1d4JZ1Fz4t8MWLJD464w",
+    "htmlUrl": "https://www.youtube.com/@AhmadBazzi"
+  },
+  {
+    "name": "AI Explained",
+    "handle": "@aiexplained-official",
+    "channelId": "UCNJ1Ymd5yFuUPtn21xtRbbw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNJ1Ymd5yFuUPtn21xtRbbw",
+    "htmlUrl": "https://www.youtube.com/@aiexplained-official"
+  },
+  {
+    "name": "ailaughatmyownjokes",
+    "handle": "@ailaughatmyownjokes",
+    "channelId": "UC_ID-A3YnSQXCwyIcCs9QFw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_ID-A3YnSQXCwyIcCs9QFw",
+    "htmlUrl": "https://www.youtube.com/@ailaughatmyownjokes"
+  },
+  {
+    "name": "Airtable",
+    "handle": "@AirtableApp",
+    "channelId": "UCHH6_KYYWUYaWzD5CPNQ6ng",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHH6_KYYWUYaWzD5CPNQ6ng",
+    "htmlUrl": "https://www.youtube.com/@AirtableApp"
+  },
+  {
+    "name": "Akiyuki Brick Channel",
+    "handle": "@akiyuky",
+    "channelId": "UCCJJNQIhS15ypcHqDfEPNXg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCJJNQIhS15ypcHqDfEPNXg",
+    "htmlUrl": "https://www.youtube.com/@akiyuky"
+  },
+  {
+    "name": "All About AI",
+    "handle": "@AllAboutAI",
+    "channelId": "UCR9j1jqqB5Rse69wjUnbYwA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR9j1jqqB5Rse69wjUnbYwA",
+    "htmlUrl": "https://www.youtube.com/@AllAboutAI"
+  },
+  {
+    "name": "All-In Podcast",
+    "handle": "@allin",
+    "channelId": "UCESLZhusAkFfsNsApnjF_Cg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFESLZhusAkFfsNsApnjF_Cg",
+    "htmlUrl": "https://www.youtube.com/@allin"
+  },
+  {
+    "name": "Andrej Karpathy",
+    "handle": "@AndrejKarpathy",
+    "channelId": "UCXUPKJO5MZQN11PqgIvyuvQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXUPKJO5MZQN11PqgIvyuvQ",
+    "htmlUrl": "https://www.youtube.com/@AndrejKarpathy"
+  },
+  {
+    "name": "Andrew Huberman",
+    "handle": "@hubermanlab",
+    "channelId": "UC2D2CMWXMOVWx7giW1n3LIg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2D2CMWXMOVWx7giW1n3LIg",
+    "htmlUrl": "https://www.youtube.com/@hubermanlab"
+  },
+  {
+    "name": "Andrew Millison",
+    "handle": "@amillison",
+    "channelId": "UCgb_TbreMgfDdLKkr4yYJHw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgb_TbreMgfDdLKkr4yYJHw",
+    "htmlUrl": "https://www.youtube.com/@amillison"
+  },
+  {
+    "name": "Andy Matuschak",
+    "handle": "@andy_matuschak",
+    "channelId": "UCqee1D1ICeF1hhfy4YKyJhg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqee1D1ICeF1hhfy4YKyJhg",
+    "htmlUrl": "https://www.youtube.com/@andy_matuschak"
+  },
+  {
+    "name": "Anthropic",
+    "handle": "@anthropic-ai",
+    "channelId": "UCrDwWp7EBBv4NwvScIpBDOA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrDwWp7EBBv4NwvScIpBDOA",
+    "htmlUrl": "https://www.youtube.com/@anthropic-ai"
+  },
+  {
+    "name": "Austen Alexander TV",
+    "handle": "@AustenAlexanderTV",
+    "channelId": "UC0KI9ocfuIS0clEug0uO7UQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0KI9ocfuIS0clEug0uO7UQ",
+    "htmlUrl": "https://www.youtube.com/@AustenAlexanderTV"
+  },
+  {
+    "name": "Authentic Revolution",
+    "handle": "@AuthRev",
+    "channelId": "UClIIENaFtDUbcVggXrocFzA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFlIIENaFtDUbcVggXrocFzA",
+    "htmlUrl": "https://www.youtube.com/@AuthRev"
+  },
+  {
+    "name": "Beast Philanthropy",
+    "handle": "@BeastPhilanthropy",
+    "channelId": "UCAiLfjNXkNv24uhpzUgPa6A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFAiLfjNXkNv24uhpzUgPa6A",
+    "htmlUrl": "https://www.youtube.com/@BeastPhilanthropy"
+  },
+  {
+    "name": "Ben Katz",
+    "handle": "@BenKatz",
+    "channelId": "UCJp2fjVH_P2el67ZwoLFsPA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJp2fjVH_P2el67ZwoLFsPA",
+    "htmlUrl": "https://www.youtube.com/@BenKatz"
+  },
+  {
+    "name": "Ben Prunty",
+    "handle": "@BenPrunty",
+    "channelId": "UCnaJfD5zehhKm1KIjUw8PJg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFnaJfD5zehhKm1KIjUw8PJg",
+    "htmlUrl": "https://www.youtube.com/@BenPrunty"
+  },
+  {
+    "name": "Bisqwit",
+    "handle": "@Bisqwit",
+    "channelId": "UCKTehwyGCKF-b2wo0RKwrcg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFKTehwyGCKF-b2wo0RKwrcg",
+    "htmlUrl": "https://www.youtube.com/@Bisqwit"
+  },
+  {
+    "name": "BPS.space",
+    "handle": "@BPSspace",
+    "channelId": "UCILl8ozWuxnFYXIe2svjHhg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFILl8ozWuxnFYXIe2svjHhg",
+    "htmlUrl": "https://www.youtube.com/@BPSspace"
+  },
+  {
+    "name": "Brendan Miller",
+    "handle": "@BrendanMillerExplains",
+    "channelId": "UCwKvgFP7gsNdlBQWOXq_fIg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwKvgFP7gsNdlBQWOXq_fIg",
+    "htmlUrl": "https://www.youtube.com/@BrendanMillerExplains"
+  },
+  {
+    "name": "Brian Douglas",
+    "handle": "@BrianBDouglas",
+    "channelId": "UCq0imsn84ShAe9PBOFnoIrg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFq0imsn84ShAe9PBOFnoIrg",
+    "htmlUrl": "https://www.youtube.com/@BrianBDouglas"
+  },
+  {
+    "name": "Brick Technology",
+    "handle": "@BrickTechnology",
+    "channelId": "UCUuvZ0skL2WYZ3rhPMZbfdA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUuvZ0skL2WYZ3rhPMZbfdA",
+    "htmlUrl": "https://www.youtube.com/@BrickTechnology"
+  },
+  {
+    "name": "Bryan Johnson",
+    "handle": "@BryanJohnson",
+    "channelId": "UCnRVL1-HJnXWB_Xi2dAoTcg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFnRVL1-HJnXWB_Xi2dAoTcg",
+    "htmlUrl": "https://www.youtube.com/@BryanJohnson"
+  },
+  {
+    "name": "CGP Grey",
+    "handle": "@CGPGrey",
+    "channelId": "UC2C_jShtL725hvbm1arSV9w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2C_jShtL725hvbm1arSV9w",
+    "htmlUrl": "https://www.youtube.com/@CGPGrey"
+  },
+  {
+    "name": "Channel 5 with Andrew Callaghan",
+    "handle": "@Channel5YouTube",
+    "channelId": "UC-AQKm7HUNMmxjdS371MSwg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-AQKm7HUNMmxjdS371MSwg",
+    "htmlUrl": "https://www.youtube.com/@Channel5YouTube"
+  },
+  {
+    "name": "Charisma on Command",
+    "handle": "@Charismaoncommand",
+    "channelId": "UCU_W0oE_ock8bWKjALiGs8Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFU_W0oE_ock8bWKjALiGs8Q",
+    "htmlUrl": "https://www.youtube.com/@Charismaoncommand"
+  },
+  {
+    "name": "Chat with data",
+    "handle": "@chatwithdata",
+    "channelId": "UCoCXmH6_qMcQhASx82ufy_Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFoCXmH6_qMcQhASx82ufy_Q",
+    "htmlUrl": "https://www.youtube.com/@chatwithdata"
+  },
+  {
+    "name": "Chris Turner",
+    "handle": "@ChrisPJTurner",
+    "channelId": "UCw62Qa74SJ4NCdWG3jw7Dfw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFw62Qa74SJ4NCdWG3jw7Dfw",
+    "htmlUrl": "https://www.youtube.com/@ChrisPJTurner"
+  },
+  {
+    "name": "Code Fiction",
+    "handle": "@codefiction7",
+    "channelId": "UCvPPXcl5dJiBgRKGTA8inPA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvPPXcl5dJiBgRKGTA8inPA",
+    "htmlUrl": "https://www.youtube.com/@codefiction7"
+  },
+  {
+    "name": "Coliving Code",
+    "handle": "@TheColivingCode",
+    "channelId": "UCWeCRX1V3e1e3MmqlXHqFGg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWeCRX1V3e1e3MmqlXHqFGg",
+    "htmlUrl": "https://www.youtube.com/@TheColivingCode"
+  },
+  {
+    "name": "Comedy Central Stand-Up",
+    "handle": "@standup",
+    "channelId": "UCtw7q4SyOeoCwM1i_3x8lDg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtw7q4SyOeoCwM1i_3x8lDg",
+    "htmlUrl": "https://www.youtube.com/@standup"
+  },
+  {
+    "name": "Comedy Dynamics",
+    "handle": "@comedydynamics",
+    "channelId": "UCDUhp92NhqVc0K3jSmWhgvA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDUhp92NhqVc0K3jSmWhgvA",
+    "htmlUrl": "https://www.youtube.com/@comedydynamics"
+  },
+  {
+    "name": "Connor Shorten",
+    "handle": "@connor-shorten",
+    "channelId": "UCHB9VepY6kYvZjj0Bgxnpbw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHB9VepY6kYvZjj0Bgxnpbw",
+    "htmlUrl": "https://www.youtube.com/@connor-shorten"
+  },
+  {
+    "name": "Cooperative AI Foundation",
+    "handle": "@CooperativeAIFoundation",
+    "channelId": "UCfxGvOUKp6usfpgtL57zUeQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFfxGvOUKp6usfpgtL57zUeQ",
+    "htmlUrl": "https://www.youtube.com/@CooperativeAIFoundation"
+  },
+  {
+    "name": "Corridor Crew",
+    "handle": "@CorridorCrew",
+    "channelId": "UCSpFnDQr88xCZ80N-X7t0nQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSpFnDQr88xCZ80N-X7t0nQ",
+    "htmlUrl": "https://www.youtube.com/@CorridorCrew"
+  },
+  {
+    "name": "CortexFutura Tools",
+    "handle": "@cortexfuturatools",
+    "channelId": "UCuXhchCm68JSgkKWZFqd0NA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuXhchCm68JSgkKWZFqd0NA",
+    "htmlUrl": "https://www.youtube.com/@cortexfuturatools"
+  },
+  {
+    "name": "Couple Things",
+    "handle": "@couplethings1807",
+    "channelId": "UCqgZ385qTieVI4sXdD2OsxQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqgZ385qTieVI4sXdD2OsxQ",
+    "htmlUrl": "https://www.youtube.com/@couplethings1807"
+  },
+  {
+    "name": "Creative Dates",
+    "handle": "@CreativeDates",
+    "channelId": "UC5GupaLcZhrD40-RmxrSaoA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5GupaLcZhrD40-RmxrSaoA",
+    "htmlUrl": "https://www.youtube.com/@CreativeDates"
+  },
+  {
+    "name": "CS153 Infra at Scale",
+    "handle": "@CS153InfraTeam",
+    "channelId": "UC0YBJCRIt4kA2jZ7siTGMyQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0YBJCRIt4kA2jZ7siTGMyQ",
+    "htmlUrl": "https://www.youtube.com/@CS153InfraTeam"
+  },
+  {
+    "name": "Curran Kelleher",
+    "handle": "@currankelleher",
+    "channelId": "UCSwd_9jyX4YtDYm9p9MxQqw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSwd_9jyX4YtDYm9p9MxQqw",
+    "htmlUrl": "https://www.youtube.com/@currankelleher"
+  },
+  {
+    "name": "Daily Drum Lesson",
+    "handle": "@DailyDrumLesson",
+    "channelId": "UCvlMCem-X4YjD_JMgGXm7YQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvlMCem-X4YjD_JMgGXm7YQ",
+    "htmlUrl": "https://www.youtube.com/@DailyDrumLesson"
+  },
+  {
+    "name": "Dan Csokmei Drummer",
+    "handle": "@Daniel19800616",
+    "channelId": "UCXsZlzbAFnPoSYEU8Uv9COw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXsZlzbAFnPoSYEU8Uv9COw",
+    "htmlUrl": "https://www.youtube.com/@Daniel19800616"
+  },
+  {
+    "name": "Don't Tell Comedy",
+    "handle": "@DontTellComedy",
+    "channelId": "UC7MgijK9WL_EqCo1juUERwg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7MgijK9WL_EqCo1juUERwg",
+    "htmlUrl": "https://www.youtube.com/@DontTellComedy"
+  },
+  {
+    "name": "Drew on the Kit",
+    "handle": "@drewonthekit",
+    "channelId": "UC-R1DgH24eS5faUlO4RH8nQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-R1DgH24eS5faUlO4RH8nQ",
+    "htmlUrl": "https://www.youtube.com/@drewonthekit"
+  },
+  {
+    "name": "Dropout",
+    "handle": "@dropout",
+    "channelId": "UCPDXXXJj9nax0fr0Wfc048g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFPDXXXJj9nax0fr0Wfc048g",
+    "htmlUrl": "https://www.youtube.com/@dropout"
+  },
+  {
+    "name": "DRUMDEX",
+    "handle": "@drumdex",
+    "channelId": "UCzWBspFXaesJaWSXM27anuQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFzWBspFXaesJaWSXM27anuQ",
+    "htmlUrl": "https://www.youtube.com/@drumdex"
+  },
+  {
+    "name": "Drumeo",
+    "handle": "@DrumeoOfficial",
+    "channelId": "UCBiJBaDaM3K6vPVggLhTyWA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBiJBaDaM3K6vPVggLhTyWA",
+    "htmlUrl": "https://www.youtube.com/@DrumeoOfficial"
+  },
+  {
+    "name": "Dry Bar Comedy",
+    "handle": "@DryBarComedy",
+    "channelId": "UCvlVuntLjdURVD3b3Hx7kxw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvlVuntLjdURVD3b3Hx7kxw",
+    "htmlUrl": "https://www.youtube.com/@DryBarComedy"
+  },
+  {
+    "name": "Dwarkesh Patel",
+    "handle": "@DwarkeshPatel",
+    "channelId": "UCXl4i9dYBrFOabk0xGmbkRA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXl4i9dYBrFOabk0xGmbkRA",
+    "htmlUrl": "https://www.youtube.com/@DwarkeshPatel"
+  },
+  {
+    "name": "Dylan Tallchief",
+    "handle": "@DylanTallchief",
+    "channelId": "UCIu2Fj4x_VMn2dgSB1bFyQA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIu2Fj4x_VMn2dgSB1bFyQA",
+    "htmlUrl": "https://www.youtube.com/@DylanTallchief"
+  },
+  {
+    "name": "East Wind Community (Sumner's Unofficial Archives)",
+    "handle": "@EastWindCommunity1973",
+    "channelId": "UCuDxOs6jXvH63pinOVpypHA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuDxOs6jXvH63pinOVpypHA",
+    "htmlUrl": "https://www.youtube.com/@EastWindCommunity1973"
+  },
+  {
+    "name": "El Estepario Siberiano",
+    "handle": "@ElEsteparioSiberiano",
+    "channelId": "UCskD50ri3723Tk1SkS-qAIA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFskD50ri3723Tk1SkS-qAIA",
+    "htmlUrl": "https://www.youtube.com/@ElEsteparioSiberiano"
+  },
+  {
+    "name": "Elliott Jin",
+    "handle": "@robot-dreams",
+    "channelId": "UC1usQRXYR9cGjsxaTYYOUVg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1usQRXYR9cGjsxaTYYOUVg",
+    "htmlUrl": "https://www.youtube.com/@robot-dreams"
+  },
+  {
+    "name": "EnterTheDojoShow",
+    "handle": "@EnterTheDojoShow",
+    "channelId": "UCxrd1I7wmE2chwpoqD4DSTA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxrd1I7wmE2chwpoqD4DSTA",
+    "htmlUrl": "https://www.youtube.com/@EnterTheDojoShow"
+  },
+  {
+    "name": "Eric Weinstein",
+    "handle": "@EricWeinsteinPhD",
+    "channelId": "UCR85PW_B_7_Aisx5vNS7Gjw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR85PW_B_7_Aisx5vNS7Gjw",
+    "htmlUrl": "https://www.youtube.com/@EricWeinsteinPhD"
+  },
+  {
+    "name": "Fix This Build That",
+    "handle": "@Fixthisbuildthat",
+    "channelId": "UCHYSw4XKO_q1GaChw5pxa-w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHYSw4XKO_q1GaChw5pxa-w",
+    "htmlUrl": "https://www.youtube.com/@Fixthisbuildthat"
+  },
+  {
+    "name": "Forgotten Flicks",
+    "handle": "@ForgottenFlicks",
+    "channelId": "UCn4HO6CmDzFtouPrDwHk91Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFn4HO6CmDzFtouPrDwHk91Q",
+    "htmlUrl": "https://www.youtube.com/@ForgottenFlicks"
+  },
+  {
+    "name": "Frame Problems",
+    "handle": "@frameproblems5164",
+    "channelId": "UCNJeGFWrst9jevwCe0T7rcw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNJeGFWrst9jevwCe0T7rcw",
+    "htmlUrl": "https://www.youtube.com/@frameproblems5164"
+  },
+  {
+    "name": "Frank Yang",
+    "handle": "@frankyang",
+    "channelId": "UCuWsua1_gQ0inbBTqxmYuIQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuWsua1_gQ0inbBTqxmYuIQ",
+    "htmlUrl": "https://www.youtube.com/@frankyang"
+  },
+  {
+    "name": "Futurepedia",
+    "handle": "@futurepedia_io",
+    "channelId": "UC_RovKmk0OCbuZjA8f08opw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_RovKmk0OCbuZjA8f08opw",
+    "htmlUrl": "https://www.youtube.com/@futurepedia_io"
+  },
+  {
+    "name": "Fäascht Bänkler",
+    "handle": "@faeaschtbaenkler",
+    "channelId": "UCL5hubpwMTSNIXK2h6r-pog",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFL5hubpwMTSNIXK2h6r-pog",
+    "htmlUrl": "https://www.youtube.com/@faeaschtbaenkler"
+  },
+  {
+    "name": "Game Changer Shorts",
+    "handle": "@GameChangerShorts",
+    "channelId": "UCTcw8GqWQlFcc6ioeJQOMAQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTcw8GqWQlFcc6ioeJQOMAQ",
+    "htmlUrl": "https://www.youtube.com/@GameChangerShorts"
+  },
+  {
+    "name": "Garry Tan",
+    "handle": "@GarryTan",
+    "channelId": "UCIBgYfDjtWlbJhg--Z4sOgQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIBgYfDjtWlbJhg--Z4sOgQ",
+    "htmlUrl": "https://www.youtube.com/@GarryTan"
+  },
+  {
+    "name": "george hotz archive",
+    "handle": "@geohotarchive",
+    "channelId": "UCwgKmJM4ZJQRJ-U5NjvR2dg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwgKmJM4ZJQRJ-U5NjvR2dg",
+    "htmlUrl": "https://www.youtube.com/@geohotarchive"
+  },
+  {
+    "name": "Girlfriend Reviews",
+    "handle": "@GirlfriendReviews",
+    "channelId": "UC2eEGT06FrWFU6VBnPOR9lg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2eEGT06FrWFU6VBnPOR9lg",
+    "htmlUrl": "https://www.youtube.com/@GirlfriendReviews"
+  },
+  {
+    "name": "Google DeepMind",
+    "handle": "@googledeepmind",
+    "channelId": "UCP7jMXSY2xbc3KCAE0MHQ-A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFP7jMXSY2xbc3KCAE0MHQ-A",
+    "htmlUrl": "https://www.youtube.com/@googledeepmind"
+  },
+  {
+    "name": "gotyemusic",
+    "handle": "@gotye",
+    "channelId": "UCFC9LamNMmLioW643VZ40OA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFFC9LamNMmLioW643VZ40OA",
+    "htmlUrl": "https://www.youtube.com/@gotye"
+  },
+  {
+    "name": "Greylock",
+    "handle": "@GreylockVC",
+    "channelId": "UCZ7x7yDBbEFCGztD8BYvRhA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZ7x7yDBbEFCGztD8BYvRhA",
+    "htmlUrl": "https://www.youtube.com/@GreylockVC"
+  },
+  {
+    "name": "Hapa Family",
+    "handle": "@HapaFamily",
+    "channelId": "UCDs6BiaaXKiPy28wNpyUpoQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDs6BiaaXKiPy28wNpyUpoQ",
+    "htmlUrl": "https://www.youtube.com/@HapaFamily"
+  },
+  {
+    "name": "Heidi Priebe",
+    "handle": "@heidipriebe1",
+    "channelId": "UCqX3KQWXJll7_6orfHFuqBQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqX3KQWXJll7_6orfHFuqBQ",
+    "htmlUrl": "https://www.youtube.com/@heidipriebe1"
+  },
+  {
+    "name": "Hello Interview - SWE Interview Preparation",
+    "handle": "@hello_interview",
+    "channelId": "UC3kf-QFT6FZzDk9JsPg8Svg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3kf-QFT6FZzDk9JsPg8Svg",
+    "htmlUrl": "https://www.youtube.com/@hello_interview"
+  },
+  {
+    "name": "hemlocke springs",
+    "handle": "@hemlockespringsmusic",
+    "channelId": "UCqO_Qz4No-tNuAQ0TyDe9Dg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqO_Qz4No-tNuAQ0TyDe9Dg",
+    "htmlUrl": "https://www.youtube.com/@hemlockespringsmusic"
+  },
+  {
+    "name": "Instadailydrum",
+    "handle": "@Instadailydrum",
+    "channelId": "UCKoR2jUl6fxjbpkV9l8lEBA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFKoR2jUl6fxjbpkV9l8lEBA",
+    "htmlUrl": "https://www.youtube.com/@Instadailydrum"
+  },
+  {
+    "name": "Isaiah Shinn",
+    "handle": "@DirectorIsaiah",
+    "channelId": "UCWcgkavzhwoahTIx9pDqLQA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWcgkavzhwoahTIx9pDqLQA",
+    "htmlUrl": "https://www.youtube.com/@DirectorIsaiah"
+  },
+  {
+    "name": "Jacob Acrobat",
+    "handle": "@jacobacrobat8303",
+    "channelId": "UCbPCFx0uSIuwPQzcy66A1uQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbPCFx0uSIuwPQzcy66A1uQ",
+    "htmlUrl": "https://www.youtube.com/@jacobacrobat8303"
+  },
+  {
+    "name": "Jacob Collier",
+    "handle": "@jacobcollier",
+    "channelId": "UCtmY49Zn4l0RMJnTWfV7Wsg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtmY49Zn4l0RMJnTWfV7Wsg",
+    "htmlUrl": "https://www.youtube.com/@jacobcollier"
+  },
+  {
+    "name": "James Bruton",
+    "handle": "@jamesbruton",
+    "channelId": "UCUbDcUPed50Y_7KmfCXKohA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUbDcUPed50Y_7KmfCXKohA",
+    "htmlUrl": "https://www.youtube.com/@jamesbruton"
+  },
+  {
+    "name": "James Gurney",
+    "handle": "@JamesGurney",
+    "channelId": "UCTIoOLzT1jbxAcPW99xn0zQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTIoOLzT1jbxAcPW99xn0zQ",
+    "htmlUrl": "https://www.youtube.com/@JamesGurney"
+  },
+  {
+    "name": "Jay and Mark",
+    "handle": "@JayForeman",
+    "channelId": "UCbbQalJ4OaC0oQ0AqRaOJ9g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbbQalJ4OaC0oQ0AqRaOJ9g",
+    "htmlUrl": "https://www.youtube.com/@JayForeman"
+  },
+  {
+    "name": "Jer Cooper",
+    "handle": "@jercooper",
+    "channelId": "UCuCxEb9dzU18Nf2_2lHXxXA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFuCxEb9dzU18Nf2_2lHXxXA",
+    "htmlUrl": "https://www.youtube.com/@jercooper"
+  },
+  {
+    "name": "Jocelyn Stericker",
+    "handle": "@JocelynStericker",
+    "channelId": "UCZ3mDLgCpLNj_fZezPhoH-Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZ3mDLgCpLNj_fZezPhoH-Q",
+    "htmlUrl": "https://www.youtube.com/@JocelynStericker"
+  },
+  {
+    "name": "Joe Edelman",
+    "handle": "@edelwax",
+    "channelId": "UCqCJdCaawuGflUtkqmhv8tw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqCJdCaawuGflUtkqmhv8tw",
+    "htmlUrl": "https://www.youtube.com/@edelwax"
+  },
+  {
+    "name": "Joe Hudson | Art of Accomplishment",
+    "handle": "@ArtofAccomplishment",
+    "channelId": "UCK3IN-E6f2bXdNFNOp7esOA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFK3IN-E6f2bXdNFNOp7esOA",
+    "htmlUrl": "https://www.youtube.com/@ArtofAccomplishment"
+  },
+  {
+    "name": "Joke WRLD",
+    "handle": "@JokeWRLD",
+    "channelId": "UCGVVGdMcWxF0KW4mCrmiNCQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGVVGdMcWxF0KW4mCrmiNCQ",
+    "htmlUrl": "https://www.youtube.com/@JokeWRLD"
+  },
+  {
+    "name": "Jungle4eva",
+    "handle": "@jungle4eva",
+    "channelId": "UCR4a2QKvUuLvLGA6M5MM2ew",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR4a2QKvUuLvLGA6M5MM2ew",
+    "htmlUrl": "https://www.youtube.com/@jungle4eva"
+  },
+  {
+    "name": "Kat Stickler",
+    "handle": "@katstickler5757",
+    "channelId": "UCjOGvbEdCbzb4iUCHLMj7xw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFjOGvbEdCbzb4iUCHLMj7xw",
+    "htmlUrl": "https://www.youtube.com/@katstickler5757"
+  },
+  {
+    "name": "Keenan Crane",
+    "handle": "@keenancrane",
+    "channelId": "UCIAmdxvgfnIEZnyQSiqgVgQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIAmdxvgfnIEZnyQSiqgVgQ",
+    "htmlUrl": "https://www.youtube.com/@keenancrane"
+  },
+  {
+    "name": "kelogsloops",
+    "handle": "@kelogsloops",
+    "channelId": "UC_9ObjTaq4kIvuVCJgHPPRw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_9ObjTaq4kIvuVCJgHPPRw",
+    "htmlUrl": "https://www.youtube.com/@kelogsloops"
+  },
+  {
+    "name": "Ken & Bryn",
+    "handle": "@kenandbryn",
+    "channelId": "UCDPPfrCYMXon-KCSRfKymTQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDPPfrCYMXon-KCSRfKymTQ",
+    "htmlUrl": "https://www.youtube.com/@kenandbryn"
+  },
+  {
+    "name": "Kendrick Lamar",
+    "handle": "@kendricklamar",
+    "channelId": "UC3lBXcrKFnFAFkfVk5WuKcQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3lBXcrKFnFAFkfVk5WuKcQ",
+    "htmlUrl": "https://www.youtube.com/@kendricklamar"
+  },
+  {
+    "name": "Key & Peele",
+    "handle": "@KeyAndPeele",
+    "channelId": "UCdN4aXTrHAtfgbVG9HjBmxQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdN4aXTrHAtfgbVG9HjBmxQ",
+    "htmlUrl": "https://www.youtube.com/@KeyAndPeele"
+  },
+  {
+    "name": "Kirby Ferguson",
+    "handle": "@KirbyFerguson",
+    "channelId": "UCu-3YlvaBS4bsya-1eFi62w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFu-3YlvaBS4bsya-1eFi62w",
+    "htmlUrl": "https://www.youtube.com/@KirbyFerguson"
+  },
+  {
+    "name": "KNOWER MUSIC",
+    "handle": "@LOUISGENEVIEVE",
+    "channelId": "UCaEKhXcW7dY65JoQB6fGhxg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFaEKhXcW7dY65JoQB6fGhxg",
+    "htmlUrl": "https://www.youtube.com/@LOUISGENEVIEVE"
+  },
+  {
+    "name": "Kris Temmerman",
+    "handle": "@KrisTemmermanNP",
+    "channelId": "UCUdunfSS-4CyZsIhICtgr6A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUdunfSS-4CyZsIhICtgr6A",
+    "htmlUrl": "https://www.youtube.com/@KrisTemmermanNP"
+  },
+  {
+    "name": "Kurt Builds",
+    "handle": "@KurtBuilds",
+    "channelId": "UCbrDYPCDkZ9eiOWCYSDzgCQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbrDYPCDkZ9eiOWCYSDzgCQ",
+    "htmlUrl": "https://www.youtube.com/@KurtBuilds"
+  },
+  {
+    "name": "Kurzgesagt – In a Nutshell",
+    "handle": "@kurzgesagt",
+    "channelId": "UCsXVk37bltHxD1rDPwtNM8Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsXVk37bltHxD1rDPwtNM8Q",
+    "htmlUrl": "https://www.youtube.com/@kurzgesagt"
+  },
+  {
+    "name": "Kye Smith",
+    "handle": "@KyeSmith",
+    "channelId": "UCZU86cQ3D96DKkTf9B0GG_A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZU86cQ3D96DKkTf9B0GG_A",
+    "htmlUrl": "https://www.youtube.com/@KyeSmith"
+  },
+  {
+    "name": "Kylan Gibbs",
+    "handle": "@kylangibbs4552",
+    "channelId": "UCXqJh2-X-FoYCdVeNQVITtg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXqJh2-X-FoYCdVeNQVITtg",
+    "htmlUrl": "https://www.youtube.com/@kylangibbs4552"
+  },
+  {
+    "name": "KYLE HANAGAMI",
+    "handle": "@kylehanagami",
+    "channelId": "UCGzGbfhdFsjP1yfJUEpSvWg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGzGbfhdFsjP1yfJUEpSvWg",
+    "htmlUrl": "https://www.youtube.com/@kylehanagami"
+  },
+  {
+    "name": "Lars Christensen",
+    "handle": "@cadcamstuff",
+    "channelId": "UCo29kn3d9ziFUZGZ50VKvWA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFo29kn3d9ziFUZGZ50VKvWA",
+    "htmlUrl": "https://www.youtube.com/@cadcamstuff"
+  },
+  {
+    "name": "Lex Fridman",
+    "handle": "@lexfridman",
+    "channelId": "UCSHZKyawb77ixDdsGog4iWA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSHZKyawb77ixDdsGog4iWA",
+    "htmlUrl": "https://www.youtube.com/@lexfridman"
+  },
+  {
+    "name": "louiscolemusic",
+    "handle": "@louiscolemusic",
+    "channelId": "UCrgACV046xX2A9ljab3u43g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrgACV046xX2A9ljab3u43g",
+    "htmlUrl": "https://www.youtube.com/@louiscolemusic"
+  },
+  {
+    "name": "Low Level",
+    "handle": "@LowLevelTV",
+    "channelId": "UC6biysICWOJ-C3P4Tyeggzg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6biysICWOJ-C3P4Tyeggzg",
+    "htmlUrl": "https://www.youtube.com/@LowLevelTV"
+  },
+  {
+    "name": "Machine Learning Dojo",
+    "handle": "@machinelearningdojo",
+    "channelId": "UCXvHuBMbgJw67i5vrMBBobA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXvHuBMbgJw67i5vrMBBobA",
+    "htmlUrl": "https://www.youtube.com/@machinelearningdojo"
+  },
+  {
+    "name": "Machine Learning Street Talk",
+    "handle": "@MachineLearningStreetTalk",
+    "channelId": "UCMLtBahI5DMrt0NPvDSoIRQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFMLtBahI5DMrt0NPvDSoIRQ",
+    "htmlUrl": "https://www.youtube.com/@MachineLearningStreetTalk"
+  },
+  {
+    "name": "Made with Layers (Thomas Sanladerer)",
+    "handle": "@MadeWithLayers",
+    "channelId": "UCb8Rde3uRL1ohROUVg46h1A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFb8Rde3uRL1ohROUVg46h1A",
+    "htmlUrl": "https://www.youtube.com/@MadeWithLayers"
+  },
+  {
+    "name": "Make Some Noise",
+    "handle": "@MakeSomeNoiseDO",
+    "channelId": "UCSoJcY9wS0_L2yWOTWJWV5Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSoJcY9wS0_L2yWOTWJWV5Q",
+    "htmlUrl": "https://www.youtube.com/@MakeSomeNoiseDO"
+  },
+  {
+    "name": "Marcus House",
+    "handle": "@MarcusHouse",
+    "channelId": "UCBNHHEoiSF8pcLgqLKVugOw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBNHHEoiSF8pcLgqLKVugOw",
+    "htmlUrl": "https://www.youtube.com/@MarcusHouse"
+  },
+  {
+    "name": "Mark J Kohler",
+    "handle": "@MarkJKohler",
+    "channelId": "UCHYeaAH3D-wzQyDiXndSfMA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHYeaAH3D-wzQyDiXndSfMA",
+    "htmlUrl": "https://www.youtube.com/@MarkJKohler"
+  },
+  {
+    "name": "Massage Sloth",
+    "handle": "@MassageSloth",
+    "channelId": "UCZLFp_VnVGZGtntS7PD8d-w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZLFp_VnVGZGtntS7PD8d-w",
+    "htmlUrl": "https://www.youtube.com/@MassageSloth"
+  },
+  {
+    "name": "Massage Therapeutics",
+    "handle": "@MassageTherapeutics915",
+    "channelId": "UCIz9EejzYLjwffJCcN-qIJw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFIz9EejzYLjwffJCcN-qIJw",
+    "htmlUrl": "https://www.youtube.com/@MassageTherapeutics915"
+  },
+  {
+    "name": "Matt Rife",
+    "handle": "@MattRifeComedy",
+    "channelId": "UC2mKA8JTOCeodl9bEK7w42Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2mKA8JTOCeodl9bEK7w42Q",
+    "htmlUrl": "https://www.youtube.com/@MattRifeComedy"
+  },
+  {
+    "name": "Matthew Berman",
+    "handle": "@matthew_berman",
+    "channelId": "UCawZsQWqfGSbCI5yjkdVkTA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFawZsQWqfGSbCI5yjkdVkTA",
+    "htmlUrl": "https://www.youtube.com/@matthew_berman"
+  },
+  {
+    "name": "Matthew Broussard",
+    "handle": "@mondaypunday",
+    "channelId": "UCXmGv-nIy80LINFCNzxz4_g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXmGv-nIy80LINFCNzxz4_g",
+    "htmlUrl": "https://www.youtube.com/@mondaypunday"
+  },
+  {
+    "name": "Max Deutsch",
+    "handle": "@discoveryfilmz",
+    "channelId": "UCJ6m2kvAUYAAOPOle69hOqw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJ6m2kvAUYAAOPOle69hOqw",
+    "htmlUrl": "https://www.youtube.com/@discoveryfilmz"
+  },
+  {
+    "name": "Meghan & Jack",
+    "handle": "@meghanandjack",
+    "channelId": "UCG0EsX9WUDVaN3EC4LjRZuQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFG0EsX9WUDVaN3EC4LjRZuQ",
+    "htmlUrl": "https://www.youtube.com/@meghanandjack"
+  },
+  {
+    "name": "Memeable Data",
+    "handle": "@memeabledata",
+    "channelId": "UCZcBeMQLxvjhsW3PEYXuiAA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZcBeMQLxvjhsW3PEYXuiAA",
+    "htmlUrl": "https://www.youtube.com/@memeabledata"
+  },
+  {
+    "name": "Michael Houck",
+    "handle": "@callmehouck",
+    "channelId": "UCH3Pc6A20J47Nzc41JG4xRQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFH3Pc6A20J47Nzc41JG4xRQ",
+    "htmlUrl": "https://www.youtube.com/@callmehouck"
+  },
+  {
+    "name": "Mike Johnston",
+    "handle": "@mikeslessons",
+    "channelId": "UC-g2PhDGnFibudkgkWhZj3w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-g2PhDGnFibudkgkWhZj3w",
+    "htmlUrl": "https://www.youtube.com/@mikeslessons"
+  },
+  {
+    "name": "Mikey on Drums",
+    "handle": "@mikey-on-drums",
+    "channelId": "UCdrT2I0Jdskpo9NuMzVAnJw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdrT2I0Jdskpo9NuMzVAnJw",
+    "htmlUrl": "https://www.youtube.com/@mikey-on-drums"
+  },
+  {
+    "name": "mildlyoverfitted",
+    "handle": "@mildlyoverfitted",
+    "channelId": "UCYBSjwkGTK06NnDnFsOcR7g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYBSjwkGTK06NnDnFsOcR7g",
+    "htmlUrl": "https://www.youtube.com/@mildlyoverfitted"
+  },
+  {
+    "name": "Moment of Zen",
+    "handle": "@MomentofZenPodcast",
+    "channelId": "UCY0OE_54Viqx_qtXuh-85VA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFY0OE_54Viqx_qtXuh-85VA",
+    "htmlUrl": "https://www.youtube.com/@MomentofZenPodcast"
+  },
+  {
+    "name": "Motif Land",
+    "handle": "@motifland",
+    "channelId": "UCxKuMnZveLVEXZCVzglSa0A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxKuMnZveLVEXZCVzglSa0A",
+    "htmlUrl": "https://www.youtube.com/@motifland"
+  },
+  {
+    "name": "MovementbyDavid",
+    "handle": "@MovementbyDavid",
+    "channelId": "UCM2ra7Od2jliHB9TLPKt76w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFM2ra7Od2jliHB9TLPKt76w",
+    "htmlUrl": "https://www.youtube.com/@MovementbyDavid"
+  },
+  {
+    "name": "MrToucan Explains Memes",
+    "handle": "@MrToucan",
+    "channelId": "UC1SZ-1Ydb7Ri6zEOF0CcwrA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1SZ-1Ydb7Ri6zEOF0CcwrA",
+    "htmlUrl": "https://www.youtube.com/@MrToucan"
+  },
+  {
+    "name": "My Little Thought Tree",
+    "handle": "@mylittlethoughttree",
+    "channelId": "UCYtu3JxrpI1XjNn-B_HqW4Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYtu3JxrpI1XjNn-B_HqW4Q",
+    "htmlUrl": "https://www.youtube.com/@mylittlethoughttree"
+  },
+  {
+    "name": "Myq Kaplan",
+    "handle": "@myqkaplan",
+    "channelId": "UCyqrJXaKnwxKe1RGClfUsKw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyqrJXaKnwxKe1RGClfUsKw",
+    "htmlUrl": "https://www.youtube.com/@myqkaplan"
+  },
+  {
+    "name": "NateMuellerDrums",
+    "handle": "@natemuellerdrums",
+    "channelId": "UCv4Zh_lYLdzoNaXXsQLKSpA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFv4Zh_lYLdzoNaXXsQLKSpA",
+    "htmlUrl": "https://www.youtube.com/@natemuellerdrums"
+  },
+  {
+    "name": "Neel Nanda",
+    "handle": "@neelnanda2469",
+    "channelId": "UCBMJ0D-omcRay8dh4QT0doQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBMJ0D-omcRay8dh4QT0doQ",
+    "htmlUrl": "https://www.youtube.com/@neelnanda2469"
+  },
+  {
+    "name": "Netflix Is A Joke",
+    "handle": "@netflixisajoke",
+    "channelId": "UCObk_g1hQBy0RKKriVX_zOQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFObk_g1hQBy0RKKriVX_zOQ",
+    "htmlUrl": "https://www.youtube.com/@netflixisajoke"
+  },
+  {
+    "name": "Neura Pod – Neuralink",
+    "handle": "@NeuraPod",
+    "channelId": "UCDukC60SYLlPwdU9CWPGx9Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFDukC60SYLlPwdU9CWPGx9Q",
+    "htmlUrl": "https://www.youtube.com/@NeuraPod"
+  },
+  {
+    "name": "New Money",
+    "handle": "@NewMoneyYouTube",
+    "channelId": "UCvSXMi2LebwJEM1s4bz5IBA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvSXMi2LebwJEM1s4bz5IBA",
+    "htmlUrl": "https://www.youtube.com/@NewMoneyYouTube"
+  },
+  {
+    "name": "NewLimit",
+    "handle": "@NewLimit",
+    "channelId": "UC-RGRa9pxgnIGVptxGpnlWw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-RGRa9pxgnIGVptxGpnlWw",
+    "htmlUrl": "https://www.youtube.com/@NewLimit"
+  },
+  {
+    "name": "NextUp Comedy",
+    "handle": "@nextupcomedy",
+    "channelId": "UCRJ7zqodlxSCMQXvW6pcZow",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFRJ7zqodlxSCMQXvW6pcZow",
+    "htmlUrl": "https://www.youtube.com/@nextupcomedy"
+  },
+  {
+    "name": "Noah Smith",
+    "handle": "@noahsmith9834",
+    "channelId": "UCAzXGOuFCFs2Sm6sYxwXbCQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFAzXGOuFCFs2Sm6sYxwXbCQ",
+    "htmlUrl": "https://www.youtube.com/@noahsmith9834"
+  },
+  {
+    "name": "Nobel Prize",
+    "handle": "@NobelPrize",
+    "channelId": "UC-V6odR7HzLCuqjYeowPjLA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF-V6odR7HzLCuqjYeowPjLA",
+    "htmlUrl": "https://www.youtube.com/@NobelPrize"
+  },
+  {
+    "name": "Normalized Nerd",
+    "handle": "@NormalizedNerd",
+    "channelId": "UC7Fs-Fdpe0I8GYg3lboEuXw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7Fs-Fdpe0I8GYg3lboEuXw",
+    "htmlUrl": "https://www.youtube.com/@NormalizedNerd"
+  },
+  {
+    "name": "Not Shane Gillis",
+    "handle": "@NotShaneGillis",
+    "channelId": "UCoYvkV85-JBiluifoJkyXGw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFoYvkV85-JBiluifoJkyXGw",
+    "htmlUrl": "https://www.youtube.com/@NotShaneGillis"
+  },
+  {
+    "name": "OpenAI",
+    "handle": "@OpenAI",
+    "channelId": "UCXZCJLdBC09xxGZ6gcdrc6A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXZCJLdBC09xxGZ6gcdrc6A",
+    "htmlUrl": "https://www.youtube.com/@OpenAI"
+  },
+  {
+    "name": "Ozzy Man Reviews",
+    "handle": "@ozzymanreviews",
+    "channelId": "UCeE3lj6pLX_gCd0Yvns517Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFeE3lj6pLX_gCd0Yvns517Q",
+    "htmlUrl": "https://www.youtube.com/@ozzymanreviews"
+  },
+  {
+    "name": "Paul Millerd",
+    "handle": "@PaulMillerd",
+    "channelId": "UCofS_FvauuHc-x6mq7yz6nA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFofS_FvauuHc-x6mq7yz6nA",
+    "htmlUrl": "https://www.youtube.com/@PaulMillerd"
+  },
+  {
+    "name": "Pete Buttigieg",
+    "handle": "@petebuttigieg",
+    "channelId": "UCxauM3N4Nb47HG6PuDMh0Ow",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxauM3N4Nb47HG6PuDMh0Ow",
+    "htmlUrl": "https://www.youtube.com/@petebuttigieg"
+  },
+  {
+    "name": "Peter Draws",
+    "handle": "@peter_draws",
+    "channelId": "UCGtGTAa-xarr2HrEKRgRUHQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGtGTAa-xarr2HrEKRgRUHQ",
+    "htmlUrl": "https://www.youtube.com/@peter_draws"
+  },
+  {
+    "name": "Pieter Abbeel",
+    "handle": "@PieterAbbeel",
+    "channelId": "UC88M-XNc4BlzJVJvOyiHZDQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF88M-XNc4BlzJVJvOyiHZDQ",
+    "htmlUrl": "https://www.youtube.com/@PieterAbbeel"
+  },
+  {
+    "name": "Praha Drums Official",
+    "handle": "@prahadrumsofficial",
+    "channelId": "UC5VNN4Xo4QYnssBsJy3nAAg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5VNN4Xo4QYnssBsJy3nAAg",
+    "htmlUrl": "https://www.youtube.com/@prahadrumsofficial"
+  },
+  {
+    "name": "pwnisher",
+    "handle": "@pwnisher",
+    "channelId": "UCWIfzAYHyNSyHmT2AO-54yg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWIfzAYHyNSyHmT2AO-54yg",
+    "htmlUrl": "https://www.youtube.com/@pwnisher"
+  },
+  {
+    "name": "Rachel Thomas",
+    "handle": "@math-rachel",
+    "channelId": "UC_pSCYWbMn4JcsxbWOzkgEQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_pSCYWbMn4JcsxbWOzkgEQ",
+    "htmlUrl": "https://www.youtube.com/@math-rachel"
+  },
+  {
+    "name": "Rafael Silva",
+    "handle": "@rafaelsilvadrums",
+    "channelId": "UCTVy4t9W7Bi-xFThz1cemWA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTVy4t9W7Bi-xFThz1cemWA",
+    "htmlUrl": "https://www.youtube.com/@rafaelsilvadrums"
+  },
+  {
+    "name": "Ralphthebaker",
+    "handle": "@Ralphthebaker",
+    "channelId": "UC97xgHJNoWDJ5zwplALb-Dw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF97xgHJNoWDJ5zwplALb-Dw",
+    "htmlUrl": "https://www.youtube.com/@Ralphthebaker"
+  },
+  {
+    "name": "Rational Animations",
+    "handle": "@RationalAnimations",
+    "channelId": "UCgqt1RE0k0MIr0LoyJRy2lg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFgqt1RE0k0MIr0LoyJRy2lg",
+    "htmlUrl": "https://www.youtube.com/@RationalAnimations"
+  },
+  {
+    "name": "RattlemBones",
+    "handle": "@rattlembones7470",
+    "channelId": "UCfx3LfWIbEoW4WGGzXluepQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFfx3LfWIbEoW4WGGzXluepQ",
+    "htmlUrl": "https://www.youtube.com/@rattlembones7470"
+  },
+  {
+    "name": "raviramamoorthi",
+    "handle": "@raviramamoorthi",
+    "channelId": "UCMXu0keYU3ZLR-aTNUJcRSQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFMXu0keYU3ZLR-aTNUJcRSQ",
+    "htmlUrl": "https://www.youtube.com/@raviramamoorthi"
+  },
+  {
+    "name": "Rebel Wisdom Clips",
+    "handle": "@rebelwisdomclips9137",
+    "channelId": "UCunObm5lmNlB9EM35AzIp0Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFunObm5lmNlB9EM35AzIp0Q",
+    "htmlUrl": "https://www.youtube.com/@rebelwisdomclips9137"
+  },
+  {
+    "name": "Red Nomster",
+    "handle": "@RedNomster",
+    "channelId": "UCsL5NeOXmY09AmfU2ftbRNA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsL5NeOXmY09AmfU2ftbRNA",
+    "htmlUrl": "https://www.youtube.com/@RedNomster"
+  },
+  {
+    "name": "Reuben Gingrich",
+    "handle": "@ReubenGingrich",
+    "channelId": "UCipVSWiaLKnVErvc9Fd6HTw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFipVSWiaLKnVErvc9Fd6HTw",
+    "htmlUrl": "https://www.youtube.com/@ReubenGingrich"
+  },
+  {
+    "name": "Rick Glassman",
+    "handle": "@rickglassman",
+    "channelId": "UCYCGsNTvYxfkPkfQopRMP7w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYCGsNTvYxfkPkfQopRMP7w",
+    "htmlUrl": "https://www.youtube.com/@rickglassman"
+  },
+  {
+    "name": "Riff Sesh",
+    "handle": "@RiffSesh",
+    "channelId": "UCmb8E8KiLlc3vNF7FJyQvUw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFmb8E8KiLlc3vNF7FJyQvUw",
+    "htmlUrl": "https://www.youtube.com/@RiffSesh"
+  },
+  {
+    "name": "Rob Burbea Talks",
+    "handle": "@boubabuddha",
+    "channelId": "UCSts1JOKBgI2HcExVBN-M1g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFSts1JOKBgI2HcExVBN-M1g",
+    "htmlUrl": "https://www.youtube.com/@boubabuddha"
+  },
+  {
+    "name": "Robby Cuthbert Design",
+    "handle": "@robbycuthbertdesign3451",
+    "channelId": "UClSlskhz1gnpxfazRs1ZBGA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFlSlskhz1gnpxfazRs1ZBGA",
+    "htmlUrl": "https://www.youtube.com/@robbycuthbertdesign3451"
+  },
+  {
+    "name": "Rupert Spira",
+    "handle": "@rupertspira",
+    "channelId": "UCxXWjjtATq3OM545gMh9PUg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxXWjjtATq3OM545gMh9PUg",
+    "htmlUrl": "https://www.youtube.com/@rupertspira"
+  },
+  {
+    "name": "Sabine Hossenfelder",
+    "handle": "@SabineHossenfelder",
+    "channelId": "UC1yNl2E66ZzKApQdRuTQ4tw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1yNl2E66ZzKApQdRuTQ4tw",
+    "htmlUrl": "https://www.youtube.com/@SabineHossenfelder"
+  },
+  {
+    "name": "Salvatore Ganacci",
+    "handle": "@TheSalvatoreGanacci",
+    "channelId": "UCyseFvMP4mZVlU5iEEbAamA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyseFvMP4mZVlU5iEEbAamA",
+    "htmlUrl": "https://www.youtube.com/@TheSalvatoreGanacci"
+  },
+  {
+    "name": "Sam Harris",
+    "handle": "@samharrisorg",
+    "channelId": "UCNAxrHudMfdzNi6NxruKPLw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNAxrHudMfdzNi6NxruKPLw",
+    "htmlUrl": "https://www.youtube.com/@samharrisorg"
+  },
+  {
+    "name": "Sam Morril",
+    "handle": "@sammorril",
+    "channelId": "UCTrOYaMDI7QiPnRzwWdYK6Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTrOYaMDI7QiPnRzwWdYK6Q",
+    "htmlUrl": "https://www.youtube.com/@sammorril"
+  },
+  {
+    "name": "Saturday Night Live",
+    "handle": "@SaturdayNightLive",
+    "channelId": "UCqFzWxSCi39LnW1JKFR3efg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqFzWxSCi39LnW1JKFR3efg",
+    "htmlUrl": "https://www.youtube.com/@SaturdayNightLive"
+  },
+  {
+    "name": "Sean Millea",
+    "handle": "@SeanMillea",
+    "channelId": "UCE1IEyq_JisUvzgoaHnQ9dg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFE1IEyq_JisUvzgoaHnQ9dg",
+    "htmlUrl": "https://www.youtube.com/@SeanMillea"
+  },
+  {
+    "name": "Sheena Melwani",
+    "handle": "@SheenaMelwani",
+    "channelId": "UCCm4EdCTj3hVbDYPAI1FHtA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCm4EdCTj3hVbDYPAI1FHtA",
+    "htmlUrl": "https://www.youtube.com/@SheenaMelwani"
+  },
+  {
+    "name": "Shiatsu Shane - ASMR Massage",
+    "handle": "@ShiatsuShane",
+    "channelId": "UCsfQYrPtmnrVQdrBl_K_Ldw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsfQYrPtmnrVQdrBl_K_Ldw",
+    "htmlUrl": "https://www.youtube.com/@ShiatsuShane"
+  },
+  {
+    "name": "Shoot From The Hip",
+    "handle": "@shootimpro",
+    "channelId": "UC3JVlyuEqD9B7VaQp7FSkIQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3JVlyuEqD9B7VaQp7FSkIQ",
+    "htmlUrl": "https://www.youtube.com/@shootimpro"
+  },
+  {
+    "name": "Shu Omi",
+    "handle": "@ShuOmi_Official",
+    "channelId": "UC525q2RIufHjnaHOuIUFY9A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF525q2RIufHjnaHOuIUFY9A",
+    "htmlUrl": "https://www.youtube.com/@ShuOmi_Official"
+  },
+  {
+    "name": "Simone Giertz",
+    "handle": "@simonegiertz",
+    "channelId": "UC3KEoMzNz8eYnwBC34RaKCQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3KEoMzNz8eYnwBC34RaKCQ",
+    "htmlUrl": "https://www.youtube.com/@simonegiertz"
+  },
+  {
+    "name": "Siros Vaziri",
+    "handle": "@sirosvaziri",
+    "channelId": "UC0TPhd3Z-gxJtA0nZ1lfTYA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0TPhd3Z-gxJtA0nZ1lfTYA",
+    "htmlUrl": "https://www.youtube.com/@sirosvaziri"
+  },
+  {
+    "name": "Smartypants",
+    "handle": "@smartypantsdropout",
+    "channelId": "UCpIUcvK7fZMbhFOU13AtVqQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFpIUcvK7fZMbhFOU13AtVqQ",
+    "htmlUrl": "https://www.youtube.com/@smartypantsdropout"
+  },
+  {
+    "name": "Soulfire",
+    "handle": "@soulfire2317",
+    "channelId": "UCCATgA9q9w0Fwvj0IoS2_3w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFCATgA9q9w0Fwvj0IoS2_3w",
+    "htmlUrl": "https://www.youtube.com/@soulfire2317"
+  },
+  {
+    "name": "Stas Fedechkin",
+    "handle": "@Mindful.Attachment.Coaching",
+    "channelId": "UC2VHrRKhUWtZw7Wq69_Irbg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2VHrRKhUWtZw7Wq69_Irbg",
+    "htmlUrl": "https://www.youtube.com/@Mindful.Attachment.Coaching"
+  },
+  {
+    "name": "Stephen Clark",
+    "handle": "@thenonglamorousdrummer",
+    "channelId": "UCO3hCh7DsvuBO9mKp4YrtWg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFO3hCh7DsvuBO9mKp4YrtWg",
+    "htmlUrl": "https://www.youtube.com/@thenonglamorousdrummer"
+  },
+  {
+    "name": "Strength Side",
+    "handle": "@Strengthside",
+    "channelId": "UC9BNGVGr_lvbn3d23ckuVOA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF9BNGVGr_lvbn3d23ckuVOA",
+    "htmlUrl": "https://www.youtube.com/@Strengthside"
+  },
+  {
+    "name": "Studying With Alex",
+    "handle": "@StudyingWithAlex",
+    "channelId": "UCUdkjbeIFea0qUSgwR1CUOg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUdkjbeIFea0qUSgwR1CUOg",
+    "htmlUrl": "https://www.youtube.com/@StudyingWithAlex"
+  },
+  {
+    "name": "SubwayTakes with Kareem Rahma",
+    "handle": "@SubwayTakes",
+    "channelId": "UCYLf5YEC59GX69au3yb1-KQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYLf5YEC59GX69au3yb1-KQ",
+    "htmlUrl": "https://www.youtube.com/@SubwayTakes"
+  },
+  {
+    "name": "SysDesign Meetup",
+    "handle": "@dimakorolev",
+    "channelId": "UC59wf9NCMAwWDsu5CY3PqnQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF59wf9NCMAwWDsu5CY3PqnQ",
+    "htmlUrl": "https://www.youtube.com/@dimakorolev"
+  },
+  {
+    "name": "Taylor Tomlinson",
+    "handle": "@taylortomlinsoncomedy",
+    "channelId": "UCYIEv9W7RmdpvFkHX7IEmyg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYIEv9W7RmdpvFkHX7IEmyg",
+    "htmlUrl": "https://www.youtube.com/@taylortomlinsoncomedy"
+  },
+  {
+    "name": "Tech Dummies - Narendra Lakshmana Gowda",
+    "handle": "@TechDummiesNarendraL",
+    "channelId": "UCn1XnDWhsLS5URXTi5wtFTA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFn1XnDWhsLS5URXTi5wtFTA",
+    "htmlUrl": "https://www.youtube.com/@TechDummiesNarendraL"
+  },
+  {
+    "name": "TED",
+    "handle": "@TED",
+    "channelId": "UCAuUUnT6oDeKwE6v1NGQxug",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFAuUUnT6oDeKwE6v1NGQxug",
+    "htmlUrl": "https://www.youtube.com/@TED"
+  },
+  {
+    "name": "TEDx Talks",
+    "handle": "@TEDx",
+    "channelId": "UCsT0YIqwnpJCM-mx7-gSA4Q",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsT0YIqwnpJCM-mx7-gSA4Q",
+    "htmlUrl": "https://www.youtube.com/@TEDx"
+  },
+  {
+    "name": "The Basement Yard",
+    "handle": "@TheBasementYard",
+    "channelId": "UC_a6c3KLo9reMOqn2pbvMqg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_a6c3KLo9reMOqn2pbvMqg",
+    "htmlUrl": "https://www.youtube.com/@TheBasementYard"
+  },
+  {
+    "name": "The Daily Show",
+    "handle": "@TheDailyShow",
+    "channelId": "UCwWhs_6x42TyRM4Wstoq8HA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwWhs_6x42TyRM4Wstoq8HA",
+    "htmlUrl": "https://www.youtube.com/@TheDailyShow"
+  },
+  {
+    "name": "The Diary Of A CEO",
+    "handle": "@TheDiaryOfACEO",
+    "channelId": "UCGq-a57w-aPwyi3pW7XLiHw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGq-a57w-aPwyi3pW7XLiHw",
+    "htmlUrl": "https://www.youtube.com/@TheDiaryOfACEO"
+  },
+  {
+    "name": "The Dor Brothers",
+    "handle": "@thedorbrothers",
+    "channelId": "UCNMK68M-Al4hRUcew07TnUA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNMK68M-Al4hRUcew07TnUA",
+    "htmlUrl": "https://www.youtube.com/@thedorbrothers"
+  },
+  {
+    "name": "The Economist",
+    "handle": "@TheEconomist",
+    "channelId": "UC0p5jTq6Xx_DosDFxVXnWaQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF0p5jTq6Xx_DosDFxVXnWaQ",
+    "htmlUrl": "https://www.youtube.com/@TheEconomist"
+  },
+  {
+    "name": "The Hacks Of Life",
+    "handle": "@TheHacksOfLife",
+    "channelId": "UCv751BnNvZshrvTU64khOww",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFv751BnNvZshrvTU64khOww",
+    "htmlUrl": "https://www.youtube.com/@TheHacksOfLife"
+  },
+  {
+    "name": "The Ready State",
+    "handle": "@TheReadyState",
+    "channelId": "UCnnB4zDBqZHhQ4uLTAX8eYA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFnnB4zDBqZHhQ4uLTAX8eYA",
+    "htmlUrl": "https://www.youtube.com/@TheReadyState"
+  },
+  {
+    "name": "The Slow Mo Guys",
+    "handle": "@theslowmoguys",
+    "channelId": "UCUK0HBIBWgM2c4vsPhkYY4w",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUK0HBIBWgM2c4vsPhkYY4w",
+    "htmlUrl": "https://www.youtube.com/@theslowmoguys"
+  },
+  {
+    "name": "The Stoa",
+    "handle": "@thestoa",
+    "channelId": "UCfI5jzpoUbwP4wkmQ6ZNqbA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFfI5jzpoUbwP4wkmQ6ZNqbA",
+    "htmlUrl": "https://www.youtube.com/@thestoa"
+  },
+  {
+    "name": "Thomas Currier",
+    "handle": "@tomcurrier4410",
+    "channelId": "UCwCULTWvNkdmOY3fnyzA9rg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFwCULTWvNkdmOY3fnyzA9rg",
+    "htmlUrl": "https://www.youtube.com/@tomcurrier4410"
+  },
+  {
+    "name": "Tom Brown",
+    "handle": "@tombrown5109",
+    "channelId": "UC6Z9KzsYcVI3r2e28rU6eOQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6Z9KzsYcVI3r2e28rU6eOQ",
+    "htmlUrl": "https://www.youtube.com/@tombrown5109"
+  },
+  {
+    "name": "Tom Cardy",
+    "handle": "@tomcardy1",
+    "channelId": "UCW7AGm8JSBEEew61dJIgl_A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW7AGm8JSBEEew61dJIgl_A",
+    "htmlUrl": "https://www.youtube.com/@tomcardy1"
+  },
+  {
+    "name": "Tom Merrick",
+    "handle": "@BodyweightWarrior",
+    "channelId": "UCU0DZhN-8KFLYO6beSaYljg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFU0DZhN-8KFLYO6beSaYljg",
+    "htmlUrl": "https://www.youtube.com/@BodyweightWarrior"
+  },
+  {
+    "name": "Track Star*",
+    "handle": "@track-star-show",
+    "channelId": "UCGwyQM5eQOTxoeHOZaMwzSg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFGwyQM5eQOTxoeHOZaMwzSg",
+    "htmlUrl": "https://www.youtube.com/@track-star-show"
+  },
+  {
+    "name": "Trip Vest",
+    "handle": "@tripish",
+    "channelId": "UCxywcWIP9aSoNaUYpyYX1YQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxywcWIP9aSoNaUYpyYX1YQ",
+    "htmlUrl": "https://www.youtube.com/@tripish"
+  },
+  {
+    "name": "Two Minute Papers",
+    "handle": "@TwoMinutePapers",
+    "channelId": "UCbfYPyITQ-7l4upoX8nvctg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbfYPyITQ-7l4upoX8nvctg",
+    "htmlUrl": "https://www.youtube.com/@TwoMinutePapers"
+  },
+  {
+    "name": "uThermal",
+    "handle": "@uThermal",
+    "channelId": "UC--TKxqP8xJNymgrLe-thhA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF--TKxqP8xJNymgrLe-thhA",
+    "htmlUrl": "https://www.youtube.com/@uThermal"
+  },
+  {
+    "name": "Valve",
+    "handle": "@Valve",
+    "channelId": "UCg0FSqPeiGD_lIiPaaAehQg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFg0FSqPeiGD_lIiPaaAehQg",
+    "htmlUrl": "https://www.youtube.com/@Valve"
+  },
+  {
+    "name": "visa",
+    "handle": "@visakanv",
+    "channelId": "UC5S2d3Ue7wHn3PghiclcCqA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5S2d3Ue7wHn3PghiclcCqA",
+    "htmlUrl": "https://www.youtube.com/@visakanv"
+  },
+  {
+    "name": "vonnart",
+    "handle": "@vonnart",
+    "channelId": "UCed6my5Hq9PBnBXkMLYwwVw",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFed6my5Hq9PBnBXkMLYwwVw",
+    "htmlUrl": "https://www.youtube.com/@vonnart"
+  },
+  {
+    "name": "Watercolor Kanta Harusaki & Yoko Harusaki",
+    "handle": "@watercolor-",
+    "channelId": "UCMYkm2w7pmc4wwJ1Ruq7n1A",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFMYkm2w7pmc4wwJ1Ruq7n1A",
+    "htmlUrl": "https://www.youtube.com/@watercolor-"
+  },
+  {
+    "name": "Web of Stories - Life Stories of Remarkable People",
+    "handle": "@webofstories",
+    "channelId": "UCrN1lcGgsCB9axGjZjpOqiQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFrN1lcGgsCB9axGjZjpOqiQ",
+    "htmlUrl": "https://www.youtube.com/@webofstories"
+  },
+  {
+    "name": "Weights & Biases",
+    "handle": "@WeightsBiases",
+    "channelId": "UCBp3w4DCEC64FZr4k9ROxig",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBp3w4DCEC64FZr4k9ROxig",
+    "htmlUrl": "https://www.youtube.com/@WeightsBiases"
+  },
+  {
+    "name": "WelcomeAIOverlords",
+    "handle": "@welcomeaioverlords",
+    "channelId": "UCxw9_WYmLqlj5PyXu2AWU_g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxw9_WYmLqlj5PyXu2AWU_g",
+    "htmlUrl": "https://www.youtube.com/@welcomeaioverlords"
+  },
+  {
+    "name": "Wendover Productions",
+    "handle": "@Wendoverproductions",
+    "channelId": "UC9RM-iSvTu1uPJb8X5yp3EQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF9RM-iSvTu1uPJb8X5yp3EQ",
+    "htmlUrl": "https://www.youtube.com/@Wendoverproductions"
+  },
+  {
+    "name": "What's AI by Louis-François Bouchard",
+    "handle": "@WhatsAI",
+    "channelId": "UCUzGQrN-lyyc0BWTYoJM_Sg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUzGQrN-lyyc0BWTYoJM_Sg",
+    "htmlUrl": "https://www.youtube.com/@WhatsAI"
+  },
+  {
+    "name": "Whitney Cummings",
+    "handle": "@whitneycummings",
+    "channelId": "UCZa3lYPi8caXYxl5DeIzJgg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZa3lYPi8caXYxl5DeIzJgg",
+    "htmlUrl": "https://www.youtube.com/@whitneycummings"
+  },
+  {
+    "name": "Whose Line Is It Anyway?",
+    "handle": "@WhoseLineIsItAnyway",
+    "channelId": "UCKg_ZFByYTINckLG76cjUEg",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFKg_ZFByYTINckLG76cjUEg",
+    "htmlUrl": "https://www.youtube.com/@WhoseLineIsItAnyway"
+  },
+  {
+    "name": "Wingfoil, Kitefoil & Kitesurf College",
+    "handle": "@kitesurfcollege",
+    "channelId": "UC2AvhQhxmgRpM32IYE5qkOA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2AvhQhxmgRpM32IYE5qkOA",
+    "htmlUrl": "https://www.youtube.com/@kitesurfcollege"
+  },
+  {
+    "name": "Wintergatan",
+    "handle": "@Wintergatan",
+    "channelId": "UCcXhhVwCT6_WqjkEniejRJQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFcXhhVwCT6_WqjkEniejRJQ",
+    "htmlUrl": "https://www.youtube.com/@Wintergatan"
+  },
+  {
+    "name": "WorkoutsbyDavid",
+    "handle": "@WorkoutsbyDavid",
+    "channelId": "UCHXq-U2JbG2ArFRuv8jY4gA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHXq-U2JbG2ArFRuv8jY4gA",
+    "htmlUrl": "https://www.youtube.com/@WorkoutsbyDavid"
+  },
+  {
+    "name": "Yannic Kilcher",
+    "handle": "@YannicKilcher",
+    "channelId": "UCZHmQk67mSJgfCCTn7xBfew",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZHmQk67mSJgfCCTn7xBfew",
+    "htmlUrl": "https://www.youtube.com/@YannicKilcher"
+  },
+  {
+    "name": "Yannic Out Of Distribution",
+    "handle": "@yannicoutofdistribution6787",
+    "channelId": "UCHmD-oSpV0sNfAUnpYpj8KA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHmD-oSpV0sNfAUnpYpj8KA",
+    "htmlUrl": "https://www.youtube.com/@yannicoutofdistribution6787"
+  },
+  {
+    "name": "ZackGrooves",
+    "handle": "@ZackGrooves",
+    "channelId": "UCW7LtGizqathWM2mUKYAx_g",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW7LtGizqathWM2mUKYAx_g",
+    "htmlUrl": "https://www.youtube.com/@ZackGrooves"
+  },
+  {
+    "name": "Zeihan on Geopolitics",
+    "handle": "@ZeihanonGeopolitics",
+    "channelId": "UCsy9I56PY3IngCf_VGjunMQ",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsy9I56PY3IngCf_VGjunMQ",
+    "htmlUrl": "https://www.youtube.com/@ZeihanonGeopolitics"
+  },
+  {
+    "name": "Ziwe",
+    "handle": "@ziwe",
+    "channelId": "UCY3L5on78KPyltbhEyiLDmA",
+    "rssUrl": "https://www.youtube.com/feeds/videos.xml?playlist_id=UULFY3L5on78KPyltbhEyiLDmA",
+    "htmlUrl": "https://www.youtube.com/@ziwe"
+  }
+]
