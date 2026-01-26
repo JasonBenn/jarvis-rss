@@ -13,6 +13,15 @@ app.get("/health", (c) => {
   return c.json({ status: "ok", timestamp: new Date().toISOString() });
 });
 
+// Archive redirect - handles Readwise's ?__readwiseLocation= query param
+app.get("/archive", (c) => {
+  const url = c.req.query("url");
+  if (!url) {
+    return c.json({ error: "Missing url parameter" }, 400);
+  }
+  return c.redirect(`https://archive.today/${url}`, 302);
+});
+
 // List all feeds from OPML
 app.get("/feeds", (c) => {
   try {
@@ -73,11 +82,12 @@ app.get("/feed/:slug", async (c) => {
       );
     }
 
-    if (!feed.xmlUrl) {
+    const sourceUrl = feed.sourceUrl || feed.xmlUrl;
+    if (!sourceUrl) {
       return c.json({ error: "Feed has no source URL" }, 400);
     }
 
-    const rss = await enrichFeedCached(feed.xmlUrl);
+    const rss = await enrichFeedCached(sourceUrl, feed.htmlUrl);
     return c.body(rss, 200, { "Content-Type": "application/rss+xml" });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
@@ -139,6 +149,162 @@ app.get("/icon.png", (c) => {
     <path d="M25 20 a55 55 0 0 1 55 55" stroke="white" stroke-width="10" fill="none" stroke-linecap="round"/>
   </svg>`;
   return c.body(svg, 200, { "Content-Type": "image/svg+xml" });
+});
+
+// RSS Feed Preview - renders feed as HTML for testing
+app.get("/preview", async (c) => {
+  const feedUrl = c.req.query("url");
+  const slug = c.req.query("slug");
+
+  // Get list of available feeds for the dropdown, grouped by category
+  const { feeds, categories } = parseOPML("feeds.opml");
+  const feedOptions = categories
+    .map((category) => {
+      const categoryFeeds = feeds.filter((f) => f.category === category);
+      if (categoryFeeds.length === 0) return "";
+      const options = categoryFeeds
+        .map((f) => {
+          const feedSlug = slugify(f.text);
+          return `<option value="${feedSlug}" ${feedSlug === slug ? "selected" : ""}>${f.text}</option>`;
+        })
+        .join("\n");
+      return `<optgroup label="${category}">${options}</optgroup>`;
+    })
+    .join("\n");
+
+  let feedContent = "";
+
+  if (slug || feedUrl) {
+    try {
+      let rssText = "";
+
+      if (slug) {
+        // Try enriched feed first, then synthetic
+        const feed = findFeedBySlug(feeds, slug);
+        if (feed) {
+          if (feed.type === "synthetic") {
+            rssText = generateSyntheticRSS(
+              feed.syntheticFile?.replace(".md", "") || slug
+            );
+          } else if (feed.xmlUrl) {
+            rssText = await enrichFeedCached(feed.xmlUrl);
+          }
+        } else {
+          // Try as synthetic feed directly
+          try {
+            rssText = generateSyntheticRSS(slug);
+          } catch {
+            feedContent = `<p class="error">Feed not found: ${slug}</p>`;
+          }
+        }
+      } else if (feedUrl) {
+        const response = await fetch(feedUrl);
+        rssText = await response.text();
+      }
+
+      if (rssText) {
+        // Parse RSS and render as HTML
+        const { XMLParser } = await import("fast-xml-parser");
+        const parser = new XMLParser({
+          ignoreAttributes: false,
+          attributeNamePrefix: "@_",
+        });
+        const parsed = parser.parse(rssText);
+
+        let items: any[] = [];
+        let feedTitle = "";
+
+        if (parsed.rss?.channel) {
+          feedTitle = parsed.rss.channel.title || "";
+          items = parsed.rss.channel.item || [];
+          if (!Array.isArray(items)) items = [items];
+        } else if (parsed.feed?.entry) {
+          feedTitle = parsed.feed.title || "";
+          items = parsed.feed.entry || [];
+          if (!Array.isArray(items)) items = [items];
+        }
+
+        feedContent = `
+          <h2>${feedTitle}</h2>
+          <p class="meta">${items.length} items</p>
+          ${items
+            .slice(0, 20)
+            .map((item) => {
+              const title = item.title || "Untitled";
+              let link = item.link || "";
+              if (typeof link === "object") {
+                link = link["@_href"] || link["#text"] || "";
+              }
+              let description = item.description || item.summary || "";
+              if (typeof description === "object") {
+                description = description["#text"] || description.__cdata || "";
+              }
+              const pubDate = item.pubDate || item.published || "";
+
+              return `
+                <article>
+                  <h3><a href="${link}" target="_blank">${title}</a></h3>
+                  <p class="meta">${pubDate}</p>
+                  <p class="link">Link: <a href="${link}" target="_blank">${link}</a></p>
+                  <div class="description">${description}</div>
+                </article>
+              `;
+            })
+            .join("")}
+        `;
+      }
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Unknown error";
+      feedContent = `<p class="error">Error: ${message}</p>`;
+    }
+  }
+
+  const html = `<!DOCTYPE html>
+<html>
+<head>
+  <title>RSS Feed Preview</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    .controls { background: #f5f5f5; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    .controls form { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    select, input, button { padding: 8px 12px; font-size: 14px; }
+    select { min-width: 200px; }
+    input[type="text"] { flex: 1; min-width: 200px; }
+    button { background: #FF6B35; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #e55a2b; }
+    article { border-bottom: 1px solid #eee; padding: 15px 0; }
+    article h3 { margin: 0 0 5px 0; }
+    article h3 a { color: #333; text-decoration: none; }
+    article h3 a:hover { color: #FF6B35; }
+    .meta { color: #666; font-size: 13px; margin: 5px 0; }
+    .link { font-size: 12px; color: #888; word-break: break-all; }
+    .link a { color: #0066cc; }
+    .description { margin-top: 10px; font-size: 14px; line-height: 1.5; }
+    .description p { margin: 5px 0; }
+    .error { color: #c00; background: #fee; padding: 10px; border-radius: 4px; }
+    h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <h1>RSS Feed Preview</h1>
+  <div class="controls">
+    <form method="get">
+      <select name="slug">
+        <option value="">-- Select a feed --</option>
+        ${feedOptions}
+      </select>
+      <span>or</span>
+      <input type="text" name="url" placeholder="Enter feed URL" value="${feedUrl || ""}">
+      <button type="submit">Load Feed</button>
+    </form>
+  </div>
+  <div id="feed-content">
+    ${feedContent || "<p>Select a feed or enter a URL to preview.</p>"}
+  </div>
+</body>
+</html>`;
+
+  return c.html(html);
 });
 
 // Root - show API info

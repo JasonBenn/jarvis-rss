@@ -36,8 +36,9 @@ async function outputOpml() {
 
 async function listFeeds() {
   try {
-    const { feeds } = parseOPML("feeds.opml");
-    console.log(feedsToTable(feeds));
+    const { feeds, categories } = parseOPML("feeds.opml");
+    console.log("Preview: https://rss.jasonbenn.com/preview");
+    console.log(feedsToTable(feeds, categories));
     console.log(`\nTotal: ${feeds.length} feeds`);
   } catch (error) {
     console.error("Failed to parse feeds.opml:", error);

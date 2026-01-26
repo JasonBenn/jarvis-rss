@@ -6,12 +6,11 @@ export interface FeedOutline {
   text: string;
   title?: string;
   xmlUrl?: string;
-  htmlUrl?: string;
+  sourceUrl?: string;  // Original feed URL (for enricher to fetch from)
+  htmlUrl?: string;    // Site homepage (for favicon fetching)
   author?: string;
   frequency?: string;
   vibe?: string;
-  paywalled?: string;
-  enrichedUrl?: string;
   syntheticFile?: string;
   category?: string;
 }
@@ -75,12 +74,11 @@ export function parseOPML(filePath: string): ParsedOPML {
           text: feed.text || "",
           title: feed.title,
           xmlUrl: feed.xmlUrl,
+          sourceUrl: feed.sourceUrl,
           htmlUrl: feed.htmlUrl,
           author: feed.author,
           frequency: feed.frequency,
           vibe: feed.vibe,
-          paywalled: feed.paywalled,
-          enrichedUrl: feed.enrichedUrl,
           syntheticFile: feed.syntheticFile,
           category: categoryName,
         });
@@ -92,12 +90,11 @@ export function parseOPML(filePath: string): ParsedOPML {
         text: category.text || "",
         title: category.title,
         xmlUrl: category.xmlUrl,
+        sourceUrl: category.sourceUrl,
         htmlUrl: category.htmlUrl,
         author: category.author,
         frequency: category.frequency,
         vibe: category.vibe,
-        paywalled: category.paywalled,
-        enrichedUrl: category.enrichedUrl,
         syntheticFile: category.syntheticFile,
         category: "Uncategorized",
       });
@@ -127,23 +124,30 @@ export function getFeedUrl(feed: FeedOutline): string {
   return feed.xmlUrl || "";
 }
 
-export function feedsToTable(feeds: FeedOutline[]): string {
+export function feedsToTable(feeds: FeedOutline[], categories: string[]): string {
+  // Calculate column widths across all feeds
+  const allRows = feeds.map((f) => [f.text, getFeedUrl(f)]);
   const header = ["Name", "URL"];
-  const rows = feeds.map((f) => [
-    f.text,
-    getFeedUrl(f),
-  ]);
-
-  // Calculate column widths
   const widths = header.map((h, i) =>
-    Math.max(h.length, ...rows.map((r) => r[i].length))
+    Math.max(h.length, ...allRows.map((r) => r[i].length))
   );
 
-  const separator = widths.map((w) => "-".repeat(w)).join(" | ");
   const formatRow = (row: string[]) =>
     row.map((cell, i) => cell.padEnd(widths[i])).join(" | ");
 
-  return [formatRow(header), separator, ...rows.map(formatRow)].join("\n");
+  const lines: string[] = [];
+
+  for (const category of categories) {
+    const categoryFeeds = feeds.filter((f) => f.category === category);
+    if (categoryFeeds.length === 0) continue;
+
+    lines.push(`\n## ${category}`);
+    for (const feed of categoryFeeds) {
+      lines.push(formatRow([feed.text, getFeedUrl(feed)]));
+    }
+  }
+
+  return lines.join("\n");
 }
 
 export function findFeedBySlug(

@@ -13,25 +13,41 @@
       <outline
         type="rss"
         text="Foreign Affairs"
-        xmlUrl="https://www.foreignaffairs.com/rss.xml"
+        xmlUrl="https://rss.jasonbenn.com/feed/foreign-affairs"
+        sourceUrl="https://www.foreignaffairs.com/rss.xml"
         htmlUrl="https://www.foreignaffairs.com"
-        author=""
         frequency="daily"
         vibe="Establishment foreign policy analysis, US-centric"
-        paywalled="true"
-        enrichedUrl="https://rss.jasonbenn.com/feed/foreign-affairs"
       />
 
       <outline
         type="rss"
-        text="The Economist"
-        xmlUrl="https://www.economist.com/the-world-this-week/rss.xml"
+        text="The Economist: Leaders"
+        xmlUrl="https://rss.jasonbenn.com/feed/the-economist-leaders"
+        sourceUrl="https://www.economist.com/leaders/rss.xml"
         htmlUrl="https://www.economist.com"
-        author=""
+        frequency="daily"
+        vibe="Main editorials - the prominent homepage articles"
+      />
+
+      <outline
+        type="rss"
+        text="The Economist: Briefing"
+        xmlUrl="https://rss.jasonbenn.com/feed/the-economist-briefing"
+        sourceUrl="https://www.economist.com/briefing/rss.xml"
+        htmlUrl="https://www.economist.com"
         frequency="weekly"
-        vibe="Global news and analysis, business, finance, science"
-        paywalled="true"
-        enrichedUrl="https://rss.jasonbenn.com/feed/the-economist"
+        vibe="In-depth briefings on major topics"
+      />
+
+      <outline
+        type="rss"
+        text="The Economist: The World This Week"
+        xmlUrl="https://rss.jasonbenn.com/feed/the-economist-the-world-this-week"
+        sourceUrl="https://www.economist.com/the-world-this-week/rss.xml"
+        htmlUrl="https://www.economist.com"
+        frequency="weekly"
+        vibe="Weekly news summaries"
       />
 
       <outline
@@ -51,32 +67,17 @@
 
       <outline
         type="rss"
-        text="Platformer"
-        xmlUrl="https://www.platformer.news/rss/"
-        htmlUrl="https://www.platformer.news"
-        author="Casey Newton"
+        text="Stratechery"
+        xmlUrl="https://stratechery.passport.online/feed/rss/CX8F8CBRaCtAvvBFhNN8f"
+        htmlUrl="https://stratechery.com"
+        author="Ben Thompson"
         frequency="3-4/week"
-        vibe="Tech platforms, content moderation, social media industry"
+        vibe="Tech industry strategy, platform dynamics, aggregation theory"
         paywalled="false"
       />
 
     </outline>
 
-    <outline text="Fix" title="Fix">
-
-      <outline
-        type="rss"
-        text="Stratechery"
-        xmlUrl="https://stratechery.com/feed/"
-        htmlUrl="https://stratechery.com"
-        author="Ben Thompson"
-        frequency="3-4/week"
-        vibe="Tech industry strategy, platform dynamics, aggregation theory"
-        paywalled="true"
-        notes="Archive.today unreliable - paywalled posts only have teasers, archives often missing or still paywalled. Free posts have full content in RSS. Consider subscribing or using original feed."
-      />
-
-    </outline>
 
     <outline text="Synthetic" title="Synthetic">
 

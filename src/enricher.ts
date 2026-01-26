@@ -1,5 +1,78 @@
 import { XMLParser, XMLBuilder } from "fast-xml-parser";
 
+// Cache for fetched favicons
+const faviconCache = new Map<string, string>();
+
+async function fetchFavicon(siteUrl: string): Promise<string | null> {
+  try {
+    const url = new URL(siteUrl);
+    const domain = url.hostname;
+
+    // Check cache first
+    if (faviconCache.has(domain)) {
+      return faviconCache.get(domain)!;
+    }
+
+    // Try to fetch the homepage and extract icon from HTML
+    const response = await fetch(siteUrl, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+        Accept: "text/html",
+      },
+      redirect: "follow",
+    });
+
+    if (response.ok) {
+      const html = await response.text();
+
+      // Look for various icon patterns in order of preference
+      const patterns = [
+        // Apple touch icon (usually high quality)
+        /<link[^>]*rel=["']apple-touch-icon["'][^>]*href=["']([^"']+)["']/i,
+        /<link[^>]*href=["']([^"']+)["'][^>]*rel=["']apple-touch-icon["']/i,
+        // Standard favicon with sizes
+        /<link[^>]*rel=["']icon["'][^>]*sizes=["'](?:32x32|64x64|96x96|128x128|192x192)["'][^>]*href=["']([^"']+)["']/i,
+        // Standard favicon
+        /<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href=["']([^"']+)["']/i,
+        /<link[^>]*href=["']([^"']+)["'][^>]*rel=["'](?:shortcut )?icon["']/i,
+      ];
+
+      for (const pattern of patterns) {
+        const match = html.match(pattern);
+        if (match && match[1]) {
+          let iconUrl = match[1];
+          // Make absolute URL if relative
+          if (iconUrl.startsWith("//")) {
+            iconUrl = `https:${iconUrl}`;
+          } else if (iconUrl.startsWith("/")) {
+            iconUrl = `${url.origin}${iconUrl}`;
+          } else if (!iconUrl.startsWith("http")) {
+            iconUrl = `${url.origin}/${iconUrl}`;
+          }
+          faviconCache.set(domain, iconUrl);
+          return iconUrl;
+        }
+      }
+    }
+
+    // Fallback to Google's favicon service
+    const googleFavicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+    faviconCache.set(domain, googleFavicon);
+    return googleFavicon;
+  } catch {
+    // Fallback to Google's favicon service on any error
+    try {
+      const domain = new URL(siteUrl).hostname;
+      const googleFavicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+      faviconCache.set(domain, googleFavicon);
+      return googleFavicon;
+    } catch {
+      return null;
+    }
+  }
+}
+
 const parserOptions = {
   ignoreAttributes: false,
   attributeNamePrefix: "@_",
@@ -24,8 +97,8 @@ interface RSSItem {
 }
 
 function getArchiveTodayUrl(url: string): string {
-  // archive.today accepts raw URLs directly (no encoding needed)
-  return `https://archive.today/${url}`;
+  // Route through our server to handle Readwise's ?__readwiseLocation= query param
+  return `https://rss.jasonbenn.com/archive?url=${encodeURIComponent(url)}`;
 }
 
 function enrichDescription(
@@ -47,7 +120,13 @@ function enrichDescription(
   return { __cdata: enriched };
 }
 
-export async function enrichFeed(feedUrl: string): Promise<string> {
+export async function enrichFeed(feedUrl: string, siteUrl?: string): Promise<string> {
+  // Fetch favicon from site if siteUrl provided
+  let faviconUrl: string | null = null;
+  if (siteUrl) {
+    faviconUrl = await fetchFavicon(siteUrl);
+  }
+
   // Fetch the original feed
   const response = await fetch(feedUrl, {
     headers: {
@@ -106,12 +185,12 @@ export async function enrichFeed(feedUrl: string): Promise<string> {
       channel.description = `[Enriched by jarvis-rss] ${channel.description}`;
     }
 
-    // Add feed image if not present
-    if (!channel.image) {
+    // Set feed image from favicon
+    if (faviconUrl) {
       channel.image = {
-        url: "https://rss.jasonbenn.com/icon.png",
-        title: channel.title || "jarvis-rss",
-        link: channel.link || "https://rss.jasonbenn.com",
+        url: faviconUrl,
+        title: channel.title || "Feed",
+        link: siteUrl || channel.link || "https://rss.jasonbenn.com",
       };
     }
   }
@@ -161,7 +240,7 @@ export async function enrichFeed(feedUrl: string): Promise<string> {
 const feedCache = new Map<string, { content: string; timestamp: number }>();
 const CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
 
-export async function enrichFeedCached(feedUrl: string): Promise<string> {
+export async function enrichFeedCached(feedUrl: string, siteUrl?: string): Promise<string> {
   const cached = feedCache.get(feedUrl);
   const now = Date.now();
 
@@ -169,7 +248,7 @@ export async function enrichFeedCached(feedUrl: string): Promise<string> {
     return cached.content;
   }
 
-  const content = await enrichFeed(feedUrl);
+  const content = await enrichFeed(feedUrl, siteUrl);
   feedCache.set(feedUrl, { content, timestamp: now });
 
   return content;
