@@ -7,7 +7,6 @@ import { parseSyntheticFile, listSyntheticFeeds } from "./synthetic";
 const command = process.argv[2];
 
 const EXPORTS_DIR = "exports";
-const DOWNLOADS_PATH = path.join(process.env.HOME || "~", "Downloads", "feeds.opml");
 
 function usage() {
   console.log(`
@@ -59,20 +58,17 @@ async function exportOpml() {
     // Generate OPML with only new feeds
     const opmlContent = generateOPML(newFeeds, "New RSS Feeds Export");
 
-    // Save to exports directory with dated filename
-    const today = new Date().toISOString().split("T")[0];
-    const exportPath = path.join(EXPORTS_DIR, `${today}.opml`);
+    // Save to exports directory with timestamped filename
+    const now = new Date();
+    const timestamp = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}-${String(now.getHours()).padStart(2, "0")}-${String(now.getMinutes()).padStart(2, "0")}`;
+    const exportPath = path.join(EXPORTS_DIR, `feeds-${timestamp}.opml`);
     fs.writeFileSync(exportPath, opmlContent);
-
-    // Copy to Downloads
-    fs.writeFileSync(DOWNLOADS_PATH, opmlContent);
 
     console.log(`Exported ${newFeeds.length} new feed(s):`);
     for (const feed of newFeeds) {
       console.log(`  - ${feed.text}`);
     }
     console.log(`\nSaved to: ${exportPath}`);
-    console.log(`Copied to: ${DOWNLOADS_PATH}`);
   } catch (error) {
     console.error("Failed to export OPML:", error);
     process.exit(1);
@@ -82,8 +78,23 @@ async function exportOpml() {
 async function listFeeds() {
   try {
     const { feeds, categories } = parseOPML("feeds.opml");
+
+    // Build map of feed URL -> export filename
+    const exportedIn = new Map<string, string>();
+    if (fs.existsSync(EXPORTS_DIR)) {
+      const exportFiles = fs.readdirSync(EXPORTS_DIR).filter(f => f.endsWith(".opml"));
+      for (const file of exportFiles) {
+        const urls = extractFeedUrls(path.join(EXPORTS_DIR, file));
+        for (const url of urls) {
+          if (!exportedIn.has(url)) {
+            exportedIn.set(url, file);
+          }
+        }
+      }
+    }
+
     console.log("Preview: https://rss.jasonbenn.com/preview");
-    console.log(feedsToTable(feeds, categories));
+    console.log(feedsToTable(feeds, categories, exportedIn));
     console.log(`\nTotal: ${feeds.length} feeds`);
   } catch (error) {
     console.error("Failed to parse feeds.opml:", error);

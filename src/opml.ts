@@ -124,10 +124,15 @@ export function getFeedUrl(feed: FeedOutline): string {
   return feed.xmlUrl || "";
 }
 
-export function feedsToTable(feeds: FeedOutline[], categories: string[]): string {
+export function feedsToTable(
+  feeds: FeedOutline[],
+  categories: string[],
+  exportedIn?: Map<string, string>
+): string {
   // Calculate column widths across all feeds
-  const allRows = feeds.map((f) => [f.text, getFeedUrl(f)]);
-  const header = ["Name", "URL"];
+  const getExport = (f: FeedOutline) => (exportedIn?.get(f.xmlUrl || "") || "-");
+  const allRows = feeds.map((f) => [f.text, getFeedUrl(f), getExport(f)]);
+  const header = ["Name", "URL", "Exported"];
   const widths = header.map((h, i) =>
     Math.max(h.length, ...allRows.map((r) => r[i].length))
   );
@@ -143,7 +148,7 @@ export function feedsToTable(feeds: FeedOutline[], categories: string[]): string
 
     lines.push(`\n## ${category}`);
     for (const feed of categoryFeeds) {
-      lines.push(formatRow([feed.text, getFeedUrl(feed)]));
+      lines.push(formatRow([feed.text, getFeedUrl(feed), getExport(feed)]));
     }
   }
 
