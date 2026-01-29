@@ -7,7 +7,8 @@
     "dev": "bun run --watch src/index.ts",
     "start": "bun run src/index.ts",
     "feeds": "bun run src/cli.ts list",
-    "opml": "bun run src/cli.ts opml"
+    "opml": "bun run src/cli.ts opml",
+    "categorize": "bun run scripts/analyze-feeds.ts && bun run scripts/classify-feeds.ts && bun run scripts/generate-opml.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -16,6 +17,7 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "csv-parse": "^6.1.0",
     "fast-xml-parser": "^5.3.3",
     "feed": "^5.2.0",
     "hono": "^4.11.5",
