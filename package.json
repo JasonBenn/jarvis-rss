@@ -8,7 +8,9 @@
     "start": "bun run src/index.ts",
     "feeds": "bun run src/cli.ts list",
     "opml": "bun run src/cli.ts opml",
-    "categorize": "bun run scripts/analyze-feeds.ts && bun run scripts/classify-feeds.ts && bun run scripts/generate-opml.ts"
+    "categorize": "bun run scripts/analyze-feeds.ts && bun run scripts/classify-feeds.ts && bun run scripts/generate-opml.ts",
+    "twitter": "bun run scripts/classify-twitter.ts",
+    "twitter:inspect": "bun run scripts/generate-inspection-page.ts && open data/inspection.html"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -17,6 +19,7 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
     "csv-parse": "^6.1.0",
     "fast-xml-parser": "^5.3.3",
     "feed": "^5.2.0",

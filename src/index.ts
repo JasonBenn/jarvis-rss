@@ -3,6 +3,14 @@ import { cors } from "hono/cors";
 import { parseOPML, slugify, findFeedBySlug, feedsToTable } from "./opml";
 import { generateSyntheticRSS, listSyntheticFeeds } from "./synthetic";
 import { enrichFeedCached } from "./enricher";
+import {
+  loadCache,
+  generateCategoryRss,
+  generateAllTweetsRss,
+  getCategoryStats,
+  slugToCategory,
+} from "./twitter";
+import { getCategorySlugs } from "./categories";
 
 const app = new Hono();
 
@@ -339,6 +347,62 @@ app.get("/preview", async (c) => {
   return c.html(html);
 });
 
+// Twitter feed categorization endpoints
+app.get("/twitter", (c) => {
+  const cache = loadCache();
+  if (!cache) {
+    return c.json({
+      error: "No cached tweets. Run the classification script first.",
+      hint: "bun run scripts/classify-twitter.ts",
+    }, 404);
+  }
+
+  const stats = getCategoryStats(cache.tweets);
+  return c.json({
+    updatedAt: cache.updatedAt,
+    totalTweets: cache.tweets.length,
+    categories: stats.map(({ category, slug, count }) => ({
+      name: category,
+      slug,
+      count,
+      url: `https://rss.jasonbenn.com/twitter/${slug}`,
+    })),
+    allUrl: "https://rss.jasonbenn.com/twitter/all",
+  });
+});
+
+app.get("/twitter/all", (c) => {
+  const cache = loadCache();
+  if (!cache) {
+    return c.json({ error: "No cached tweets" }, 404);
+  }
+
+  const rss = generateAllTweetsRss(cache.tweets);
+  return c.body(rss, 200, { "Content-Type": "application/rss+xml" });
+});
+
+app.get("/twitter/:slug", (c) => {
+  const slug = c.req.param("slug");
+  const category = slugToCategory(slug);
+
+  if (!category) {
+    const available = getCategorySlugs();
+    return c.json({
+      error: "Category not found",
+      requestedSlug: slug,
+      available,
+    }, 404);
+  }
+
+  const cache = loadCache();
+  if (!cache) {
+    return c.json({ error: "No cached tweets" }, 404);
+  }
+
+  const rss = generateCategoryRss(cache.tweets, category);
+  return c.body(rss, 200, { "Content-Type": "application/rss+xml" });
+});
+
 // Root - show API info
 app.get("/", (c) => {
   return c.json({
@@ -352,6 +416,9 @@ app.get("/", (c) => {
       "/feed/:slug": "Get enriched RSS feed (with archive links)",
       "/synthetic": "List synthetic feeds",
       "/synthetic/:slug": "Get synthetic RSS feed",
+      "/twitter": "List categorized Twitter feeds",
+      "/twitter/:category": "Get RSS feed for a Twitter category",
+      "/twitter/all": "Get all tweets with category tags",
     },
     source: "https://github.com/jasonbenn/jarvis-rss",
   });

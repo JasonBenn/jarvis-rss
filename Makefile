@@ -22,4 +22,12 @@ health:
 ssh:
 	ssh jason
 
-.PHONY: deploy restart install logs health ssh
+twitter:
+	ssh jason 'cd /opt/jarvis-rss && bun run twitter'
+
+cron-setup:
+	@echo "Add these lines to crontab (crontab -e on server):"
+	@echo "# Run Twitter classification 30 min after Readwise digest times (8:30 AM, 8:30 PM PST)"
+	@echo "30 8,20 * * * cd /opt/jarvis-rss && ANTHROPIC_API_KEY=\$$(cat ~/.anthropic_key) READWISE_TOKEN=\$$(cat ~/.readwise_token) bun run twitter >> /var/log/jarvis-rss-twitter.log 2>&1"
+
+.PHONY: deploy restart install logs health ssh twitter cron-setup

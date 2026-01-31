@@ -36,3 +36,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # OPML exports
 exports/
 scripts/.browser-data/
+
+# Twitter cache data
+data/*.json
+data/*.html
