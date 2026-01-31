@@ -326,7 +326,34 @@ export function mergeTweets(existing: Tweet[], newTweets: Tweet[]): Tweet[] {
 }
 
 /**
+ * Group tweets by date (YYYY-MM-DD).
+ */
+function groupTweetsByDate(tweets: Tweet[]): Map<string, Tweet[]> {
+  const byDate = new Map<string, Tweet[]>();
+  for (const tweet of tweets) {
+    const date = tweet.publishedAt.split("T")[0] ?? tweet.publishedAt;
+    const list = byDate.get(date) ?? [];
+    list.push(tweet);
+    byDate.set(date, list);
+  }
+  return byDate;
+}
+
+/**
+ * Format tweets as HTML for RSS item description.
+ */
+function formatTweetsAsHtml(tweets: Tweet[]): string {
+  return tweets
+    .map(
+      (t) =>
+        `<p><strong><a href="https://twitter.com/${t.handle}">@${t.handle}</a></strong>: ${t.content.replace(/</g, "&lt;").replace(/>/g, "&gt;")}<br><a href="${t.url}">View tweet</a></p>`
+    )
+    .join("\n<hr>\n");
+}
+
+/**
  * Generate RSS feed for a specific category.
+ * Each item is a daily digest of tweets.
  */
 export function generateCategoryRss(
   tweets: Tweet[],
@@ -334,6 +361,7 @@ export function generateCategoryRss(
 ): string {
   const categoryTweets = tweets.filter((t) => t.category === category);
   const slug = categoryToSlug(category);
+  const byDate = groupTweetsByDate(categoryTweets);
 
   const feed = new Feed({
     title: `Twitter: ${category}`,
@@ -345,14 +373,17 @@ export function generateCategoryRss(
     copyright: "",
   });
 
-  for (const tweet of categoryTweets.slice(0, 50)) {
+  // Sort dates descending
+  const sortedDates = [...byDate.keys()].sort((a, b) => b.localeCompare(a));
+
+  for (const date of sortedDates.slice(0, 30)) {
+    const dateTweets = byDate.get(date) ?? [];
     feed.addItem({
-      title: `@${tweet.handle}: ${tweet.content.slice(0, 100)}${tweet.content.length > 100 ? "..." : ""}`,
-      id: tweet.id,
-      link: tweet.url,
-      description: tweet.content,
-      author: [{ name: tweet.author, link: `https://twitter.com/${tweet.handle}` }],
-      date: new Date(tweet.publishedAt),
+      title: `${category}: ${date} (${dateTweets.length} tweets)`,
+      id: `${slug}-${date}`,
+      link: `https://rss.jasonbenn.com/twitter/${slug}`,
+      description: formatTweetsAsHtml(dateTweets),
+      date: new Date(date),
     });
   }
 
@@ -360,9 +391,11 @@ export function generateCategoryRss(
 }
 
 /**
- * Generate RSS feed with all tweets, tagged with categories.
+ * Generate RSS feed with all tweets, grouped by date with category sections.
  */
 export function generateAllTweetsRss(tweets: Tweet[]): string {
+  const byDate = groupTweetsByDate(tweets);
+
   const feed = new Feed({
     title: "Twitter: All Categories",
     description: "All categorized tweets from Twitter Following list",
@@ -373,14 +406,35 @@ export function generateAllTweetsRss(tweets: Tweet[]): string {
     copyright: "",
   });
 
-  for (const tweet of tweets.slice(0, 100)) {
+  // Sort dates descending
+  const sortedDates = [...byDate.keys()].sort((a, b) => b.localeCompare(a));
+
+  for (const date of sortedDates.slice(0, 30)) {
+    const dateTweets = byDate.get(date) ?? [];
+
+    // Group by category within the day
+    const byCategory = new Map<string, Tweet[]>();
+    for (const tweet of dateTweets) {
+      const cat = tweet.category ?? "Other";
+      const list = byCategory.get(cat) ?? [];
+      list.push(tweet);
+      byCategory.set(cat, list);
+    }
+
+    // Format with category sections
+    let html = "";
+    for (const [cat, catTweets] of byCategory) {
+      html += `<h3>${cat} (${catTweets.length})</h3>\n`;
+      html += formatTweetsAsHtml(catTweets);
+      html += "\n";
+    }
+
     feed.addItem({
-      title: `[${tweet.category}] @${tweet.handle}: ${tweet.content.slice(0, 80)}${tweet.content.length > 80 ? "..." : ""}`,
-      id: tweet.id,
-      link: tweet.url,
-      description: `<p><strong>Category:</strong> ${tweet.category}</p><p>${tweet.content}</p>`,
-      author: [{ name: tweet.author, link: `https://twitter.com/${tweet.handle}` }],
-      date: new Date(tweet.publishedAt),
+      title: `Twitter Digest: ${date} (${dateTweets.length} tweets)`,
+      id: `all-${date}`,
+      link: "https://rss.jasonbenn.com/twitter/all",
+      description: html,
+      date: new Date(date),
     });
   }
 
