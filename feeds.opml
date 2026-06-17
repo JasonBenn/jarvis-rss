@@ -53,7 +53,6 @@
       <outline
         type="rss"
         text="War on the Rocks"
-        xmlUrl="https://warontherocks.com/feed/"
         htmlUrl="https://warontherocks.com"
         author=""
         frequency="daily"
@@ -61,6 +60,11 @@
         paywalled="false"
       />
 
+      <outline type="rss" text="War on the Rocks" xmlUrl="https://warontherocks.com/feed/" htmlUrl="https://warontherocks.com" />
+      <outline type="rss" text="The Bulwark" xmlUrl="https://www.thebulwark.com/feed" htmlUrl="https://www.thebulwark.com" />
+      <outline type="rss" text="Matt Levine - Bloomberg Opinion Columnist" xmlUrl="https://www.bloomberg.com/opinion/authors/ARbTQlRLRjE/matthew-s-levine.rss" />
+      <outline type="rss" text="Net Interest" xmlUrl="https://www.netinterest.co/feed" />
+      <outline type="rss" text="News Minimalist daily" xmlUrl="https://rss.beehiiv.com/feeds/4aF2pGVAEN.xml?_gl=1*1bzwt0d*_ga*MTUxNzA5NzUuMTY4NjExNzUyNA..*_ga_8PH2Y9VTK9*MTY4NjExNzUyMy4xLjEuMTY4NjExNzU0MC4wLjAuMA.." />
     </outline>
 
     <outline text="Tech Strategy" title="Tech Strategy">
@@ -76,6 +80,12 @@
         paywalled="false"
       />
 
+      <outline type="rss" text="Big Technology" xmlUrl="https://www.bigtechnology.com/feed" htmlUrl="https://www.bigtechnology.com" />
+      <outline type="rss" text="Untangled with Charley Johnson" xmlUrl="https://untangled.substack.com/feed" htmlUrl="https://untangled.substack.com" />
+      <outline type="rss" text="Shreyas's Substack" xmlUrl="https://shreyasaiyer.substack.com/feed" htmlUrl="https://shreyasaiyer.substack.com" />
+      <outline type="rss" text="Hacker News: Newest" xmlUrl="https://hnrss.org/newest?link=comments&amp;points=300" />
+      <outline type="rss" text="How They Make Money" xmlUrl="https://appeconomyinsights.substack.com/feed" />
+      <outline type="rss" text="The Diff" xmlUrl="https://www.thediff.co/rss/" />
     </outline>
 
 
@@ -103,6 +113,29 @@
 
     </outline>
 
+    <outline text="Real Estate" title="Real Estate">
+
+      <!-- Real estate finance & markets -->
+      <outline type="rss" text="Thesis Driven" xmlUrl="https://thesisdriven.substack.com/feed" htmlUrl="https://thesisdriven.substack.com" author="Brad Hargreaves" frequency="2-3/week" vibe="Institutional deep-dives on real estate development theses, proptech, and niche strategies" />
+      <outline type="rss" text="Calculated Risk" xmlUrl="https://www.calculatedriskblog.com/feeds/posts/default" htmlUrl="https://www.calculatedriskblog.com" author="Bill McBride" frequency="daily" vibe="Rigorous housing market and macro data analysis" />
+      <outline type="rss" text="The Basis Point" xmlUrl="https://www.thebasispoint.com/feed" htmlUrl="https://www.thebasispoint.com" frequency="2-3/week" vibe="Mortgage, housing finance, and fintech" />
+      <outline type="rss" text="Bisnow" xmlUrl="https://www.bisnow.com/rss" htmlUrl="https://www.bisnow.com" frequency="daily" vibe="Commercial real estate news and deals" />
+
+      <!-- Real estate development & the built world -->
+      <outline type="rss" text="Construction Physics" xmlUrl="https://www.construction-physics.com/feed" htmlUrl="https://www.construction-physics.com" author="Brian Potter" frequency="weekly" vibe="How buildings and infrastructure actually get built — engineering meets economics" />
+      <outline type="rss" text="Propmodo" xmlUrl="https://www.propmodo.com/feed" htmlUrl="https://www.propmodo.com" frequency="daily" vibe="Proptech and the future of the built environment" />
+      <outline type="rss" text="Market Urbanism" xmlUrl="https://marketurbanism.com/feed" htmlUrl="https://marketurbanism.com" frequency="weekly" vibe="Market-oriented housing development and zoning" />
+      <outline type="rss" text="Strong Towns" xmlUrl="https://www.strongtowns.org/journal?format=rss" htmlUrl="https://www.strongtowns.org" frequency="daily" vibe="The financial productivity and resilience of places" />
+      <outline type="rss" text="Courtyard Urbanist" xmlUrl="https://courtyardurbanist.com/feed" htmlUrl="https://courtyardurbanist.com" author="Alicia Pederson" frequency="varies" vibe="Courtyard-block housing design for North American cities" />
+      <outline type="rss" text="The Urban Condition" xmlUrl="https://benjaminschneider.substack.com/feed" htmlUrl="https://benjaminschneider.substack.com" author="Benjamin Schneider" frequency="varies" vibe="Housing, urbanism, and the built environment" />
+
+      <!-- Community building -->
+      <outline type="rss" text="Supernuclear" xmlUrl="https://supernuclear.substack.com/feed" htmlUrl="https://supernuclear.substack.com" author="Phil Levin et al." frequency="varies" vibe="A guide to co-living and intentional communities" />
+      <outline type="rss" text="Seeking Tribe" xmlUrl="https://www.seekingtribe.com/feed" htmlUrl="https://www.seekingtribe.com" frequency="varies" vibe="Building belonging and intentional community" />
+
+      <outline type="rss" text="devonzuegel.com" xmlUrl="https://devonzuegel.com/feed.xml" />
+    </outline>
+
     <!-- Substack feeds imported 2026-01-25 -->
     <outline type="rss" text="becoming | more myself" xmlUrl="https://www.moremyself.xyz/feed" htmlUrl="https://www.moremyself.xyz" frequency="varies" />
     <outline type="rss" text="The Commons" xmlUrl="https://jointhecommons.substack.com/feed" htmlUrl="https://jointhecommons.substack.com" frequency="varies" />
@@ -128,8 +161,6 @@
     <outline type="rss" text="Anarchonomicon" xmlUrl="https://www.anarchonomicon.com/feed" htmlUrl="https://www.anarchonomicon.com" frequency="varies" />
     <outline type="rss" text="Andrew Yang Newsletter" xmlUrl="https://blog.andrewyang.com/feed" htmlUrl="https://blog.andrewyang.com" frequency="varies" />
     <outline type="rss" text="Andy Masley" xmlUrl="https://andymasley.substack.com/feed" htmlUrl="https://andymasley.substack.com" frequency="varies" />
-    <outline type="rss" text="Anne selke" xmlUrl="https://anneselke.substack.com/feed" htmlUrl="https://anneselke.substack.com" frequency="varies" />
-    <outline type="rss" text="Approach with Alacrity" xmlUrl="https://approachwithalacrity.substack.com/feed" htmlUrl="https://approachwithalacrity.substack.com" frequency="varies" />
     <outline type="rss" text="The Argument" xmlUrl="https://www.theargumentmag.com/feed" htmlUrl="https://www.theargumentmag.com" frequency="varies" />
     <outline type="rss" text="Artificial Intelligence Made Simple" xmlUrl="https://www.artificialintelligencemadesimple.com/feed" htmlUrl="https://www.artificialintelligencemadesimple.com" frequency="varies" />
     <outline type="rss" text="Asimov's Addendum" xmlUrl="https://asimovaddendum.substack.com/feed" htmlUrl="https://asimovaddendum.substack.com" frequency="varies" />
@@ -141,17 +172,12 @@
     <outline type="rss" text="Barnacles" xmlUrl="https://barnacles.substack.com/feed" htmlUrl="https://barnacles.substack.com" frequency="varies" />
     <outline type="rss" text="The Barrcast" xmlUrl="https://barrcast.substack.com/feed" htmlUrl="https://barrcast.substack.com" frequency="varies" />
     <outline type="rss" text="Behind the Craft" xmlUrl="https://creatoreconomy.so/feed" htmlUrl="https://creatoreconomy.so" frequency="varies" />
-    <outline type="rss" text="Best Dressed" xmlUrl="https://bestdressed.substack.com/feed" htmlUrl="https://bestdressed.substack.com" frequency="varies" />
     <outline type="rss" text="Best of Econtwitter" xmlUrl="https://www.bestofecontwitter.com/feed" htmlUrl="https://www.bestofecontwitter.com" frequency="varies" />
-    <outline type="rss" text="Big Technology" xmlUrl="https://www.bigtechnology.com/feed" htmlUrl="https://www.bigtechnology.com" frequency="varies" />
     <outline type="rss" text="Bonnie Yu" xmlUrl="https://bonnieyu.substack.com/feed" htmlUrl="https://bonnieyu.substack.com" frequency="varies" />
     <outline type="rss" text="bookbear express" xmlUrl="https://www.avabear.xyz/feed" htmlUrl="https://www.avabear.xyz" frequency="varies" />
     <outline type="rss" text="booritney" xmlUrl="https://www.booritney.com/feed" htmlUrl="https://www.booritney.com" frequency="varies" />
-    <outline type="rss" text="Boulton &amp; Watt" xmlUrl="https://boultonwatt.substack.com/feed" htmlUrl="https://boultonwatt.substack.com" frequency="varies" />
     <outline type="rss" text="Building Optimism" xmlUrl="https://buildingoptimism.substack.com/feed" htmlUrl="https://buildingoptimism.substack.com" frequency="varies" />
-    <outline type="rss" text="The Bulwark" xmlUrl="https://www.thebulwark.com/feed" htmlUrl="https://www.thebulwark.com" frequency="varies" />
     <outline type="rss" text="ByteByteGo Newsletter" xmlUrl="https://blog.bytebytego.com/feed" htmlUrl="https://blog.bytebytego.com" frequency="varies" />
-    <outline type="rss" text="Cartoons Hate Her" xmlUrl="https://www.cartoonshateher.com/feed" htmlUrl="https://www.cartoonshateher.com" frequency="varies" />
     <outline type="rss" text="Cassandra Unchained" xmlUrl="https://michaeljburry.substack.com/feed" htmlUrl="https://michaeljburry.substack.com" frequency="varies" />
     <outline type="rss" text="Chalmermagne" xmlUrl="https://www.chalmermagne.com/feed" htmlUrl="https://www.chalmermagne.com" frequency="varies" />
     <outline type="rss" text="charli's substack" xmlUrl="https://itscharlibb.substack.com/feed" htmlUrl="https://itscharlibb.substack.com" frequency="varies" />
@@ -165,7 +191,6 @@
     <outline type="rss" text="Cornerstone" xmlUrl="https://lucagattonicelli.substack.com/feed" htmlUrl="https://lucagattonicelli.substack.com" frequency="varies" />
     <outline type="rss" text="The Cosmopolitan Globalist" xmlUrl="https://claireberlinski.substack.com/feed" htmlUrl="https://claireberlinski.substack.com" frequency="varies" />
     <outline type="rss" text="Cosmos Institute" xmlUrl="https://blog.cosmos-institute.org/feed" htmlUrl="https://blog.cosmos-institute.org" frequency="varies" />
-    <outline type="rss" text="Courtyard Urbanist" xmlUrl="https://courtyardurbanist.com/feed" htmlUrl="https://courtyardurbanist.com" frequency="varies" />
     <outline type="rss" text="The Creative Act" xmlUrl="https://rickrubin.substack.com/feed" htmlUrl="https://rickrubin.substack.com" frequency="varies" />
     <outline type="rss" text="The Cultural Romantic" xmlUrl="https://theculturalromantic.substack.com/feed" htmlUrl="https://theculturalromantic.substack.com" frequency="varies" />
     <outline type="rss" text="Culture Study" xmlUrl="https://annehelen.substack.com/feed" htmlUrl="https://annehelen.substack.com" frequency="varies" />
@@ -218,7 +243,6 @@
     <outline type="rss" text="IFP" xmlUrl="https://instituteforprogress.substack.com/feed" htmlUrl="https://instituteforprogress.substack.com" frequency="varies" />
     <outline type="rss" text="Immediacy" xmlUrl="https://andrewblevins.substack.com/feed" htmlUrl="https://andrewblevins.substack.com" frequency="varies" />
     <outline type="rss" text="The InnerNet Of Elegance" xmlUrl="https://theelegantway.substack.com/feed" htmlUrl="https://theelegantway.substack.com" frequency="varies" />
-    <outline type="rss" text="Interconnects AI" xmlUrl="https://www.interconnects.ai/feed" htmlUrl="https://www.interconnects.ai" frequency="varies" />
     <outline type="rss" text="Jessica Ocean" xmlUrl="https://jessicaocean.substack.com/feed" htmlUrl="https://jessicaocean.substack.com" frequency="varies" />
     <outline type="rss" text="Joe Carlsmith's Substack" xmlUrl="https://joecarlsmith.substack.com/feed" htmlUrl="https://joecarlsmith.substack.com" frequency="varies" />
     <outline type="rss" text="Joyce's Dating Playbook" xmlUrl="https://thejoycezhang.substack.com/feed" htmlUrl="https://thejoycezhang.substack.com" frequency="varies" />
@@ -232,8 +256,6 @@
     <outline type="rss" text="Locally Optimal" xmlUrl="https://chrislakin.blog/feed" htmlUrl="https://chrislakin.blog" frequency="varies" />
     <outline type="rss" text="Love and Growth with Alyssa" xmlUrl="https://alyssaatkins.substack.com/feed" htmlUrl="https://alyssaatkins.substack.com" frequency="varies" />
     <outline type="rss" text="Luke Drago" xmlUrl="https://lukedrago.substack.com/feed" htmlUrl="https://lukedrago.substack.com" frequency="varies" />
-    <outline type="rss" text="Lynette Bye" xmlUrl="https://lynettebye.substack.com/feed" htmlUrl="https://lynettebye.substack.com" frequency="varies" />
-    <outline type="rss" text="Mackenzie's Substack" xmlUrl="https://mackenziesharp.substack.com/feed" htmlUrl="https://mackenziesharp.substack.com" frequency="varies" />
     <outline type="rss" text="Madeleine Song" xmlUrl="https://yourpublicuniversalfriend.substack.com/feed" htmlUrl="https://yourpublicuniversalfriend.substack.com" frequency="varies" />
     <outline type="rss" text="mandates" xmlUrl="https://ethanding.substack.com/feed" htmlUrl="https://ethanding.substack.com" frequency="varies" />
     <outline type="rss" text="The Map is Mostly Water" xmlUrl="https://map.simonsarris.com/feed" htmlUrl="https://map.simonsarris.com" frequency="varies" />
@@ -248,9 +270,7 @@
     <outline type="rss" text="Misha's Substack" xmlUrl="https://mishaglouberman.substack.com/feed" htmlUrl="https://mishaglouberman.substack.com" frequency="varies" />
     <outline type="rss" text="ML Safety Newsletter" xmlUrl="https://newsletter.mlsafety.org/feed" htmlUrl="https://newsletter.mlsafety.org" frequency="varies" />
     <outline type="rss" text="Monomythical" xmlUrl="https://nayafia.substack.com/feed" htmlUrl="https://nayafia.substack.com" frequency="varies" />
-    <outline type="rss" text="Moral Infrastructure" xmlUrl="https://moralinfra.substack.com/feed" htmlUrl="https://moralinfra.substack.com" frequency="varies" />
     <outline type="rss" text="More Reasonable" xmlUrl="https://substack.morereasonable.com/feed" htmlUrl="https://substack.morereasonable.com" frequency="varies" />
-    <outline type="rss" text="morphic reverie" xmlUrl="https://morphicreverie.substack.com/feed" htmlUrl="https://morphicreverie.substack.com" frequency="varies" />
     <outline type="rss" text="Musings on the Alignment Problem" xmlUrl="https://aligned.substack.com/feed" htmlUrl="https://aligned.substack.com" frequency="varies" />
     <outline type="rss" text="Nan's Substack" xmlUrl="https://nanransohoff.substack.com/feed" htmlUrl="https://nanransohoff.substack.com" frequency="varies" />
     <outline type="rss" text="Narrative Ark" xmlUrl="https://www.narrativeark.xyz/feed" htmlUrl="https://www.narrativeark.xyz" frequency="varies" />
@@ -290,29 +310,22 @@
     <outline type="rss" text="Rosie Campbell" xmlUrl="https://www.rosiecampbell.xyz/feed" htmlUrl="https://www.rosiecampbell.xyz" frequency="varies" />
     <outline type="rss" text="Rough Diamonds" xmlUrl="https://sarahconstantin.substack.com/feed" htmlUrl="https://sarahconstantin.substack.com" frequency="varies" />
     <outline type="rss" text="Ryan's Substack" xmlUrl="https://loweryant.substack.com/feed" htmlUrl="https://loweryant.substack.com" frequency="varies" />
-    <outline type="rss" text="Sandra parker" xmlUrl="https://angelic50.substack.com/feed" htmlUrl="https://angelic50.substack.com" frequency="varies" />
     <outline type="rss" text="Sasha's Newsletter" xmlUrl="https://sashachapin.substack.com/feed" htmlUrl="https://sashachapin.substack.com" frequency="varies" />
     <outline type="rss" text="The Science Fictions Podcast" xmlUrl="https://sciencefictionspod.substack.com/feed" htmlUrl="https://sciencefictionspod.substack.com" frequency="varies" />
     <outline type="rss" text="Sean McClure" xmlUrl="https://seanmcclure.substack.com/feed" htmlUrl="https://seanmcclure.substack.com" frequency="varies" />
     <outline type="rss" text="Search Terms" xmlUrl="https://marykateandsmashley.substack.com/feed" htmlUrl="https://marykateandsmashley.substack.com" frequency="varies" />
     <outline type="rss" text="Second Person" xmlUrl="https://www.secondperson.dating/feed" htmlUrl="https://www.secondperson.dating" frequency="varies" />
     <outline type="rss" text="Second Thoughts" xmlUrl="https://secondthoughts.ai/feed" htmlUrl="https://secondthoughts.ai" frequency="varies" />
-    <outline type="rss" text="Seeking Tribe" xmlUrl="https://www.seekingtribe.com/feed" htmlUrl="https://www.seekingtribe.com" frequency="varies" />
     <outline type="rss" text="SemiAnalysis" xmlUrl="https://newsletter.semianalysis.com/feed" htmlUrl="https://newsletter.semianalysis.com" frequency="varies" />
     <outline type="rss" text="Sentinel Global Risks Watch" xmlUrl="https://blog.sentinel-team.org/feed" htmlUrl="https://blog.sentinel-team.org" frequency="varies" />
-    <outline type="rss" text="SF Contemplarium Newsletter" xmlUrl="https://sfcontemplarium.substack.com/feed" htmlUrl="https://sfcontemplarium.substack.com" frequency="varies" />
     <outline type="rss" text="The Shadowed Archive" xmlUrl="https://theshadowedarchive.substack.com/feed" htmlUrl="https://theshadowedarchive.substack.com" frequency="varies" />
-    <outline type="rss" text="Shreyas's Substack" xmlUrl="https://shreyasaiyer.substack.com/feed" htmlUrl="https://shreyasaiyer.substack.com" frequency="varies" />
     <outline type="rss" text="skin contact" xmlUrl="https://skincontact.substack.com/feed" htmlUrl="https://skincontact.substack.com" frequency="varies" />
     <outline type="rss" text="Slow Boring" xmlUrl="https://www.slowboring.com/feed" htmlUrl="https://www.slowboring.com" frequency="varies" />
     <outline type="rss" text="SlutStack" xmlUrl="https://sluts.substack.com/feed" htmlUrl="https://sluts.substack.com" frequency="varies" />
     <outline type="rss" text="Soft Power" xmlUrl="https://softpower.press/feed" htmlUrl="https://softpower.press" frequency="varies" />
-    <outline type="rss" text="Sparks in the Wind" xmlUrl="https://fchollet.substack.com/feed" htmlUrl="https://fchollet.substack.com" frequency="varies" />
     <outline type="rss" text="Spectech Newsletter" xmlUrl="https://blog.spec.tech/feed" htmlUrl="https://blog.spec.tech" frequency="varies" />
     <outline type="rss" text="Speculative" xmlUrl="https://annadallara.substack.com/feed" htmlUrl="https://annadallara.substack.com" frequency="varies" />
     <outline type="rss" text="Strange Pilgrims" xmlUrl="https://www.strangepilgrims.com/feed" htmlUrl="https://www.strangepilgrims.com" frequency="varies" />
-    <outline type="rss" text="Supernuclear" xmlUrl="https://supernuclear.substack.com/feed" htmlUrl="https://supernuclear.substack.com" frequency="varies" />
-    <outline type="rss" text="Thesis Driven" xmlUrl="https://thesisdriven.substack.com/feed" htmlUrl="https://thesisdriven.substack.com" frequency="varies" />
     <outline type="rss" text="Thinkgirl's Substack" xmlUrl="https://thinkgirlinstitute.substack.com/feed" htmlUrl="https://thinkgirlinstitute.substack.com" frequency="varies" />
     <outline type="rss" text="Thoughts + Things from Jackson Dahl" xmlUrl="https://jdahl.substack.com/feed" htmlUrl="https://jdahl.substack.com" frequency="varies" />
     <outline type="rss" text="Threading the Needle" xmlUrl="https://writing.antonleicht.me/feed" htmlUrl="https://writing.antonleicht.me" frequency="varies" />
@@ -321,8 +334,6 @@
     <outline type="rss" text="Transformer" xmlUrl="https://www.transformernews.ai/feed" htmlUrl="https://www.transformernews.ai" frequency="varies" />
     <outline type="rss" text="Uncharted Territories" xmlUrl="https://unchartedterritories.tomaspueyo.com/feed" htmlUrl="https://unchartedterritories.tomaspueyo.com" frequency="varies" />
     <outline type="rss" text="Understanding AI" xmlUrl="https://www.understandingai.org/feed" htmlUrl="https://www.understandingai.org" frequency="varies" />
-    <outline type="rss" text="Untangled with Charley Johnson" xmlUrl="https://untangled.substack.com/feed" htmlUrl="https://untangled.substack.com" frequency="varies" />
-    <outline type="rss" text="The Urban Condition" xmlUrl="https://benjaminschneider.substack.com/feed" htmlUrl="https://benjaminschneider.substack.com" frequency="varies" />
     <outline type="rss" text="Useful Fictions" xmlUrl="https://usefulfictions.substack.com/feed" htmlUrl="https://usefulfictions.substack.com" frequency="varies" />
     <outline type="rss" text="velvet noise" xmlUrl="https://velvetnoise.substack.com/feed" htmlUrl="https://velvetnoise.substack.com" frequency="varies" />
     <outline type="rss" text="William's Substack" xmlUrl="https://williamrsaunders.substack.com/feed" htmlUrl="https://williamrsaunders.substack.com" frequency="varies" />
@@ -366,7 +377,6 @@
       <outline
         type="rss"
         text="AI Explained"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFNJ1Ymd5yFuUPtn21xtRbbw"
         htmlUrl="https://www.youtube.com/@aiexplained-official"
       />
 
@@ -394,7 +404,6 @@
       <outline
         type="rss"
         text="All About AI"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFR9j1jqqB5Rse69wjUnbYwA"
         htmlUrl="https://www.youtube.com/@AllAboutAI"
       />
 
@@ -681,7 +690,6 @@
       <outline
         type="rss"
         text="Drumeo"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBiJBaDaM3K6vPVggLhTyWA"
         htmlUrl="https://www.youtube.com/@DrumeoOfficial"
       />
 
@@ -849,7 +857,6 @@
       <outline
         type="rss"
         text="Hello Interview - SWE Interview Preparation"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF3kf-QFT6FZzDk9JsPg8Svg"
         htmlUrl="https://www.youtube.com/@hello_interview"
       />
 
@@ -1017,7 +1024,6 @@
       <outline
         type="rss"
         text="Kurt Builds"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFbrDYPCDkZ9eiOWCYSDzgCQ"
         htmlUrl="https://www.youtube.com/@KurtBuilds"
       />
 
@@ -1038,7 +1044,6 @@
       <outline
         type="rss"
         text="Kylan Gibbs"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXqJh2-X-FoYCdVeNQVITtg"
         htmlUrl="https://www.youtube.com/@kylangibbs4552"
       />
 
@@ -1073,7 +1078,6 @@
       <outline
         type="rss"
         text="Low Level"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF6biysICWOJ-C3P4Tyeggzg"
         htmlUrl="https://www.youtube.com/@LowLevelTV"
       />
 
@@ -1087,7 +1091,6 @@
       <outline
         type="rss"
         text="Machine Learning Street Talk"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFMLtBahI5DMrt0NPvDSoIRQ"
         htmlUrl="https://www.youtube.com/@MachineLearningStreetTalk"
       />
 
@@ -1143,7 +1146,6 @@
       <outline
         type="rss"
         text="Matthew Berman"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFawZsQWqfGSbCI5yjkdVkTA"
         htmlUrl="https://www.youtube.com/@matthew_berman"
       />
 
@@ -1157,7 +1159,6 @@
       <outline
         type="rss"
         text="Max Deutsch"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFJ6m2kvAUYAAOPOle69hOqw"
         htmlUrl="https://www.youtube.com/@discoveryfilmz"
       />
 
@@ -1192,7 +1193,6 @@
       <outline
         type="rss"
         text="Mikey on Drums"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFdrT2I0Jdskpo9NuMzVAnJw"
         htmlUrl="https://www.youtube.com/@mikey-on-drums"
       />
 
@@ -1227,7 +1227,6 @@
       <outline
         type="rss"
         text="MrToucan Explains Memes"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF1SZ-1Ydb7Ri6zEOF0CcwrA"
         htmlUrl="https://www.youtube.com/@MrToucan"
       />
 
@@ -1248,7 +1247,6 @@
       <outline
         type="rss"
         text="NateMuellerDrums"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFv4Zh_lYLdzoNaXXsQLKSpA"
         htmlUrl="https://www.youtube.com/@natemuellerdrums"
       />
 
@@ -1297,7 +1295,6 @@
       <outline
         type="rss"
         text="Noah Smith"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFAzXGOuFCFs2Sm6sYxwXbCQ"
         htmlUrl="https://www.youtube.com/@noahsmith9834"
       />
 
@@ -1563,7 +1560,6 @@
       <outline
         type="rss"
         text="Smartypants"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFpIUcvK7fZMbhFOU13AtVqQ"
         htmlUrl="https://www.youtube.com/@smartypantsdropout"
       />
 
@@ -1640,7 +1636,6 @@
       <outline
         type="rss"
         text="TEDx Talks"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFsT0YIqwnpJCM-mx7-gSA4Q"
         htmlUrl="https://www.youtube.com/@TEDx"
       />
 
@@ -1759,7 +1754,6 @@
       <outline
         type="rss"
         text="uThermal"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF--TKxqP8xJNymgrLe-thhA"
         htmlUrl="https://www.youtube.com/@uThermal"
       />
 
@@ -1801,14 +1795,12 @@
       <outline
         type="rss"
         text="Weights &amp; Biases"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFBp3w4DCEC64FZr4k9ROxig"
         htmlUrl="https://www.youtube.com/@WeightsBiases"
       />
 
       <outline
         type="rss"
         text="WelcomeAIOverlords"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFxw9_WYmLqlj5PyXu2AWU_g"
         htmlUrl="https://www.youtube.com/@welcomeaioverlords"
       />
 
@@ -1822,7 +1814,6 @@
       <outline
         type="rss"
         text="What's AI by Louis-François Bouchard"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFUzGQrN-lyyc0BWTYoJM_Sg"
         htmlUrl="https://www.youtube.com/@WhatsAI"
       />
 
@@ -1843,7 +1834,6 @@
       <outline
         type="rss"
         text="Wingfoil, Kitefoil &amp; Kitesurf College"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2AvhQhxmgRpM32IYE5qkOA"
         htmlUrl="https://www.youtube.com/@kitesurfcollege"
       />
 
@@ -1864,21 +1854,18 @@
       <outline
         type="rss"
         text="Yannic Kilcher"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFZHmQk67mSJgfCCTn7xBfew"
         htmlUrl="https://www.youtube.com/@YannicKilcher"
       />
 
       <outline
         type="rss"
         text="Yannic Out Of Distribution"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFHmD-oSpV0sNfAUnpYpj8KA"
         htmlUrl="https://www.youtube.com/@yannicoutofdistribution6787"
       />
 
       <outline
         type="rss"
         text="ZackGrooves"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFW7LtGizqathWM2mUKYAx_g"
         htmlUrl="https://www.youtube.com/@ZackGrooves"
       />
 
@@ -1897,5 +1884,110 @@
       />
     </outline>
 
+  
+    <!-- Pulled from Readwise (reconcile.py) -->
+    <outline text="AI/ML" title="AI/ML">
+      <outline type="rss" text="Interconnects AI" xmlUrl="https://www.interconnects.ai/feed" htmlUrl="https://www.interconnects.ai" />
+      <outline type="rss" text="Sparks in the Wind" xmlUrl="https://fchollet.substack.com/feed" htmlUrl="https://fchollet.substack.com" />
+      <outline type="rss" text="DeepMind" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCP7jMXSY2xbc3KCAE0MHQ-A" />
+      <outline type="rss" text="Forethought" xmlUrl="https://www.forethought.org/feed" />
+      <outline type="rss" text="Import AI" xmlUrl="https://jack-clark.net/feed/" />
+      <outline type="rss" text="the singularity is nearer" xmlUrl="https://geohot.github.io//blog/feed.xml" />
+      <outline type="rss" text="Twitter: AI/ML" xmlUrl="https://rss.jasonbenn.com/twitter/ai-ml" />
+    </outline>
+    <outline text="Comedy &amp; Entertainment" title="Comedy &amp; Entertainment">
+      <outline type="rss" text="CollegeHumor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPDXXXJj9nax0fr0Wfc048g" />
+      <outline type="rss" text="Obscurious" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_RovKmk0OCbuZjA8f08opw" />
+      <outline type="rss" text="On This Day...1776" xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=PLYOGLpQQfhNIzsiXxPLUMwhBEunGH9bem" />
+      <outline type="rss" text="Twitter: Funny" xmlUrl="https://rss.jasonbenn.com/twitter/funny" />
+    </outline>
+    <outline text="Engineering &amp; Systems" title="Engineering &amp; Systems">
+      <outline type="rss" text="Google SRE Prodcast" xmlUrl="https://feeds.libsyn.com/407036/rss" />
+      <outline type="rss" text="Servet Gulnaroglu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvPPXcl5dJiBgRKGTA8inPA" />
+    </outline>
+    <outline text="Other" title="Other">
+      <outline type="rss" text="Anne selke" xmlUrl="https://anneselke.substack.com/feed" htmlUrl="https://anneselke.substack.com" />
+      <outline type="rss" text="Mackenzie's Substack" xmlUrl="https://mackenziesharp.substack.com/feed" htmlUrl="https://mackenziesharp.substack.com" />
+      <outline type="rss" text="morphic reverie" xmlUrl="https://morphicreverie.substack.com/feed" htmlUrl="https://morphicreverie.substack.com" />
+      <outline type="rss" text="Sandra parker" xmlUrl="https://angelic50.substack.com/feed" htmlUrl="https://angelic50.substack.com" />
+      <outline type="rss" text="Aceso Under Glass" xmlUrl="https://acesounderglass.com/feed/" />
+      <outline type="rss" text="Better Cities" xmlUrl="https://bettercities.substack.com/feed" />
+      <outline type="rss" text="Blog - Lynette Bye Coaching" xmlUrl="http://feeds.feedburner.com/EACoaching" />
+      <outline type="rss" text="Cold Takes" xmlUrl="https://www.cold-takes.com/rss/" />
+      <outline type="rss" text="Dan Wang" xmlUrl="https://danwang.co/feed/" />
+      <outline type="rss" text="DeepMind Blog" xmlUrl="https://deepmind.com/blog/feed/basic/" />
+      <outline type="rss" text="Elizabeth Yin" xmlUrl="https://elizabethyin.com/feed/" />
+      <outline type="rss" text="Flight From Perfection" xmlUrl="https://flightfromperfection.com/feeds/all.atom.xml" />
+      <outline type="rss" text="Guzey's Best of Twitter" xmlUrl="https://bestoftwitter.substack.com/feed" />
+      <outline type="rss" text="Gwern.net Newsletter" xmlUrl="https://gwern.substack.com/feed" />
+      <outline type="rss" text="Higher Ground's Friday Notes" xmlUrl="https://higherground.substack.com/feed" />
+      <outline type="rss" text="Ideas &amp; Musings" xmlUrl="https://eriktorenberg.substack.com/feed" />
+      <outline type="rss" text="Infrastructure – Institute for Progress" xmlUrl="https://ifp.org/category/infrastructure/feed/" />
+      <outline type="rss" text="Irrational Labs" xmlUrl="https://irrationallabs.com/feed" />
+      <outline type="rss" text="jonstokes.com" xmlUrl="https://www.jonstokes.com/feed" />
+      <outline type="rss" text="Knowingless" xmlUrl="https://aella.substack.com/feed" />
+      <outline type="rss" text="Longitudinal Science" xmlUrl="https://longitudinal.blog/feed/" />
+      <outline type="rss" text="Luke Muehlhauser" xmlUrl="https://lukemuehlhauser.com/feed/" />
+      <outline type="rss" text="Meteuphoric" xmlUrl="https://meteuphoric.com/feed/" />
+      <outline type="rss" text="Minding our way" xmlUrl="https://mindingourway.com/rss/" />
+      <outline type="rss" text="Paul Graham: Essays" xmlUrl="http://www.aaronsw.com/2002/feeds/pgessays.rss" />
+      <outline type="rss" text="Posts on Dwarkesh Patel" xmlUrl="https://dwarkeshpatel.com/posts/index.xml" />
+      <outline type="rss" text="Punk Rock Bio" xmlUrl="https://dgoodwin.substack.com/feed" />
+      <outline type="rss" text="Rebuilding Society on Meaning" xmlUrl="https://rebuildingmeaning.substack.com/feed" />
+      <outline type="rss" text="Related" xmlUrl="https://rhaina.substack.com/feed" />
+      <outline type="rss" text="Ryan Moulton's Articles" xmlUrl="https://moultano.wordpress.com/feed/" />
+      <outline type="rss" text="Sam Altman" xmlUrl="https://blog.samaltman.com/posts.atom" />
+      <outline type="rss" text="Shtetl-Optimized" xmlUrl="https://scottaaronson.blog/?feed=rss2" />
+      <outline type="rss" text="SocketSite™" xmlUrl="https://socketsite.com/feed" />
+      <outline type="rss" text="Sorta Insightful" xmlUrl="https://www.alexirpan.com/feed.xml" />
+      <outline type="rss" text="The Economist explains" xmlUrl="https://www.economist.com/the-economist-explains/rss.xml" />
+      <outline type="rss" text="The Electric Typewriter" xmlUrl="http://tetw.tumblr.com/rss" />
+      <outline type="rss" text="The Last Psychiatrist" xmlUrl="https://feeds.feedburner.com/thelastpsychiatrist/fLMy" />
+      <outline type="rss" text="The Prompt Report" xmlUrl="https://rss.beehiiv.com/feeds/93SSXiBIFs.xml" />
+      <outline type="rss" text="The Roots of Progress" xmlUrl="https://rootsofprogress.org/feed.xml" />
+      <outline type="rss" text="thesephist" xmlUrl="https://thesephist.com/index.xml" />
+      <outline type="rss" text="Thinking Complete" xmlUrl="https://thinkingcomplete.blogspot.com/feeds/posts/default?alt=rss" />
+      <outline type="rss" text="Tynan.com" xmlUrl="https://tynan.com/feed/" />
+      <outline type="rss" text="What's New Under the Sun" xmlUrl="https://mattsclancy.substack.com/feed" />
+      <outline type="rss" text="🏴‍☠️ Pirate Wires" xmlUrl="https://www.piratewires.com/feed" />
+      <outline type="rss" text="Aria Babu" xmlUrl="https://www.ariababu.co.uk/feed" />
+      <outline type="rss" text="freesystems on Substack" xmlUrl="https://freesystems.substack.com/feed" />
+      <outline type="rss" text="jeffgiesea on Substack" xmlUrl="https://jeffgiesea.substack.com/feed" />
+    </outline>
+    <outline text="Personal Growth &amp; Relationships" title="Personal Growth &amp; Relationships">
+      <outline type="rss" text="SF Contemplarium Newsletter" xmlUrl="https://sfcontemplarium.substack.com/feed" htmlUrl="https://sfcontemplarium.substack.com" />
+      <outline type="rss" text="Autotranslucence" xmlUrl="https://autotranslucence.wordpress.com/feed/" />
+      <outline type="rss" text="Building the Builders" xmlUrl="https://builders.genagorlin.com/feed" />
+      <outline type="rss" text="Commonplace - The Commoncog Blog" xmlUrl="https://commoncog.com/blog/rss/" />
+      <outline type="rss" text="Neurotic Gradient Descent" xmlUrl="http://neuroticgradientdescent.blogspot.com/feeds/posts/default?alt=rss" />
+      <outline type="rss" text="Wellness Wisdom by Patricia Mou" xmlUrl="https://wellnesswisdom.substack.com/feed" />
+    </outline>
+    <outline text="Progress Studies &amp; Science" title="Progress Studies &amp; Science">
+      <outline type="rss" text="Boulton &amp; Watt" xmlUrl="https://boultonwatt.substack.com/feed" htmlUrl="https://boultonwatt.substack.com" />
+      <outline type="rss" text="Milan Cvitkovic" xmlUrl="https://milan.cvitkovic.net/index.xml" />
+      <outline type="rss" text="Nintil" xmlUrl="https://nintil.com/rss.xml" />
+      <outline type="rss" text="Veritasium" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA" />
+      <outline type="rss" text="Works in Progress" xmlUrl="https://www.worksinprogress.co/feed/" />
+    </outline>
+    <outline text="Rationality &amp; EA" title="Rationality &amp; EA">
+      <outline type="rss" text="Approach with Alacrity" xmlUrl="https://approachwithalacrity.substack.com/feed" htmlUrl="https://approachwithalacrity.substack.com" />
+      <outline type="rss" text="Lynette Bye" xmlUrl="https://lynettebye.substack.com/feed" htmlUrl="https://lynettebye.substack.com" />
+      <outline type="rss" text="Moral Infrastructure" xmlUrl="https://moralinfra.substack.com/feed" htmlUrl="https://moralinfra.substack.com" />
+      <outline type="rss" text="Daniel Schmachtenberger" xmlUrl="https://civilizationemerging.com/feed/" />
+      <outline type="rss" text="Featured posts - LessWrong 2.0 viewer" xmlUrl="https://www.greaterwrong.com/index?view=featured&amp;format=rss" />
+      <outline type="rss" text="Spencer Greenberg" xmlUrl="https://www.spencergreenberg.com/feed/" />
+    </outline>
+    <outline text="Twitter" title="Twitter">
+      <outline type="rss" text="Following" xmlUrl="https://twitter.com/i/lists/2015635068299911453" />
+    </outline>
+    <outline text="Writing &amp; Culture" title="Writing &amp; Culture">
+      <outline type="rss" text="Cartoons Hate Her" xmlUrl="https://www.cartoonshateher.com/feed" htmlUrl="https://www.cartoonshateher.com" />
+      <outline type="rss" text="Best Dressed" xmlUrl="https://bestdressed.substack.com/feed" htmlUrl="https://bestdressed.substack.com" />
+      <outline type="rss" text="@visakanv's blog" xmlUrl="http://www.visakanv.com/blog/feed/" />
+      <outline type="rss" text="CS Lewis - Great Essays" xmlUrl="https://rss.jasonbenn.com/synthetic/cs-lewis-essays" />
+      <outline type="rss" text="Interintellect" xmlUrl="https://interintellect.substack.com/feed" />
+      <outline type="rss" text="Meaningness" xmlUrl="http://meaningness.com/rss.xml" />
+      <outline type="rss" text="The Intrinsic Perspective" xmlUrl="https://erikhoel.substack.com/feed" />
+    </outline>
   </body>
 </opml>

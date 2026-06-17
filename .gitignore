@@ -40,3 +40,7 @@ scripts/.browser-data/
 # Twitter cache data
 data/*.json
 data/*.html
+
+# Python
+__pycache__/
+*.pyc
