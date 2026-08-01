@@ -1,10 +1,10 @@
 # Deploy via git (push locally, pull on server)
 deploy:
-	git push && ssh jason 'cd /opt/jarvis-rss && git pull && tmux send-keys -t jarvis-rss C-c && sleep 1 && tmux send-keys -t jarvis-rss "PORT=3001 bun run start" Enter'
+	git push && ssh jason 'cd /opt/jarvis-rss && git pull && sudo systemctl restart jarvis-rss'
 
 # Just restart the service (no code changes)
 restart:
-	ssh jason 'tmux send-keys -t jarvis-rss C-c && sleep 1 && tmux send-keys -t jarvis-rss "PORT=3001 bun run start" Enter'
+	ssh jason 'sudo systemctl restart jarvis-rss'
 
 # Pull latest and install dependencies
 install:
@@ -12,7 +12,7 @@ install:
 
 # View recent logs
 logs:
-	ssh jason 'tmux capture-pane -p -t jarvis-rss -S -50'
+	ssh jason 'journalctl -u jarvis-rss -n 50 --no-pager'
 
 # Check service health
 health:
