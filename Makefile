@@ -1,29 +1,29 @@
 # Deploy via git (push locally, pull on server)
 deploy:
-	git push && ssh jason 'cd /opt/jarvis-rss && git pull && sudo systemctl restart jarvis-rss'
+	git push && ssh nose 'cd /opt/jarvis-rss && git pull && sudo systemctl restart jarvis-rss'
 
 # Just restart the service (no code changes)
 restart:
-	ssh jason 'sudo systemctl restart jarvis-rss'
+	ssh nose 'sudo systemctl restart jarvis-rss'
 
 # Pull latest and install dependencies
 install:
-	ssh jason 'cd /opt/jarvis-rss && git pull && bun install'
+	ssh nose 'cd /opt/jarvis-rss && git pull && bun install'
 
 # View recent logs
 logs:
-	ssh jason 'journalctl -u jarvis-rss -n 50 --no-pager'
+	ssh nose 'journalctl -u jarvis-rss -n 50 --no-pager'
 
 # Check service health
 health:
-	ssh jason 'curl -s localhost:3001/health'
+	ssh nose 'curl -s localhost:3001/health'
 
 # SSH to server
 ssh:
-	ssh jason
+	ssh nose
 
 twitter:
-	ssh jason 'cd /opt/jarvis-rss && bun run twitter'
+	ssh nose 'cd /opt/jarvis-rss && bun run twitter'
 
 cron-setup:
 	@echo "Add these lines to crontab (crontab -e on server):"
