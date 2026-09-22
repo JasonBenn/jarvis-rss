@@ -1,3 +1,4 @@
+import "./instrument";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { parseOPML, slugify, findFeedBySlug, feedsToTable } from "./opml";

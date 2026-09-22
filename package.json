@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
+    "@sentry/bun": "^10.75.1",
     "csv-parse": "^6.1.0",
     "fast-xml-parser": "^5.3.3",
     "feed": "^5.2.0",
