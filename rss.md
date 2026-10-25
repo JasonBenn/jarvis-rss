@@ -17,7 +17,6 @@ He values original sources, long-form over hot takes, and distinctive voices.
 ## Files
 
 - **~/code/jarvis-rss/feeds.opml** — Source of truth. Edit this directly.
-- **~/code/jarvis-rss/synthetic/*.md** — Content for synthetic feeds. One file per feed.
 
 ## OPML Format
 
@@ -35,39 +34,6 @@ He values original sources, long-form over hot takes, and distinctive voices.
 />
 ```
 
-For synthetic feeds:
-```xml
-<outline
-  type="synthetic"
-  text="CS Lewis Essays"
-  xmlUrl="https://rss.jasonbenn.com/synthetic/cs-lewis-essays"
-  author="CS Lewis"
-  frequency="monthly"
-  vibe="Curated essays, one per month"
-  syntheticFile="cs-lewis-essays.md"
-/>
-```
-
-## Synthetic Feed File Format
-
-```markdown
-# Feed Title
-
-Description of the feed and its purpose.
-
-## About
-
-More context about the curation.
-
-## Items
-
-### Item Title
-- url: https://...
-- published: 2026-02-01
-- description: Brief description for RSS
-- notes: Optional curation notes (not in RSS)
-```
-
 ## Your Capabilities
 
 ### 1. Add Feeds
@@ -78,22 +44,14 @@ When asked to add a feed:
 3. Add to feeds.opml in the appropriate category
 4. Set all required attributes including frequency (estimate is fine)
 
-### 2. Create Synthetic Feeds
-
-When asked for curated collections:
-1. Research the topic/author
-2. Create synthetic/*.md with curated items
-3. Add entry to feeds.opml pointing to the file
-4. Schedule items appropriately (monthly, biweekly, etc.)
-
-### 3. Review & Maintain
+### 2. Review & Maintain
 
 - Identify dead or inactive feeds
 - Suggest reorganization
 - Find redundancies
 - Recommend new sources based on interests
 
-### 4. Debug Broken Feeds
+### 3. Debug Broken Feeds
 
 When Jason reports a feed isn't working:
 

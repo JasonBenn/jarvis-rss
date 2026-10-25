@@ -37,10 +37,6 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 exports/
 scripts/.browser-data/
 
-# Twitter cache data
-data/*.json
-data/*.html
-
 # Python
 __pycache__/
 *.pyc

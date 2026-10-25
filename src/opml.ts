@@ -2,7 +2,7 @@ import { XMLParser, XMLBuilder } from "fast-xml-parser";
 import * as fs from "fs";
 
 export interface FeedOutline {
-  type: "rss" | "synthetic" | "twitter-list";
+  type: "rss" | "twitter-list";
   text: string;
   title?: string;
   xmlUrl?: string;
@@ -11,7 +11,6 @@ export interface FeedOutline {
   author?: string;
   frequency?: string;
   vibe?: string;
-  syntheticFile?: string;
   category?: string;
 }
 
@@ -79,7 +78,6 @@ export function parseOPML(filePath: string): ParsedOPML {
           author: feed.author,
           frequency: feed.frequency,
           vibe: feed.vibe,
-          syntheticFile: feed.syntheticFile,
           category: categoryName,
         });
       }
@@ -95,7 +93,6 @@ export function parseOPML(filePath: string): ParsedOPML {
         author: category.author,
         frequency: category.frequency,
         vibe: category.vibe,
-        syntheticFile: category.syntheticFile,
         category: "Uncategorized",
       });
     }
@@ -114,10 +111,6 @@ export function slugify(text: string): string {
 const BASE_URL = "https://rss.jasonbenn.com";
 
 export function getFeedUrl(feed: FeedOutline): string {
-  if (feed.type === "synthetic") {
-    const slug = feed.syntheticFile?.replace(".md", "") || slugify(feed.text);
-    return `${BASE_URL}/synthetic/${slug}`;
-  }
   if (feed.enrichedUrl) {
     return feed.enrichedUrl;
   }
@@ -188,7 +181,6 @@ export function generateOPML(feeds: FeedOutline[], title: string = "RSS Feeds"):
     if (feed.author) attrs.push(`author="${escapeXml(feed.author)}"`);
     if (feed.frequency) attrs.push(`frequency="${escapeXml(feed.frequency)}"`);
     if (feed.vibe) attrs.push(`vibe="${escapeXml(feed.vibe)}"`);
-    if (feed.syntheticFile) attrs.push(`syntheticFile="${escapeXml(feed.syntheticFile)}"`);
     return attrs.join(" ");
   };
 

@@ -2,16 +2,7 @@ import "./instrument";
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { parseOPML, slugify, findFeedBySlug, feedsToTable } from "./opml";
-import { generateSyntheticRSS, listSyntheticFeeds } from "./synthetic";
 import { enrichFeedCached } from "./enricher";
-import {
-  loadCache,
-  generateCategoryRss,
-  generateAllTweetsRss,
-  getCategoryStats,
-  slugToCategory,
-} from "./twitter";
-import { getCategorySlugs } from "./categories";
 
 const app = new Hono();
 
@@ -104,38 +95,6 @@ app.get("/feed/:slug", async (c) => {
   }
 });
 
-// Synthetic feed
-app.get("/synthetic/:slug", (c) => {
-  const slug = c.req.param("slug");
-
-  try {
-    const rss = generateSyntheticRSS(slug);
-    return c.body(rss, 200, { "Content-Type": "application/rss+xml" });
-  } catch (error) {
-    const available = listSyntheticFeeds();
-    return c.json(
-      {
-        error: "Synthetic feed not found",
-        requestedSlug: slug,
-        available,
-      },
-      404
-    );
-  }
-});
-
-// List available synthetic feeds
-app.get("/synthetic", (c) => {
-  const available = listSyntheticFeeds();
-  return c.json({
-    count: available.length,
-    feeds: available.map((slug) => ({
-      slug,
-      url: `https://rss.jasonbenn.com/synthetic/${slug}`,
-    })),
-  });
-});
-
 // Serve the OPML file directly
 app.get("/feeds.opml", async (c) => {
   try {
@@ -189,24 +148,14 @@ app.get("/preview", async (c) => {
       let rssText = "";
 
       if (slug) {
-        // Try enriched feed first, then synthetic
         const feed = findFeedBySlug(feeds, slug);
         if (feed) {
-          if (feed.type === "synthetic") {
-            rssText = generateSyntheticRSS(
-              feed.syntheticFile?.replace(".md", "") || slug
-            );
-          } else if (feed.sourceUrl || feed.xmlUrl) {
+          if (feed.sourceUrl || feed.xmlUrl) {
             const sourceUrl = feed.sourceUrl || feed.xmlUrl;
             rssText = await enrichFeedCached(sourceUrl, feed.htmlUrl);
           }
         } else {
-          // Try as synthetic feed directly
-          try {
-            rssText = generateSyntheticRSS(slug);
-          } catch {
-            feedContent = `<p class="error">Feed not found: ${slug}</p>`;
-          }
+          feedContent = `<p class="error">Feed not found: ${slug}</p>`;
         }
       } else if (feedUrl) {
         const response = await fetch(feedUrl);
@@ -348,62 +297,6 @@ app.get("/preview", async (c) => {
   return c.html(html);
 });
 
-// Twitter feed categorization endpoints
-app.get("/twitter", (c) => {
-  const cache = loadCache();
-  if (!cache) {
-    return c.json({
-      error: "No cached tweets. Run the classification script first.",
-      hint: "bun run scripts/classify-twitter.ts",
-    }, 404);
-  }
-
-  const stats = getCategoryStats(cache.tweets);
-  return c.json({
-    updatedAt: cache.updatedAt,
-    totalTweets: cache.tweets.length,
-    categories: stats.map(({ category, slug, count }) => ({
-      name: category,
-      slug,
-      count,
-      url: `https://rss.jasonbenn.com/twitter/${slug}`,
-    })),
-    allUrl: "https://rss.jasonbenn.com/twitter/all",
-  });
-});
-
-app.get("/twitter/all", (c) => {
-  const cache = loadCache();
-  if (!cache) {
-    return c.json({ error: "No cached tweets" }, 404);
-  }
-
-  const rss = generateAllTweetsRss(cache.tweets);
-  return c.body(rss, 200, { "Content-Type": "application/rss+xml" });
-});
-
-app.get("/twitter/:slug", (c) => {
-  const slug = c.req.param("slug");
-  const category = slugToCategory(slug);
-
-  if (!category) {
-    const available = getCategorySlugs();
-    return c.json({
-      error: "Category not found",
-      requestedSlug: slug,
-      available,
-    }, 404);
-  }
-
-  const cache = loadCache();
-  if (!cache) {
-    return c.json({ error: "No cached tweets" }, 404);
-  }
-
-  const rss = generateCategoryRss(cache.tweets, category);
-  return c.body(rss, 200, { "Content-Type": "application/rss+xml" });
-});
-
 // Root - show API info
 app.get("/", (c) => {
   return c.json({
@@ -415,11 +308,6 @@ app.get("/", (c) => {
       "/feeds/table": "List all feeds (plain text table)",
       "/feeds.opml": "Download OPML file",
       "/feed/:slug": "Get enriched RSS feed (with archive links)",
-      "/synthetic": "List synthetic feeds",
-      "/synthetic/:slug": "Get synthetic RSS feed",
-      "/twitter": "List categorized Twitter feeds",
-      "/twitter/:category": "Get RSS feed for a Twitter category",
-      "/twitter/all": "Get all tweets with category tags",
     },
     source: "https://github.com/jasonbenn/jarvis-rss",
   });

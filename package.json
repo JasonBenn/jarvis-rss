@@ -8,9 +8,7 @@
     "start": "bun run src/index.ts",
     "feeds": "bun run src/cli.ts list",
     "opml": "bun run src/cli.ts opml",
-    "categorize": "bun run scripts/analyze-feeds.ts && bun run scripts/classify-feeds.ts && bun run scripts/generate-opml.ts",
-    "twitter": "bun run scripts/classify-twitter.ts",
-    "twitter:inspect": "bun run scripts/generate-inspection-page.ts && open data/inspection.html"
+    "categorize": "bun run scripts/analyze-feeds.ts && bun run scripts/classify-feeds.ts && bun run scripts/generate-opml.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"

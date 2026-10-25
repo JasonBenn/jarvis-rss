@@ -2,7 +2,6 @@
 import * as fs from "fs";
 import * as path from "path";
 import { parseOPML, feedsToTable, slugify, generateOPML, extractFeedUrls } from "./opml";
-import { parseSyntheticFile, listSyntheticFeeds } from "./synthetic";
 
 const command = process.argv[2];
 
@@ -15,9 +14,8 @@ jarvis-rss CLI
 Commands:
   list              List all feeds with URLs
   opml              Export new feeds to OPML (incremental)
-  validate          Validate OPML and synthetic files
+  validate          Validate OPML
   categories        List feed categories
-  synthetic         List synthetic feeds and their items
 
 Examples:
   bun run feeds:list
@@ -123,51 +121,10 @@ async function validate() {
         warnings++;
       }
 
-      // Check synthetic feeds have their files
-      if (feed.type === "synthetic" && feed.syntheticFile) {
-        const syntheticPath = path.join("synthetic", feed.syntheticFile);
-        if (!fs.existsSync(syntheticPath)) {
-          console.error(`  [ERROR] ${feed.text}: missing synthetic file: ${syntheticPath}`);
-          errors++;
-        } else {
-          // Validate synthetic file format
-          try {
-            const data = parseSyntheticFile(syntheticPath);
-            if (!data.title) {
-              console.warn(`  [WARN] ${feed.syntheticFile}: missing title`);
-              warnings++;
-            }
-            if (data.items.length === 0) {
-              console.warn(`  [WARN] ${feed.syntheticFile}: no items defined`);
-              warnings++;
-            }
-            console.log(`  [OK] ${feed.text}: ${data.items.length} items in synthetic feed`);
-          } catch (e) {
-            console.error(`  [ERROR] ${feed.syntheticFile}: failed to parse`);
-            errors++;
-          }
-        }
-      }
-
       // Check RSS feeds have xmlUrl
       if (feed.type === "rss" && !feed.xmlUrl) {
         console.error(`  [ERROR] ${feed.text}: RSS feed missing xmlUrl`);
         errors++;
-      }
-    }
-
-    // Check for orphaned synthetic files
-    const syntheticFiles = listSyntheticFeeds();
-    const referencedFiles = new Set(
-      feeds
-        .filter((f) => f.syntheticFile)
-        .map((f) => f.syntheticFile!.replace(".md", ""))
-    );
-
-    for (const file of syntheticFiles) {
-      if (!referencedFiles.has(file)) {
-        console.warn(`  [WARN] Orphaned synthetic file: synthetic/${file}.md`);
-        warnings++;
       }
     }
 
@@ -201,48 +158,6 @@ async function listCategories() {
   }
 }
 
-async function listSynthetic() {
-  const syntheticDir = "synthetic";
-  if (!fs.existsSync(syntheticDir)) {
-    console.log("No synthetic directory found");
-    return;
-  }
-
-  const files = listSyntheticFeeds();
-  if (files.length === 0) {
-    console.log("No synthetic feeds found");
-    return;
-  }
-
-  console.log("Synthetic Feeds:\n");
-
-  for (const slug of files) {
-    const filePath = path.join(syntheticDir, `${slug}.md`);
-    try {
-      const data = parseSyntheticFile(filePath);
-      const now = new Date();
-      const publishedItems = data.items.filter(
-        (i) => new Date(i.published) <= now
-      );
-      const upcomingItems = data.items.filter(
-        (i) => new Date(i.published) > now
-      );
-
-      console.log(`${data.title}`);
-      console.log(`  Slug: ${slug}`);
-      console.log(`  Items: ${publishedItems.length} published, ${upcomingItems.length} upcoming`);
-
-      if (upcomingItems.length > 0) {
-        const next = upcomingItems[0];
-        console.log(`  Next: "${next.title}" on ${next.published}`);
-      }
-      console.log("");
-    } catch (e) {
-      console.error(`Failed to parse ${slug}: ${e}`);
-    }
-  }
-}
-
 // Main
 switch (command) {
   case "list":
@@ -256,9 +171,6 @@ switch (command) {
     break;
   case "categories":
     await listCategories();
-    break;
-  case "synthetic":
-    await listSynthetic();
     break;
   case "help":
   case "--help":
