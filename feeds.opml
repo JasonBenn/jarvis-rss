@@ -83,35 +83,10 @@
       <outline type="rss" text="Big Technology" xmlUrl="https://www.bigtechnology.com/feed" htmlUrl="https://www.bigtechnology.com" />
       <outline type="rss" text="Untangled with Charley Johnson" xmlUrl="https://untangled.substack.com/feed" htmlUrl="https://untangled.substack.com" />
       <outline type="rss" text="Shreyas's Substack" xmlUrl="https://shreyasaiyer.substack.com/feed" htmlUrl="https://shreyasaiyer.substack.com" />
-      <outline type="rss" text="Hacker News: Newest" xmlUrl="https://hnrss.org/newest?link=comments&amp;points=300" />
       <outline type="rss" text="How They Make Money" xmlUrl="https://appeconomyinsights.substack.com/feed" />
       <outline type="rss" text="The Diff" xmlUrl="https://www.thediff.co/rss/" />
     </outline>
 
-
-    <outline text="Synthetic" title="Synthetic">
-
-      <outline
-        type="synthetic"
-        text="GK Chesterton - Essays"
-        xmlUrl="https://rss.jasonbenn.com/synthetic/gk-chesterton"
-        author="GK Chesterton"
-        frequency="monthly"
-        vibe="Wit, paradox, and Christian apologetics"
-        syntheticFile="gk-chesterton.md"
-      />
-
-      <outline
-        type="synthetic"
-        text="On True Friendship"
-        xmlUrl="https://rss.jasonbenn.com/synthetic/true-friendship"
-        author="Various"
-        frequency="biweekly"
-        vibe="Great essays on the nature of friendship across history"
-        syntheticFile="true-friendship.md"
-      />
-
-    </outline>
 
     <outline text="Real Estate" title="Real Estate">
 
@@ -1893,13 +1868,11 @@
       <outline type="rss" text="Forethought" xmlUrl="https://www.forethought.org/feed" />
       <outline type="rss" text="Import AI" xmlUrl="https://jack-clark.net/feed/" />
       <outline type="rss" text="the singularity is nearer" xmlUrl="https://geohot.github.io//blog/feed.xml" />
-      <outline type="rss" text="Twitter: AI/ML" xmlUrl="https://rss.jasonbenn.com/twitter/ai-ml" />
     </outline>
     <outline text="Comedy &amp; Entertainment" title="Comedy &amp; Entertainment">
       <outline type="rss" text="CollegeHumor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPDXXXJj9nax0fr0Wfc048g" />
       <outline type="rss" text="Obscurious" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_RovKmk0OCbuZjA8f08opw" />
       <outline type="rss" text="On This Day...1776" xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=PLYOGLpQQfhNIzsiXxPLUMwhBEunGH9bem" />
-      <outline type="rss" text="Twitter: Funny" xmlUrl="https://rss.jasonbenn.com/twitter/funny" />
     </outline>
     <outline text="Engineering &amp; Systems" title="Engineering &amp; Systems">
       <outline type="rss" text="Google SRE Prodcast" xmlUrl="https://feeds.libsyn.com/407036/rss" />
@@ -1984,7 +1957,6 @@
       <outline type="rss" text="Cartoons Hate Her" xmlUrl="https://www.cartoonshateher.com/feed" htmlUrl="https://www.cartoonshateher.com" />
       <outline type="rss" text="Best Dressed" xmlUrl="https://bestdressed.substack.com/feed" htmlUrl="https://bestdressed.substack.com" />
       <outline type="rss" text="@visakanv's blog" xmlUrl="http://www.visakanv.com/blog/feed/" />
-      <outline type="rss" text="CS Lewis - Great Essays" xmlUrl="https://rss.jasonbenn.com/synthetic/cs-lewis-essays" />
       <outline type="rss" text="Interintellect" xmlUrl="https://interintellect.substack.com/feed" />
       <outline type="rss" text="Meaningness" xmlUrl="http://meaningness.com/rss.xml" />
       <outline type="rss" text="The Intrinsic Perspective" xmlUrl="https://erikhoel.substack.com/feed" />
