@@ -44,3 +44,5 @@ __pycache__/
 # Feed filter state
 data/filter-state.json
 data/filter-ledger.jsonl
+data/feed-backlog.json
+data/feed-classes.json

@@ -82,6 +82,32 @@ export function isHandSaved(doc: Doc): boolean {
   return doc.location === "new" || doc.location === "later";
 }
 
+// Reader's list payload has no feed id. A feed is identified by its YouTube channel
+// (site_name "YouTube" + author), else the source_url host; substack.com-hosted posts
+// (substack.com/@name, open.substack.com/pub/name) take the publication from the path.
+export function feedKey(doc: Doc): string {
+  let host = "";
+  let parts: string[] = [];
+  try {
+    const u = new URL(doc.source_url ?? "");
+    host = u.hostname.replace(/^www\./, "");
+    parts = u.pathname.split("/").filter(Boolean);
+  } catch {}
+  if (host === "youtube.com" || host === "m.youtube.com" || doc.site_name === "YouTube") {
+    return `youtube:${doc.author ?? "?"}`;
+  }
+  if (host === "open.substack.com" && parts[0] === "pub" && parts[1]) return `${parts[1]}.substack.com`;
+  if (host === "substack.com" && parts[0]?.startsWith("@")) return `${parts[0].slice(1)}.substack.com`;
+  return host || doc.site_name || doc.author || "?";
+}
+
+export type FeedClass = "timeless" | "topical" | "low";
+export type FeedClasses = Record<string, { class: FeedClass; reason: string }>;
+
+export function loadFeedClasses(p: string): FeedClasses {
+  return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : {};
+}
+
 // --- State and ledger -----------------------------------------------------
 
 export interface LedgerEntry {
@@ -94,7 +120,7 @@ export interface LedgerEntry {
   score: number | null;
   why: string;
   decision: "keep" | "drop";
-  action: "keep" | "delete" | "dry-run";
+  action: "keep" | "delete" | "dry-run" | "sweep-delete";
   model: string | null;
 }
 
@@ -126,6 +152,7 @@ export interface RunOptions {
   judge: Judge;
   statePath: string;
   ledgerPath: string;
+  feedClasses?: FeedClasses;
   dryRun: boolean;
   since?: Date;
   now?: Date;
@@ -190,10 +217,13 @@ export async function run(opts: RunOptions): Promise<RunResult> {
     if (action === "delete") await reader.delete(doc.id);
   };
 
-  const shorts = candidates.filter(isShort);
-  for (const doc of shorts) await act(doc, { score: 0, why: "YouTube Short" }, null);
+  const isLow = (d: Doc) => opts.feedClasses?.[feedKey(d)]?.class === "low";
+  for (const doc of candidates.filter(isShort)) await act(doc, { score: 0, why: "YouTube Short" }, null);
+  for (const doc of candidates.filter((d) => !isShort(d) && isLow(d))) {
+    await act(doc, { score: 0, why: "Low-value feed" }, null);
+  }
 
-  const toJudge = candidates.filter((d) => !isShort(d));
+  const toJudge = candidates.filter((d) => !isShort(d) && !isLow(d));
   if (toJudge.length > 0) {
     const exemplars = await handSavedExemplars(reader);
     for (let i = 0; i < toJudge.length; i += BATCH_SIZE) {
@@ -297,7 +327,7 @@ export function claudeJudge(client: Anthropic, taste: string): Judge {
       blurb: (d.summary ?? "").slice(0, 500),
     }));
     const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
-    const prompt = `Score each item 0-10 for whether Jason should read it, following the scoring guide. Scores of 7+ are kept; only about 1 in 10 items should reach 7. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
+    const prompt = `Score each item 0-10 for whether Jason should read it, following the scoring guide. Scores of 7+ are kept. Calibrate so that roughly the best 1 in 10 items reach 7: in a batch of 20, usually about 2 items score 7+, more on a rich batch. Score relative to the batch: its strongest non-news essay or talk touching his questions even loosely is a 7, unless every item is news, promo or noise. A short blurb, a familiar framing or a roundup format is not by itself a reason to score below 7. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
 
 Items:
 ${JSON.stringify(items, null, 1)}
@@ -348,6 +378,7 @@ async function main() {
     judge: claudeJudge(new Anthropic(), taste),
     statePath: path.join(root, "data/filter-state.json"),
     ledgerPath: path.join(root, "data/filter-ledger.jsonl"),
+    feedClasses: loadFeedClasses(path.join(root, "data/feed-classes.json")),
     dryRun,
     since,
   });

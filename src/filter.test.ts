@@ -7,6 +7,7 @@ import {
   untouchableReason,
   isShort,
   isHandSaved,
+  feedKey,
   parseJudgments,
   readwiseClient,
   type Doc,
@@ -266,5 +267,31 @@ describe("thresholds and exemplars", () => {
 
   test("untouchableReason passes a clean feed doc", () => {
     expect(untouchableReason(doc(), WATERMARK)).toBeNull();
+  });
+});
+
+describe("feed classes", () => {
+  test("a low-class feed drops without a model call; others are judged", async () => {
+    const low = doc({ id: "low", source_url: "https://noise.example/post" });
+    const other = doc({ id: "ok", source_url: "https://essays.example/post" });
+    const reader = new MockReader([low, other]);
+    const judgedIds: string[] = [];
+    await go(
+      reader,
+      async (docs) => {
+        judgedIds.push(...docs.map((d) => d.id));
+        return docs.map(() => ({ score: 9, why: "good" }));
+      },
+      { feedClasses: { "noise.example": { class: "low", reason: "thin" }, "essays.example": { class: "topical", reason: "x" } } },
+    );
+    expect(judgedIds).toEqual(["ok"]);
+    expect(reader.calls).toContain("delete low");
+  });
+
+  test("feedKey groups by channel or publication", () => {
+    expect(feedKey(doc({ site_name: "YouTube", author: "TED", source_url: "https://www.youtube.com/watch?v=1" }))).toBe("youtube:TED");
+    expect(feedKey(doc({ source_url: "https://www.astralcodexten.com/p/x" }))).toBe("astralcodexten.com");
+    expect(feedKey(doc({ source_url: "https://open.substack.com/pub/foo/p/x" }))).toBe("foo.substack.com");
+    expect(feedKey(doc({ source_url: "https://substack.com/@bar/note/1" }))).toBe("bar.substack.com");
   });
 });
