@@ -297,7 +297,7 @@ export function claudeJudge(client: Anthropic, taste: string): Judge {
       blurb: (d.summary ?? "").slice(0, 500),
     }));
     const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
-    const prompt = `Score each item 0-10 for whether Jason should read it, following the scoring guide. Scores of 7+ are kept; only about 1 in 10 items should reach 7. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
+    const prompt = `Score each item 0-10 for whether Jason should read it, following the scoring guide. Scores of 7+ are kept. Calibrate so that roughly the best 1 in 10 items reach 7: in a batch of 20, usually about 2 items score 7+, more on a rich batch, none only if every item is news, promo or noise. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
 
 Items:
 ${JSON.stringify(items, null, 1)}
