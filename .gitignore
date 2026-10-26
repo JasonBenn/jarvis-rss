@@ -40,3 +40,7 @@ scripts/.browser-data/
 # Python
 __pycache__/
 *.pyc
+
+# Feed filter state
+data/filter-state.json
+data/filter-ledger.jsonl

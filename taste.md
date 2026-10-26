@@ -1,0 +1,37 @@
+# What Jason wants from his feed
+
+Conversation is his medium, not reading for its own sake. He hosts salons and a Sunday "Church" group with smart friends. A piece is worth his time if it hands him a great question to bring to one of those conversations, or deepens one he is already in. He reads at night, one piece per night in the chair, usually an essay. He wants depth on a handful of questions, not breadth.
+
+## The questions that are alive
+
+1. **Great love.** Can love and sexual attraction coexist over a lifetime? What does real intimacy ask of you?
+2. **Emotional digestion.** Processing feeling, resourcing, and inner work as the bottleneck to living well.
+3. **Power and the egregore.** How power-seeking systems (companies, movements, AI labs, states) take on a life of their own, and what resists them. This is the Church chat's main thread right now.
+4. **Why is it so hard to hang?** Friendship, community, cohousing, living from attunement and fun instead of scheduling.
+5. **Collective intelligence.** How groups think well together; superminds; what an ideal church or gathering looks like.
+6. **Practice without self-optimization.** Meditation, jhana, the View, contemplative traditions, approached as a way of seeing rather than a productivity hack.
+7. **Union's Desk / building with AI.** Only when a piece says something about how work, agency or meaning change, not product news.
+
+## What makes a piece worth his time
+
+- A claim someone could disagree with, argued with good examples and sources. Michael Nielsen's "How to Be a Wise Optimist About Science and Technology" is the model.
+- Someone writing from inside a practice: Rob Burbea, David Johnson, Ruben Laukkonen, Chris Lakin, Sasha Chapin.
+- Timeless essays about how to live and be together. The feeds he loved most were curated sets of G.K. Chesterton essays ("The Ethics of Elfland", "A Piece of Chalk", "On Running After One's Hat"), C.S. Lewis essays ("Friendship" from The Four Loves), and a reading list on true friendship (Aristotle, Cicero, Montaigne, Emerson, Simone Weil, Bonhoeffer's Life Together). His most-highlighted books are Creating Cohousing, Superminds, Care of the Soul.
+- Serious long-form analysis from sources he loves: Foreign Affairs and The Economist. A Foreign Affairs essay arguing a big, contestable thesis about power or institutions is a keep; a news brief is not.
+- It touches a live question above. A likeable idea, a clever methodology with a workmanlike conclusion, or "interesting" alone does not count.
+
+## What he does not want
+
+- Volume. About 120 items arrive a day; he wants roughly one in ten to survive, around 10 a day. When in doubt, drop.
+- News, horse-race politics, daily geopolitics, market moves, election coverage, outrage. Geopolitics by default bores him; only keep it when it is a deep argument about power.
+- Product launches, company announcements, tool tutorials, AI model release notes, "how X uses our product" videos, startup growth tactics, newsletter roundups and link dumps.
+- Short-form anything: YouTube Shorts, clips, trailers, teasers, sponsored segments, podcast episode promos with no substance in the blurb.
+- Homework: inputs that feel like work, listicles, productivity advice, self-optimization.
+- Generic takes anyone could write.
+
+## Scoring guide
+
+- 9-10: directly feeds one of the alive questions with a real argument; he would bring it to Church.
+- 7-8: strong piece on an alive question, or a rare great essay on how to live from a source he loves.
+- 4-6: smart and well made but off his questions, or on-topic but thin.
+- 0-3: news, promo, product, short-form, roundup, or noise.

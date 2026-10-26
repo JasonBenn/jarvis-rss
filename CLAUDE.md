@@ -18,3 +18,7 @@ make install     # Run bun install on server (after adding deps)
 ```
 
 On nose the server runs as systemd unit `jarvis-rss.service` (port 3001, behind nginx at rss.jasonbenn.com).
+
+## Feed filter
+
+`src/filter.ts` runs every 30 minutes from cron on nose (`~/.claude/nose/crontab`, log in `~/.local/state/feed-filter.log`). It judges documents that arrived in Reader's `feed` location since the watermark in `data/filter-state.json` against `taste.md` plus Jason's 40 latest hand saves, using `claude-sonnet-5-5`. Score >= 7 gets tag `pick` and a one-line why as its summary; the rest are deleted from Reader. Opened, tagged, noted or progressed documents, and anything outside `feed`, are never touched (guards and tests in `src/filter.test.ts`). Every judgment is appended to `data/filter-ledger.jsonl` before any write, and that ledger is the only way back: to re-save a deleted item, `jq -r 'select(.action=="delete" and (.title|test("<words>";"i"))) | .url' data/filter-ledger.jsonl` and POST each url to `https://readwise.io/api/v3/save/` with `{"url": "<url>"}` and `Authorization: Token $READWISE_TOKEN`. Try it with `bun run src/filter.ts --dry-run --since <iso>` (writes ledger rows with action `dry-run`, touches nothing in Reader).
