@@ -141,9 +141,11 @@ async function main() {
     batch.forEach((f, k) => (classes[f.key] = { ...f, ...results[k]! }));
     fs.writeFileSync(classesPath, JSON.stringify(classes, null, 1));
   }
-  // Refresh counts and samples for feeds classified on an earlier run.
-  for (const f of feeds) classes[f.key] = { ...classes[f.key]!, ...f };
-  fs.writeFileSync(classesPath, JSON.stringify(classes, null, 1));
+  // Refresh counts and samples for feeds classified on an earlier run; drop stale keys.
+  const current: ClassifiedFeeds = {};
+  for (const f of feeds) current[f.key] = { ...classes[f.key]!, ...f };
+  fs.writeFileSync(classesPath, JSON.stringify(current, null, 1));
+  Object.assign(classes, current);
 
   const doomed = backlog.docs.filter((d) => sweepable(d, classes));
   const byClass: Record<string, { feeds: number; docs: number }> = {};

@@ -84,12 +84,17 @@ export function isHandSaved(doc: Doc): boolean {
 
 // Reader's list payload has no feed id. A feed is identified by its YouTube channel
 // (site_name "YouTube" + author), else the source_url host; substack.com-hosted posts
-// (substack.com/@name, open.substack.com/pub/name) take the publication from the path.
+// (substack.com/@name, open.substack.com/pub/name) take the publication from the path,
+// this server's /archive proxy (Foreign Affairs, Economist) the wrapped url's host, and
+// forwarded newsletters (mailto:reader-forwarded-email/...) their author.
 export function feedKey(doc: Doc): string {
   let host = "";
   let parts: string[] = [];
+  if (doc.source_url?.startsWith("mailto:")) return `email:${doc.author ?? "?"}`;
   try {
-    const u = new URL(doc.source_url ?? "");
+    let u = new URL(doc.source_url ?? "");
+    const wrapped = u.hostname === "rss.jasonbenn.com" && u.searchParams.get("url");
+    if (wrapped) u = new URL(wrapped);
     host = u.hostname.replace(/^www\./, "");
     parts = u.pathname.split("/").filter(Boolean);
   } catch {}

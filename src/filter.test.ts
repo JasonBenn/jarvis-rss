@@ -293,5 +293,7 @@ describe("feed classes", () => {
     expect(feedKey(doc({ source_url: "https://www.astralcodexten.com/p/x" }))).toBe("astralcodexten.com");
     expect(feedKey(doc({ source_url: "https://open.substack.com/pub/foo/p/x" }))).toBe("foo.substack.com");
     expect(feedKey(doc({ source_url: "https://substack.com/@bar/note/1" }))).toBe("bar.substack.com");
+    expect(feedKey(doc({ source_url: "https://rss.jasonbenn.com/archive?url=https%3A%2F%2Fwww.foreignaffairs.com%2Fx" }))).toBe("foreignaffairs.com");
+    expect(feedKey(doc({ source_url: "mailto:reader-forwarded-email/abc", author: "Pirate Wires Daily" }))).toBe("email:Pirate Wires Daily");
   });
 });
