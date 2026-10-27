@@ -11,6 +11,7 @@ import {
   parseJudgments,
   readwiseClient,
   pacificDay,
+  dedupeKeys,
   DAILY_BUDGET,
   KEEP_THRESHOLD,
   type Doc,
@@ -22,11 +23,12 @@ import {
 const WATERMARK = new Date("2026-10-26T00:00:00Z");
 
 function doc(over: Partial<Doc> = {}): Doc {
+  const id = over.id ?? Math.random().toString(36).slice(2);
   return {
-    id: over.id ?? Math.random().toString(36).slice(2),
+    id,
     url: "https://read.readwise.io/read/x",
-    source_url: "https://example.com/essay",
-    title: "An essay",
+    source_url: `https://example.com/essay-${id}`,
+    title: `An essay ${id}`,
     author: "Someone",
     site_name: "example.com",
     summary: "blurb",
@@ -175,7 +177,7 @@ describe("rule 4: ledger before delete", () => {
       ["action", "author", "decision", "id", "model", "score", "site", "title", "ts", "url", "why"].sort(),
     );
     expect(e.action).toBe("delete");
-    expect(e.url).toBe("https://example.com/essay");
+    expect(e.url).toBe("https://example.com/essay-drop1");
   });
 });
 
@@ -339,5 +341,28 @@ describe("daily budget", () => {
     expect(kept(reader)).toBe(0);
     expect(state()).toMatchObject({ day: "2026-10-25", kept: 7 });
     expect(state().watermark).not.toBe(WATERMARK.toISOString());
+  });
+});
+
+describe("duplicates within a run", () => {
+  test("keeps the higher-scored copy and deletes the other as a duplicate", async () => {
+    const scores: Record<string, number> = { lo: 6, hi: 9, mirror: 8, other: 7 };
+    const reader = new MockReader([
+      doc({ id: "lo", source_url: "https://www.avabear.xyz/p/best-practices/?utm_source=rss", title: "best practices" }),
+      doc({ id: "hi", source_url: "https://avabear.xyz/p/best-practices", title: "best practices" }),
+      doc({ id: "mirror", source_url: "https://thezvi.wordpress.com/2026/10/26/x/", title: "Gemini 4: The Model" }),
+      doc({ id: "other", source_url: "https://thezvi.substack.com/p/x", title: "Gemini 4 — the model" }),
+    ]);
+    await go(reader, async (ds) => ds.map((d) => ({ score: scores[d.id]!, why: d.id })));
+    expect(reader.calls.filter((c) => c.startsWith("update")).map((c) => c.split(" ")[1])).toEqual(["hi", "mirror"]);
+    expect(reader.calls).toContain("delete lo");
+    expect(reader.calls).toContain("delete other");
+    expect(ledger().find((e) => e.id === "lo")).toMatchObject({ decision: "drop", why: "duplicate of hi" });
+    expect(ledger().find((e) => e.id === "other")).toMatchObject({ decision: "drop", why: "duplicate of mirror" });
+  });
+
+  test("dedupeKeys keeps the YouTube video id and ignores mailto urls", () => {
+    expect(dedupeKeys(doc({ source_url: "https://www.youtube.com/watch?v=AoKo", title: null }))).toEqual(["url:youtube.com/watch?v=AoKo"]);
+    expect(dedupeKeys(doc({ source_url: "mailto:reader-forwarded-email/abc", title: "Hi!" }))).toEqual(["title:hi"]);
   });
 });

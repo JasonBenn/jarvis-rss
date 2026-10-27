@@ -108,6 +108,22 @@ export function feedKey(doc: Doc): string {
   return host || doc.site_name || doc.author || "?";
 }
 
+// Keys under which two arrivals count as the same post: the source url without scheme,
+// www, tracking params or trailing slash (the /archive proxy unwrapped), and the title.
+export function dedupeKeys(doc: Doc): string[] {
+  const keys: string[] = [];
+  try {
+    let u = new URL(doc.source_url ?? "");
+    const wrapped = u.hostname === "rss.jasonbenn.com" && u.searchParams.get("url");
+    if (wrapped) u = new URL(wrapped);
+    for (const k of [...u.searchParams.keys()]) if (k.startsWith("utm_")) u.searchParams.delete(k);
+    if (!u.protocol.startsWith("mailto")) keys.push(`url:${u.hostname.replace(/^www\./, "")}${u.pathname.replace(/\/$/, "")}${u.search}`);
+  } catch {}
+  const title = (doc.title ?? "").toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
+  if (title) keys.push(`title:${title}`);
+  return keys;
+}
+
 export type FeedClass = "timeless" | "topical" | "low";
 export type FeedClasses = Record<string, { class: FeedClass; reason: string }>;
 
@@ -269,7 +285,15 @@ export async function run(opts: RunOptions): Promise<RunResult> {
     }
   }
   judged.sort((a, b) => b[1].score - a[1].score);
-  for (const [doc, j] of judged) await act(doc, j, MODEL);
+  // The same post often arrives from two feeds; only its highest-scored copy competes.
+  const firstSeen = new Map<string, string>();
+  for (const [doc, j] of judged) {
+    const keys = dedupeKeys(doc);
+    const original = keys.map((k) => firstSeen.get(k)).find(Boolean);
+    for (const k of keys) if (!firstSeen.has(k)) firstSeen.set(k, doc.id);
+    if (original) await act(doc, { score: 0, why: `duplicate of ${original}` }, MODEL);
+    else await act(doc, j, MODEL);
+  }
 
   if (!dryRun && result.failedBatches === 0) {
     writeState(statePath, { ...readState(statePath), watermark: new Date(now.getTime() - WATERMARK_LAG_MS).toISOString() });
