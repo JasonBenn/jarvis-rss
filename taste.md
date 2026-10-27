@@ -16,16 +16,16 @@ Conversation is his medium, not reading for its own sake. He hosts salons and a 
 
 - A claim someone could disagree with, argued with good examples and sources. Michael Nielsen's "How to Be a Wise Optimist About Science and Technology" is the model.
 - Someone writing from inside a practice: Rob Burbea, David Johnson, Ruben Laukkonen, Chris Lakin, Sasha Chapin.
-- Timeless essays about how to live and be together. The feeds he loved most were curated sets of G.K. Chesterton essays ("The Ethics of Elfland", "A Piece of Chalk", "On Running After One's Hat"), C.S. Lewis essays ("Friendship" from The Four Loves), and a reading list on true friendship (Aristotle, Cicero, Montaigne, Emerson, Simone Weil, Bonhoeffer's Life Together). His most-highlighted books are Creating Cohousing, Superminds, Care of the Soul.
+- Timeless essays about how to live and be together. His favorite feeds were curated sets of G.K. Chesterton essays ("The Ethics of Elfland", "A Piece of Chalk", "On Running After One's Hat"), C.S. Lewis essays ("Friendship" from The Four Loves), and a reading list on true friendship (Aristotle, Cicero, Montaigne, Emerson, Simone Weil, Bonhoeffer's Life Together). His most-highlighted books are Creating Cohousing, Superminds, Care of the Soul.
 - Serious long-form analysis from sources he loves: Foreign Affairs and The Economist. A Foreign Affairs essay arguing a big, contestable thesis about power or institutions is a keep; a news brief is not.
-- It touches a live question above. A likeable idea, a clever methodology with a workmanlike conclusion, or "interesting" alone does not count.
+- It touches a live question above. A likeable idea, clever methodology, or "interesting" alone does not count.
 
 ## What he does not want
 
-- Volume. About 120 items arrive a day; he wants roughly one in ten to survive, around 10 a day.
+- Volume. About 110 items arrive a day; he wants roughly one in six to survive, around 20 a day.
 - News, horse-race politics, daily geopolitics, market moves, election coverage, outrage. Geopolitics by default bores him; only keep it when it is a deep argument about power.
-- Product launches, company announcements, tool tutorials, AI model release notes, "how X uses our product" videos, startup growth tactics, newsletter roundups and link dumps.
-- Short-form anything: YouTube Shorts, clips, trailers, teasers, sponsored segments, podcast episode promos with no substance in the blurb.
+- Product launches, company announcements, tool tutorials, AI model release notes, "how X uses our product" videos, startup growth tactics, auto-generated link dumps.
+- Short-form anything: YouTube Shorts, clips, trailers, teasers, sponsored segments, empty podcast promos.
 - Homework: inputs that feel like work, listicles, productivity advice, self-optimization.
 
 ## Scoring guide
@@ -33,6 +33,6 @@ Conversation is his medium, not reading for its own sake. He hosts salons and a 
 Judge the piece, not the blurb: feed blurbs are short, so infer from title, author and source.
 
 - 9-10: directly feeds an alive question with a real argument; he would bring it to Church.
-- 7-8: a thoughtful piece he would be glad to find: touches an alive question, comes from a writer he follows, or is a serious essay on how to live, think or organize together.
-- 4-6: competent but off his questions, or a roundup with one relevant item.
-- 0-3: news, promo, product, short-form, or noise.
+- 5-8: a thoughtful piece he would be glad to find: touches an alive question, comes from a writer he follows, or is a serious essay on how to live, think or organize together.
+- 2-4: competent but off his questions. Roundups and overviews (Stratechery, Exponential View, Economist explainer videos) score a notch below a comparable essay, not zero.
+- 0-1: news, promo, product, short-form, or noise.
