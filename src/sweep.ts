@@ -13,6 +13,7 @@ import {
   loadFeedClasses,
   readwiseClient,
   untouchableReason,
+  HttpError,
   type Doc,
   type FeedClass,
   type FeedClasses,
@@ -54,9 +55,17 @@ export function summarizeFeeds(docs: Doc[]): FeedSummary[] {
     .sort((a, b) => b.count - a.count);
 }
 
-/** A sweep deletes only never-touched feed documents whose feed is topical or low. */
+// Keys that lump several real feeds together, so one class cannot speak for all of them.
+const SHARED_KEYS = new Set(["?", "youtube:?", "substack.com", "medium.com", "feedburner.com", "feeds.feedburner.com", "archive.today"]);
+
+export function isSharedKey(key: string): boolean {
+  return key.startsWith("email:") || SHARED_KEYS.has(key);
+}
+
+/** A sweep deletes only never-touched feed documents whose own feed is topical or low. */
 export function sweepable(doc: Doc, classes: FeedClasses): boolean {
   if (untouchableReason(doc, EPOCH)) return false;
+  if (isSharedKey(feedKey(doc))) return false;
   const c = classes[feedKey(doc)]?.class;
   return c === "topical" || c === "low";
 }
@@ -85,28 +94,49 @@ Reply with only a JSON array, one object per feed in order: [{"i": 0, "class": "
   });
 }
 
-async function deleteAll(reader: Reader, docs: Doc[], listedAt: string, ledgerPath: string) {
+/** The real run refuses feeds that no dry run has classified. */
+export function assertClassified(feeds: FeedSummary[], classes: FeedClasses) {
+  const missing = feeds.filter((f) => !classes[f.key]).map((f) => f.key);
+  if (missing.length > 0) {
+    throw new Error(`Unclassified feeds, run --dry-run first to classify them:\n  ${missing.join("\n  ")}`);
+  }
+}
+
+export async function deleteAll(reader: Reader, docs: Doc[], listedAt: string, ledgerPath: string, log = console.log) {
   for (let i = 0; i < docs.length; i += 100) {
-    // Drop anything that changed since the listing (opened, tagged, moved) before deleting it.
-    const changed = new Set((await reader.list({ location: "feed", updatedAfter: listedAt })).map((d) => d.id));
-    for (const d of docs.slice(i, i + 100)) {
+    // Drop anything that changed since the listing (opened, tagged, moved out of feed) before
+    // deleting it. No location filter: Reader bumps updated_at on open, move and tag, but a
+    // moved doc no longer lists under location=feed.
+    const changed = new Set((await reader.list({ updatedAfter: listedAt })).map((d) => d.id));
+    for (const [k, d] of docs.slice(i, i + 100).entries()) {
       if (changed.has(d.id)) continue;
-      appendLedger(ledgerPath, {
+      const row = {
         ts: new Date().toISOString(),
         id: d.id,
         url: d.source_url,
+        reader_url: d.url,
         title: d.title,
         site: d.site_name,
         author: d.author,
         score: null,
         why: `sweep: ${feedKey(d)}`,
-        decision: "drop",
-        action: "sweep-delete",
+        decision: "drop" as const,
         model: null,
-      });
-      await reader.delete(d.id);
+      };
+      appendLedger(ledgerPath, { ...row, action: "sweep-delete" });
+      try {
+        await reader.delete(d.id);
+      } catch (err) {
+        if (err instanceof HttpError && err.status === 404) {
+          // Already gone (Jason or Reader deleted it): mark the row above as not ours and go on.
+          appendLedger(ledgerPath, { ...row, ts: new Date().toISOString(), action: "sweep-gone" });
+          log(`${d.id} already gone (404), continuing`);
+          continue;
+        }
+        throw new Error(`Sweep aborted at ${i + k + 1}/${docs.length}: DELETE ${d.id} failed: ${err}`);
+      }
     }
-    console.log(`${new Date().toISOString()} deleted through ${Math.min(i + 100, docs.length)}/${docs.length}`);
+    log(`${new Date().toISOString()} deleted through ${Math.min(i + 100, docs.length)}/${docs.length}`);
   }
 }
 
@@ -133,6 +163,7 @@ async function main() {
 
   const feeds = summarizeFeeds(backlog.docs);
   const classes = loadFeedClasses(classesPath) as ClassifiedFeeds;
+  if (!dryRun) assertClassified(feeds, classes);
   const todo = feeds.filter((f) => !classes[f.key]);
   const client = new Anthropic();
   for (let i = 0; i < todo.length; i += BATCH_SIZE) {
@@ -148,16 +179,22 @@ async function main() {
   Object.assign(classes, current);
 
   const doomed = backlog.docs.filter((d) => sweepable(d, classes));
-  const byClass: Record<string, { feeds: number; docs: number }> = {};
+  const byClass: Record<string, { feeds: number; docs: number; doomed: number }> = {};
   for (const f of feeds) {
-    const c = (byClass[classes[f.key]!.class] ??= { feeds: 0, docs: 0 });
+    const c = (byClass[classes[f.key]!.class] ??= { feeds: 0, docs: 0, doomed: 0 });
     c.feeds++;
     c.docs += f.count;
   }
+  for (const d of doomed) byClass[classes[feedKey(d)]!.class]!.doomed++;
+  // Docs the old rule would have deleted that shared keys now protect.
+  const spared = backlog.docs.filter(
+    (d) => isSharedKey(feedKey(d)) && !untouchableReason(d, EPOCH) && ["topical", "low"].includes(classes[feedKey(d)]!.class),
+  );
   const pct = ((100 * doomed.length) / Math.max(1, backlog.docs.length)).toFixed(1);
   console.log(`Feed docs: ${backlog.docs.length} (listed ${backlog.listedAt}), feeds: ${feeds.length}`);
-  for (const [c, v] of Object.entries(byClass)) console.log(`  ${c}: ${v.feeds} feeds, ${v.docs} docs`);
+  for (const [c, v] of Object.entries(byClass)) console.log(`  ${c}: ${v.feeds} feeds, ${v.docs} docs, ${v.doomed} to delete`);
   console.log(`${dryRun ? "Projected deletions" : "Deleting"}: ${doomed.length} (${pct}% of the backlog)`);
+  console.log(`Spared as shared feed keys (email:*, archive.today, ...): ${spared.length}`);
   console.log("Largest feeds:");
   for (const f of feeds.slice(0, 20)) {
     const c = classes[f.key]!;

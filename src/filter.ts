@@ -127,8 +127,9 @@ export interface LedgerEntry {
   score: number | null;
   why: string;
   decision: "keep" | "drop";
-  action: "keep" | "delete" | "dry-run" | "sweep-delete";
+  action: "keep" | "delete" | "dry-run" | "sweep-delete" | "sweep-gone";
   model: string | null;
+  reader_url?: string;
 }
 
 export function appendLedger(ledgerPath: string, entry: LedgerEntry) {
@@ -291,6 +292,15 @@ export async function handSavedExemplars(reader: Reader, n = 40): Promise<Doc[]>
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+export class HttpError extends Error {
+  constructor(
+    message: string,
+    public status: number,
+  ) {
+    super(message);
+  }
+}
+
 export function readwiseClient(token: string): Reader {
   let last = 0;
   const request = async (method: string, url: string, body?: unknown): Promise<Response> => {
@@ -308,7 +318,7 @@ export function readwiseClient(token: string): Reader {
         await sleep((Number(res.headers.get("Retry-After")) || 60) * 1000);
         continue;
       }
-      if (!res.ok) throw new Error(`${method} ${url}: ${res.status} ${await res.text()}`);
+      if (!res.ok) throw new HttpError(`${method} ${url}: ${res.status} ${await res.text()}`, res.status);
       return res;
     }
   };
