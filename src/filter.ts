@@ -8,7 +8,9 @@ import * as fs from "fs";
 import * as path from "path";
 
 export const MODEL = "claude-sonnet-5-5";
-export const KEEP_THRESHOLD = 7;
+export const KEEP_THRESHOLD = 6;
+export const DAILY_BUDGET = 20;
+const BUDGET_TZ = "America/Los_Angeles";
 const BATCH_SIZE = 20;
 const API = "https://readwise.io/api/v3";
 // The next watermark trails the run start, because a doc's saved_at can precede
@@ -140,14 +142,25 @@ export function appendLedger(ledgerPath: string, entry: LedgerEntry) {
   }
 }
 
-function readWatermark(statePath: string): Date | null {
-  if (!fs.existsSync(statePath)) return null;
-  return new Date(JSON.parse(fs.readFileSync(statePath, "utf8")).watermark);
+// `day` (a Pacific calendar date) and `kept` count keeps against DAILY_BUDGET across runs.
+export interface State {
+  watermark: string;
+  day?: string;
+  kept?: number;
 }
 
-function writeWatermark(statePath: string, watermark: Date) {
+function readState(statePath: string): State | null {
+  if (!fs.existsSync(statePath)) return null;
+  return JSON.parse(fs.readFileSync(statePath, "utf8"));
+}
+
+function writeState(statePath: string, state: State) {
   fs.mkdirSync(path.dirname(statePath), { recursive: true });
-  fs.writeFileSync(statePath, JSON.stringify({ watermark: watermark.toISOString() }) + "\n");
+  fs.writeFileSync(statePath, JSON.stringify(state) + "\n");
+}
+
+export function pacificDay(d: Date): string {
+  return d.toLocaleDateString("en-CA", { timeZone: BUDGET_TZ });
 }
 
 // --- Run ------------------------------------------------------------------
@@ -157,7 +170,6 @@ export interface RunOptions {
   judge: Judge;
   statePath: string;
   ledgerPath: string;
-  feedClasses?: FeedClasses;
   dryRun: boolean;
   since?: Date;
   now?: Date;
@@ -178,9 +190,10 @@ export async function run(opts: RunOptions): Promise<RunResult> {
   const log = opts.log ?? console.log;
   const result: RunResult = { judged: 0, kept: 0, dropped: 0, skipped: 0, failedBatches: 0 };
 
-  const watermark = opts.since ?? readWatermark(statePath);
+  const state = readState(statePath);
+  const watermark = opts.since ?? (state && new Date(state.watermark));
   if (!watermark) {
-    if (!dryRun) writeWatermark(statePath, now);
+    if (!dryRun) writeState(statePath, { watermark: now.toISOString() });
     log(`No watermark; initialized to ${now.toISOString()}. Nothing processed.`);
     return result;
   }
@@ -193,8 +206,15 @@ export async function run(opts: RunOptions): Promise<RunResult> {
   });
   log(`${listed.length} listed, ${candidates.length} candidates since ${watermark.toISOString()}`);
 
+  const today = pacificDay(now);
+  let keptToday = state?.day === today ? (state.kept ?? 0) : 0;
+  const saveCount = () =>
+    writeState(statePath, { watermark: watermark.toISOString(), ...readState(statePath), day: today, kept: keptToday });
+
   const act = async (doc: Doc, j: Judgment, model: string | null) => {
-    const decision = j.score >= KEEP_THRESHOLD ? "keep" : "drop";
+    const overBudget = j.score >= KEEP_THRESHOLD && keptToday >= DAILY_BUDGET;
+    const decision = j.score >= KEEP_THRESHOLD && !overBudget ? "keep" : "drop";
+    const why = overBudget ? `over daily budget: ${j.why}` : j.why;
     const action = dryRun ? "dry-run" : decision === "keep" ? "keep" : "delete";
     // Re-read right before writing: Jason may have opened or tagged it since the list call.
     const fresh = dryRun ? doc : await reader.get(doc.id);
@@ -210,45 +230,48 @@ export async function run(opts: RunOptions): Promise<RunResult> {
       site: doc.site_name,
       author: doc.author,
       score: j.score,
-      why: j.why,
+      why,
       decision,
       action,
       model,
     });
     result.judged++;
-    if (decision === "keep") result.kept++;
-    else result.dropped++;
-    if (action === "keep") await reader.update(doc.id, { tags: ["pick"], summary: j.why.slice(0, 140) });
+    if (decision === "keep") {
+      result.kept++;
+      keptToday++;
+    } else result.dropped++;
+    if (action === "keep") {
+      await reader.update(doc.id, { tags: ["pick"], summary: j.why.slice(0, 140) });
+      saveCount();
+    }
     if (action === "delete") await reader.delete(doc.id);
   };
 
-  const isLow = (d: Doc) => opts.feedClasses?.[feedKey(d)]?.class === "low";
   for (const doc of candidates.filter(isShort)) await act(doc, { score: 0, why: "YouTube Short" }, null);
-  for (const doc of candidates.filter((d) => !isShort(d) && isLow(d))) {
-    await act(doc, { score: 0, why: "Low-value feed" }, null);
-  }
 
-  const toJudge = candidates.filter((d) => !isShort(d) && !isLow(d));
+  // Judge everything first so the day's budget goes to the run's highest scores.
+  const toJudge = candidates.filter((d) => !isShort(d));
+  const judged: [Doc, Judgment][] = [];
   if (toJudge.length > 0) {
     const exemplars = await handSavedExemplars(reader);
     for (let i = 0; i < toJudge.length; i += BATCH_SIZE) {
       const batch = toJudge.slice(i, i + BATCH_SIZE);
-      let judgments: Judgment[];
       try {
-        judgments = await judge(batch, exemplars);
+        const judgments = await judge(batch, exemplars);
+        batch.forEach((d, k) => judged.push([d, judgments[k]!]));
       } catch (err) {
         // A failed batch stays in the feed; the watermark holds so the next run retries it.
         result.failedBatches++;
         Sentry.captureException(err);
         log(`Batch ${i / BATCH_SIZE} failed, left in feed: ${err}`);
-        continue;
       }
-      for (let k = 0; k < batch.length; k++) await act(batch[k]!, judgments[k]!, MODEL);
     }
   }
+  judged.sort((a, b) => b[1].score - a[1].score);
+  for (const [doc, j] of judged) await act(doc, j, MODEL);
 
   if (!dryRun && result.failedBatches === 0) {
-    writeWatermark(statePath, new Date(now.getTime() - WATERMARK_LAG_MS));
+    writeState(statePath, { ...readState(statePath), watermark: new Date(now.getTime() - WATERMARK_LAG_MS).toISOString() });
   }
   return result;
 }
@@ -332,7 +355,7 @@ export function claudeJudge(client: Anthropic, taste: string): Judge {
       blurb: (d.summary ?? "").slice(0, 500),
     }));
     const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
-    const prompt = `Score each item 0-10 for whether Jason should read it, following the scoring guide. Scores of 7+ are kept. Calibrate so that roughly the best 1 in 10 items reach 7: in a batch of 20, usually about 2 items score 7+, more on a rich batch. Score relative to the batch: its strongest non-news essay or talk touching his questions even loosely is a 7, unless every item is news, promo or noise. A short blurb, a familiar framing or a roundup format is not by itself a reason to score below 7. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
+    const prompt = `Score each item 0-10 for whether Jason should read it, following the scoring guide. Scores of ${KEEP_THRESHOLD}+ are kept. Calibrate so that roughly the best 1 in 5 items reach ${KEEP_THRESHOLD}: in a batch of 20, usually about 4 items score ${KEEP_THRESHOLD}+, more on a rich batch. Score relative to the batch: its strongest few non-news essays or talks touching his questions even loosely reach ${KEEP_THRESHOLD}, unless every item is news, promo or noise. A short blurb or a familiar framing is not by itself a reason to score below ${KEEP_THRESHOLD}. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
 
 Items:
 ${JSON.stringify(items, null, 1)}
@@ -383,7 +406,6 @@ async function main() {
     judge: claudeJudge(new Anthropic(), taste),
     statePath: path.join(root, "data/filter-state.json"),
     ledgerPath: path.join(root, "data/filter-ledger.jsonl"),
-    feedClasses: loadFeedClasses(path.join(root, "data/feed-classes.json")),
     dryRun,
     since,
   });

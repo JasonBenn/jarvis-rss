@@ -10,6 +10,9 @@ import {
   feedKey,
   parseJudgments,
   readwiseClient,
+  pacificDay,
+  DAILY_BUDGET,
+  KEEP_THRESHOLD,
   type Doc,
   type Reader,
   type Judge,
@@ -251,9 +254,9 @@ describe("rule 7: model failure skips the batch", () => {
 });
 
 describe("thresholds and exemplars", () => {
-  test("keeps at 7, drops at 6", async () => {
+  test("keeps at the threshold, drops just below it", async () => {
     const reader = new MockReader([doc({ id: "a" }), doc({ id: "b" })]);
-    await go(reader, async (docs) => docs.map((d) => ({ score: d.id === "a" ? 7 : 6, why: "w" })));
+    await go(reader, async (docs) => docs.map((d) => ({ score: d.id === "a" ? KEEP_THRESHOLD : KEEP_THRESHOLD - 1, why: "w" })));
     expect(reader.calls[0]).toStartWith("update a");
     expect(reader.calls[1]).toBe("delete b");
   });
@@ -270,24 +273,7 @@ describe("thresholds and exemplars", () => {
   });
 });
 
-describe("feed classes", () => {
-  test("a low-class feed drops without a model call; others are judged", async () => {
-    const low = doc({ id: "low", source_url: "https://noise.example/post" });
-    const other = doc({ id: "ok", source_url: "https://essays.example/post" });
-    const reader = new MockReader([low, other]);
-    const judgedIds: string[] = [];
-    await go(
-      reader,
-      async (docs) => {
-        judgedIds.push(...docs.map((d) => d.id));
-        return docs.map(() => ({ score: 9, why: "good" }));
-      },
-      { feedClasses: { "noise.example": { class: "low", reason: "thin" }, "essays.example": { class: "topical", reason: "x" } } },
-    );
-    expect(judgedIds).toEqual(["ok"]);
-    expect(reader.calls).toContain("delete low");
-  });
-
+describe("feed keys", () => {
   test("feedKey groups by channel or publication", () => {
     expect(feedKey(doc({ site_name: "YouTube", author: "TED", source_url: "https://www.youtube.com/watch?v=1" }))).toBe("youtube:TED");
     expect(feedKey(doc({ source_url: "https://www.astralcodexten.com/p/x" }))).toBe("astralcodexten.com");
@@ -295,5 +281,63 @@ describe("feed classes", () => {
     expect(feedKey(doc({ source_url: "https://substack.com/@bar/note/1" }))).toBe("bar.substack.com");
     expect(feedKey(doc({ source_url: "https://rss.jasonbenn.com/archive?url=https%3A%2F%2Fwww.foreignaffairs.com%2Fx" }))).toBe("foreignaffairs.com");
     expect(feedKey(doc({ source_url: "mailto:reader-forwarded-email/abc", author: "Pirate Wires Daily" }))).toBe("email:Pirate Wires Daily");
+  });
+});
+
+describe("daily budget", () => {
+  const docs = (prefix: string, n: number, saved_at = "2026-10-26T06:00:00Z") =>
+    Array.from({ length: n }, (_, i) => doc({ id: `${prefix}${i}`, saved_at }));
+  const state = () => JSON.parse(fs.readFileSync(statePath, "utf8"));
+  const kept = (r: MockReader) => r.calls.filter((c) => c.startsWith("update")).length;
+  // 2026-10-26 09:00 PT and 23:30 PT, then 00:30 PT the next day.
+  const morning = new Date("2026-10-26T16:00:00Z");
+  const lateNight = new Date("2026-10-27T06:30:00Z");
+  const afterMidnight = new Date("2026-10-27T07:30:00Z");
+
+  test("pacificDay uses the Los Angeles calendar", () => {
+    expect(pacificDay(lateNight)).toBe("2026-10-26");
+    expect(pacificDay(afterMidnight)).toBe("2026-10-27");
+  });
+
+  test("the cap applies across runs within a day", async () => {
+    const first = new MockReader(docs("a", DAILY_BUDGET - 5));
+    await go(first, scoreAll(9), { now: morning });
+    expect(kept(first)).toBe(DAILY_BUDGET - 5);
+    expect(state()).toMatchObject({ day: "2026-10-26", kept: DAILY_BUDGET - 5 });
+
+    const second = new MockReader(docs("b", 10, "2026-10-27T06:00:00Z"));
+    await go(second, scoreAll(9), { now: lateNight });
+    expect(kept(second)).toBe(5);
+    expect(second.calls.filter((c) => c.startsWith("delete")).length).toBe(5);
+    expect(state().kept).toBe(DAILY_BUDGET);
+    const over = ledger().filter((e) => e.why.startsWith("over daily budget"));
+    expect(over.map((e) => e.action)).toEqual(Array(5).fill("delete"));
+  });
+
+  test("the count resets at midnight Pacific", async () => {
+    fs.writeFileSync(statePath, JSON.stringify({ watermark: WATERMARK.toISOString(), day: "2026-10-26", kept: DAILY_BUDGET }));
+    const reader = new MockReader(docs("c", 3));
+    await go(reader, scoreAll(9), { now: afterMidnight });
+    expect(kept(reader)).toBe(3);
+    expect(state()).toMatchObject({ day: "2026-10-27", kept: 3 });
+  });
+
+  test("the highest scores win within a run", async () => {
+    fs.writeFileSync(statePath, JSON.stringify({ watermark: WATERMARK.toISOString(), day: "2026-10-26", kept: DAILY_BUDGET - 2 }));
+    const scores: Record<string, number> = { lo: KEEP_THRESHOLD, mid: 8, hi: 10, top: 9 };
+    const reader = new MockReader(Object.keys(scores).map((id) => doc({ id })));
+    await go(reader, async (ds) => ds.map((d) => ({ score: scores[d.id]!, why: d.id })), { now: morning });
+    expect(reader.calls.filter((c) => c.startsWith("update")).map((c) => c.split(" ")[1])).toEqual(["hi", "top"]);
+    expect(reader.calls).toContain("delete mid");
+    expect(reader.calls).toContain("delete lo");
+  });
+
+  test("a run that keeps nothing leaves the counter alone", async () => {
+    fs.writeFileSync(statePath, JSON.stringify({ watermark: WATERMARK.toISOString(), day: "2026-10-25", kept: 7 }));
+    const reader = new MockReader(docs("d", 3));
+    await go(reader, scoreAll(0), { now: morning });
+    expect(kept(reader)).toBe(0);
+    expect(state()).toMatchObject({ day: "2026-10-25", kept: 7 });
+    expect(state().watermark).not.toBe(WATERMARK.toISOString());
   });
 });
