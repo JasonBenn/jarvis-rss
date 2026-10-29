@@ -13,6 +13,8 @@ import {
   pacificDay,
   dedupeKeys,
   extractTaste,
+  claudeJudge,
+  SCORING_GUIDE,
   DAILY_BUDGET,
   KEEP_THRESHOLD,
   type Doc,
@@ -457,4 +459,21 @@ old stuff
       expect(fs.readFileSync(statePath, "utf8")).toBe(before);
     });
   }
+});
+
+describe("judge prompt", () => {
+  test("system prompt carries the scoring bands right after the taste", async () => {
+    let system = "";
+    const client = {
+      messages: {
+        create: async (p: { system: string }) => {
+          system = p.system;
+          return { content: [{ type: "text", text: '[{"i":0,"score":5,"why":"w"}]' }] };
+        },
+      },
+    };
+    await claudeJudge(client as never)([doc()], [], "TASTE TEXT");
+    expect(system).toContain("TASTE TEXT\n\nScoring guide. Judge the piece, not the blurb");
+    for (const band of ["9-10:", "5-8:", "2-4:", "0-1:"]) expect(SCORING_GUIDE).toContain(band);
+  });
 });
