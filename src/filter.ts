@@ -420,6 +420,8 @@ export function readwiseClient(token: string): Reader {
 
 const line = (d: Doc) => `${d.title ?? "(untitled)"} — ${d.site_name ?? d.author ?? "?"}`;
 
+export const SCORING_GUIDE = `Scoring guide. Judge the piece, not the blurb: feed blurbs are short, so infer from title, author and source. 9-10: directly feeds a live question with a real argument; he would bring it to Church. 5-8: a thoughtful piece he would be glad to find: touches a live question, comes from a writer he follows, or is a serious essay on how to live, think or organize together. 2-4: competent but off his questions; roundups and overviews score a notch below a comparable essay, not zero. 0-1: news, promo, product, short-form, or noise.`;
+
 export function claudeJudge(client: Anthropic): Judge {
   return async (docs, exemplars, taste) => {
     const items = docs.map((d, i) => ({
@@ -430,7 +432,7 @@ export function claudeJudge(client: Anthropic): Judge {
       url: d.source_url,
       blurb: (d.summary ?? "").slice(0, 500),
     }));
-    const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
+    const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\n${SCORING_GUIDE}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
     const prompt = `Score each item 0-10 for whether Jason should read it. Scores of ${KEEP_THRESHOLD}+ are kept. Calibrate so that roughly the best 1 in 5 items reach ${KEEP_THRESHOLD}: in a batch of 20, usually 4 or 5 items score ${KEEP_THRESHOLD}+, more on a rich batch; if fewer than 3 do, you are scoring too harshly. Score relative to the batch: its strongest few non-news essays or talks touching his questions even loosely reach ${KEEP_THRESHOLD}, unless every item is news, promo or noise. A short blurb or a familiar framing is not by itself a reason to score below ${KEEP_THRESHOLD}. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
 
 Items:
