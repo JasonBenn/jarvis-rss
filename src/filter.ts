@@ -1,5 +1,5 @@
 // Feed filter for Readwise Reader: judges new documents in the `feed` location
-// against taste.md, tags keeps `pick` with a one-line why, deletes the rest.
+// against Jason's Fascinations note, gives keeps a one-line why as their summary, deletes the rest.
 // Usage: bun run src/filter.ts [--dry-run] [--since <iso>]
 import "./instrument";
 import * as Sentry from "@sentry/bun";
@@ -14,8 +14,10 @@ const BUDGET_TZ = "America/Los_Angeles";
 const BATCH_SIZE = 20;
 const API = "https://readwise.io/api/v3";
 // The next watermark trails the run start, because a doc's saved_at can precede
-// the moment it becomes listable. Overlap is safe: keeps carry a tag and deletes are gone.
+// the moment it becomes listable. Overlap is safe: keeps are in the ledger and deletes are gone.
 const WATERMARK_LAG_MS = 10 * 60 * 1000;
+export const DEFAULT_TASTE_PATH = "/opt/notes/Fascinations.md";
+const TASTE_SECTIONS = ["Now", "Long questions", "Taste"];
 
 export interface Doc {
   id: string;
@@ -50,7 +52,7 @@ export interface Judgment {
   why: string;
 }
 
-export type Judge = (docs: Doc[], exemplars: Doc[]) => Promise<Judgment[]>;
+export type Judge = (docs: Doc[], exemplars: Doc[], taste: string) => Promise<Judgment[]>;
 
 // --- Safety guards --------------------------------------------------------
 
@@ -131,6 +133,25 @@ export function loadFeedClasses(p: string): FeedClasses {
   return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : {};
 }
 
+// --- Taste ----------------------------------------------------------------
+
+// The note's "## Now", "## Long questions" and "## Taste" sections, headings included;
+// everything else (preamble, "## Lately", other sections) is dropped.
+export function extractTaste(note: string): string {
+  const sections = note.split(/^(?=## )/m);
+  return sections
+    .filter((s) => TASTE_SECTIONS.includes(s.match(/^## (.*)/)?.[1]?.trim() ?? ""))
+    .filter((s) => s.replace(/^## .*/, "").trim() !== "")
+    .map((s) => s.trim())
+    .join("\n\n");
+}
+
+/** The taste text, read fresh from disk; null when the note is missing or its sections are empty. */
+export function loadTaste(tastePath: string): string | null {
+  if (!fs.existsSync(tastePath)) return null;
+  return extractTaste(fs.readFileSync(tastePath, "utf8")) || null;
+}
+
 // --- State and ledger -----------------------------------------------------
 
 export interface LedgerEntry {
@@ -166,6 +187,16 @@ export interface State {
   kept?: number;
 }
 
+// Keeps are untagged, so the ledger is what stops a later run from re-judging one.
+function keptIds(ledgerPath: string): Set<string> {
+  if (!fs.existsSync(ledgerPath)) return new Set();
+  const ids = new Set<string>();
+  for (const l of fs.readFileSync(ledgerPath, "utf8").split("\n")) {
+    if (l.includes('"action":"keep"')) ids.add((JSON.parse(l) as LedgerEntry).id);
+  }
+  return ids;
+}
+
 function readState(statePath: string): State | null {
   if (!fs.existsSync(statePath)) return null;
   return JSON.parse(fs.readFileSync(statePath, "utf8"));
@@ -187,6 +218,7 @@ export interface RunOptions {
   judge: Judge;
   statePath: string;
   ledgerPath: string;
+  tastePath: string;
   dryRun: boolean;
   since?: Date;
   now?: Date;
@@ -207,6 +239,15 @@ export async function run(opts: RunOptions): Promise<RunResult> {
   const log = opts.log ?? console.log;
   const result: RunResult = { judged: 0, kept: 0, dropped: 0, skipped: 0, failedBatches: 0 };
 
+  // Without taste every score is noise, so the run touches nothing and the watermark holds.
+  const taste = loadTaste(opts.tastePath);
+  if (!taste) {
+    const msg = `No taste in ${opts.tastePath} (missing, or ${TASTE_SECTIONS.join("/")} empty); skipped run.`;
+    log(`WARNING: ${msg}`);
+    Sentry.captureMessage(msg, "warning");
+    return result;
+  }
+
   const state = readState(statePath);
   const watermark = opts.since ?? (state && new Date(state.watermark));
   if (!watermark) {
@@ -216,8 +257,9 @@ export async function run(opts: RunOptions): Promise<RunResult> {
   }
 
   const listed = await reader.list({ location: "feed", updatedAfter: watermark.toISOString() });
+  const kept = keptIds(ledgerPath);
   const candidates = listed.filter((d) => {
-    const reason = untouchableReason(d, watermark);
+    const reason = untouchableReason(d, watermark) ?? (kept.has(d.id) ? "already kept" : null);
     if (reason) result.skipped++;
     return !reason;
   });
@@ -258,7 +300,7 @@ export async function run(opts: RunOptions): Promise<RunResult> {
       keptToday++;
     } else result.dropped++;
     if (action === "keep") {
-      await reader.update(doc.id, { tags: ["pick"], summary: j.why.slice(0, 140) });
+      await reader.update(doc.id, { summary: j.why.slice(0, 140) });
       saveCount();
     }
     if (action === "delete") await reader.delete(doc.id);
@@ -274,7 +316,7 @@ export async function run(opts: RunOptions): Promise<RunResult> {
     for (let i = 0; i < toJudge.length; i += BATCH_SIZE) {
       const batch = toJudge.slice(i, i + BATCH_SIZE);
       try {
-        const judgments = await judge(batch, exemplars);
+        const judgments = await judge(batch, exemplars, taste);
         batch.forEach((d, k) => judged.push([d, judgments[k]!]));
       } catch (err) {
         // A failed batch stays in the feed; the watermark holds so the next run retries it.
@@ -378,8 +420,8 @@ export function readwiseClient(token: string): Reader {
 
 const line = (d: Doc) => `${d.title ?? "(untitled)"} — ${d.site_name ?? d.author ?? "?"}`;
 
-export function claudeJudge(client: Anthropic, taste: string): Judge {
-  return async (docs, exemplars) => {
+export function claudeJudge(client: Anthropic): Judge {
+  return async (docs, exemplars, taste) => {
     const items = docs.map((d, i) => ({
       i,
       title: d.title,
@@ -389,7 +431,7 @@ export function claudeJudge(client: Anthropic, taste: string): Judge {
       blurb: (d.summary ?? "").slice(0, 500),
     }));
     const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
-    const prompt = `Score each item 0-10 for whether Jason should read it, following the scoring guide. Scores of ${KEEP_THRESHOLD}+ are kept. Calibrate so that roughly the best 1 in 5 items reach ${KEEP_THRESHOLD}: in a batch of 20, usually 4 or 5 items score ${KEEP_THRESHOLD}+, more on a rich batch; if fewer than 3 do, you are scoring too harshly. Score relative to the batch: its strongest few non-news essays or talks touching his questions even loosely reach ${KEEP_THRESHOLD}, unless every item is news, promo or noise. A short blurb or a familiar framing is not by itself a reason to score below ${KEEP_THRESHOLD}. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
+    const prompt = `Score each item 0-10 for whether Jason should read it. Scores of ${KEEP_THRESHOLD}+ are kept. Calibrate so that roughly the best 1 in 5 items reach ${KEEP_THRESHOLD}: in a batch of 20, usually 4 or 5 items score ${KEEP_THRESHOLD}+, more on a rich batch; if fewer than 3 do, you are scoring too harshly. Score relative to the batch: its strongest few non-news essays or talks touching his questions even loosely reach ${KEEP_THRESHOLD}, unless every item is news, promo or noise. A short blurb or a familiar framing is not by itself a reason to score below ${KEEP_THRESHOLD}. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
 
 Items:
 ${JSON.stringify(items, null, 1)}
@@ -433,21 +475,19 @@ async function main() {
   const token = process.env.READWISE_TOKEN;
   if (!token) throw new Error("READWISE_TOKEN not set");
   const root = path.join(import.meta.dir, "..");
-  const taste = fs.readFileSync(path.join(root, "taste.md"), "utf8");
 
   const result = await run({
     reader: readwiseClient(token),
-    judge: claudeJudge(new Anthropic(), taste),
+    judge: claudeJudge(new Anthropic()),
     statePath: path.join(root, "data/filter-state.json"),
     ledgerPath: path.join(root, "data/filter-ledger.jsonl"),
+    tastePath: process.env.TASTE_PATH ?? DEFAULT_TASTE_PATH,
     dryRun,
     since,
   });
   console.log(`${new Date().toISOString()} ${dryRun ? "[dry-run] " : ""}${JSON.stringify(result)}`);
-  if (result.failedBatches > 0) {
-    await Sentry.flush(2000);
-    process.exitCode = 1;
-  }
+  await Sentry.flush(2000);
+  if (result.failedBatches > 0) process.exitCode = 1;
 }
 
 if (import.meta.main) {

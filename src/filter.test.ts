@@ -12,6 +12,7 @@ import {
   readwiseClient,
   pacificDay,
   dedupeKeys,
+  extractTaste,
   DAILY_BUDGET,
   KEEP_THRESHOLD,
   type Doc,
@@ -69,10 +70,13 @@ const scoreAll = (score: number): Judge => async (docs) => docs.map(() => ({ sco
 let dir: string;
 let statePath: string;
 let ledgerPath: string;
+let tastePath: string;
 beforeEach(() => {
   dir = fs.mkdtempSync(path.join(os.tmpdir(), "filter-"));
   statePath = path.join(dir, "state.json");
   ledgerPath = path.join(dir, "ledger.jsonl");
+  tastePath = path.join(dir, "Fascinations.md");
+  fs.writeFileSync(tastePath, "## Taste\nEssays, not news.\n");
   fs.writeFileSync(statePath, JSON.stringify({ watermark: WATERMARK.toISOString() }));
 });
 
@@ -82,7 +86,7 @@ const ledger = (): LedgerEntry[] =>
     : [];
 
 const go = (reader: Reader, judge: Judge, extra: Partial<Parameters<typeof run>[0]> = {}) =>
-  run({ reader, judge, statePath, ledgerPath, dryRun: false, log: () => {}, ...extra });
+  run({ reader, judge, statePath, ledgerPath, tastePath, dryRun: false, log: () => {}, ...extra });
 
 describe("rule 1: only the feed location", () => {
   test.each(["new", "later", "archive", "shortlist"])("never touches %s", async (location) => {
@@ -106,6 +110,29 @@ describe("rule 2: never Jason's documents", () => {
     const reader = new MockReader([doc(over)]);
     await go(reader, scoreAll(0));
     expect(reader.calls).toEqual([]);
+  });
+
+  test("a hand-curated pick saved into feed after the watermark is never judged or deleted", async () => {
+    const pick = doc({ saved_at: "2026-10-26T09:00:00Z", tags: { pick: { name: "pick", type: "manual" } } });
+    const reader = new MockReader([pick]);
+    let judged = 0;
+    await go(reader, async (docs) => {
+      judged += docs.length;
+      return docs.map(() => ({ score: 0, why: "n" }));
+    });
+    expect(judged).toBe(0);
+    expect(reader.calls).toEqual([]);
+    expect(ledger()).toEqual([]);
+  });
+
+  test("a keep from an earlier run is not judged again when it is re-listed", async () => {
+    const d = doc({ id: "k" });
+    await go(new MockReader([d]), scoreAll(9));
+    expect(ledger().map((e) => e.action)).toEqual(["keep"]);
+    const reader = new MockReader([d]);
+    await go(reader, scoreAll(0), { since: WATERMARK });
+    expect(reader.calls).toEqual([]);
+    expect(ledger().map((e) => e.action)).toEqual(["keep"]);
   });
 
   test("re-reads before deleting and skips a doc opened since the list call", async () => {
@@ -169,7 +196,7 @@ describe("rule 4: ledger before delete", () => {
     expect(seen.keep1).toContain("keep1");
     expect(seen.drop1).toContain("drop1");
     expect(reader.calls).toEqual([
-      `update keep1 ${JSON.stringify({ tags: ["pick"], summary: "on great love" })}`,
+      `update keep1 ${JSON.stringify({ summary: "on great love" })}`,
       "delete drop1",
     ]);
     const e = ledger().find((x) => x.id === "drop1")!;
@@ -365,4 +392,69 @@ describe("duplicates within a run", () => {
     expect(dedupeKeys(doc({ source_url: "https://www.youtube.com/watch?v=AoKo", title: null }))).toEqual(["url:youtube.com/watch?v=AoKo"]);
     expect(dedupeKeys(doc({ source_url: "mailto:reader-forwarded-email/abc", title: "Hi!" }))).toEqual(["title:hi"]);
   });
+});
+
+describe("taste from the Fascinations note", () => {
+  const note = `# Fascinations
+Preamble about the note.
+
+## Now
+Power and the egregore.
+
+## Lately
+- read a thing about bread
+
+## Long questions
+1. Can love and attraction coexist?
+
+## Taste
+Arguments, not news.
+
+## Archive
+old stuff
+`;
+
+  test("extracts Now, Long questions and Taste, and excludes Lately", () => {
+    const taste = extractTaste(note);
+    expect(taste).toBe("## Now\nPower and the egregore.\n\n## Long questions\n1. Can love and attraction coexist?\n\n## Taste\nArguments, not news.");
+    expect(taste).not.toContain("Lately");
+    expect(taste).not.toContain("bread");
+    expect(taste).not.toContain("Preamble");
+    expect(taste).not.toContain("old stuff");
+  });
+
+  test("the judge receives the extracted sections, read fresh each run", async () => {
+    fs.writeFileSync(tastePath, note);
+    let seen = "";
+    const judge: Judge = async (docs, _ex, taste) => {
+      seen = taste;
+      return docs.map(() => ({ score: 9, why: "y" }));
+    };
+    await go(new MockReader([doc()]), judge);
+    expect(seen).toBe(extractTaste(note));
+    fs.writeFileSync(tastePath, "## Taste\nEdited.\n");
+    await go(new MockReader([doc()]), judge, { since: WATERMARK });
+    expect(seen).toBe("## Taste\nEdited.");
+  });
+
+  for (const [name, setup] of [
+    ["missing file", () => fs.rmSync(tastePath)],
+    ["empty sections", () => fs.writeFileSync(tastePath, "## Now\n\n## Lately\n- only this\n## Taste\n  \n")],
+  ] as const) {
+    test(`${name} skips the run with zero deletes and holds the watermark`, async () => {
+      setup();
+      const before = fs.readFileSync(statePath, "utf8");
+      const reader = new MockReader([doc(), doc(), doc({ source_url: "https://youtube.com/shorts/x" })]);
+      let judged = 0;
+      const result = await go(reader, async (docs) => {
+        judged += docs.length;
+        return docs.map(() => ({ score: 0, why: "n" }));
+      });
+      expect(reader.calls).toEqual([]);
+      expect(judged).toBe(0);
+      expect(result.judged).toBe(0);
+      expect(ledger()).toEqual([]);
+      expect(fs.readFileSync(statePath, "utf8")).toBe(before);
+    });
+  }
 });
