@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { buildRows, exclusion, label, type ReaderDoc } from "./eval-set";
-import { auc, capRows, metrics, split, type Scored } from "./eval";
+import { auc, balancedFeedRows, capRows, metrics, split, type Scored } from "./eval";
 
 const NOW = new Date("2026-10-31T12:00:00Z");
 const none = { highlights: 0, highlightNotes: 0 };
@@ -143,5 +143,22 @@ describe("eval metrics", () => {
     const capped = capRows(rows, 300) as { label: string }[];
     expect(capped.length).toBe(300);
     expect(capped.filter((r) => r.label === "like").length).toBe(200);
+  });
+
+  test("balanced feed sample: feed likes only, matched by dislikes first, weak dislikes to fill", () => {
+    const row = (id: string, label: string, source = "Reader RSS") => ({ id, label, source }) as never;
+    const rows = [
+      ...[...Array(10)].map((_, i) => row(`p${i}`, i % 2 ? "like" : "strong_like")),
+      row("hand-like", "strong_like", "Reader Share Sheet iOS"),
+      row("hand-dislike", "dislike", "Reader web"),
+      ...[...Array(6)].map((_, i) => row(`d${i}`, "dislike")),
+      ...[...Array(20)].map((_, i) => row(`w${i}`, "weak_dislike")),
+    ];
+    const got = balancedFeedRows(rows) as { id: string; label: string }[];
+    expect(got.filter((r) => r.label.endsWith("like") && !r.label.includes("dislike")).length).toBe(10);
+    expect(got.filter((r) => r.label === "dislike").map((r) => r.id).sort()).toEqual(["d0", "d1", "d2", "d3", "d4", "d5"]);
+    expect(got.filter((r) => r.label === "weak_dislike").length).toBe(4);
+    expect(got.map((r) => r.id)).not.toContain("hand-like");
+    expect(balancedFeedRows([...rows].reverse())).toEqual(balancedFeedRows(rows));
   });
 });

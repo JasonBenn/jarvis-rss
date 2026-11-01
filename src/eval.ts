@@ -1,6 +1,8 @@
 // Runs the filter's judge over the engagement eval set and scores it against Jason's labels.
 // Usage:
 //   bun run src/eval.ts --prompt <name>            judge the set with a prompt from eval-prompts.ts
+//   bun run src/eval.ts --prompt <name> --feed-only --balanced
+//                                                  judge feed arrivals only, likes vs an equal number of dislikes
 //   bun run src/eval.ts --report <name> [<name>…]  print metrics and misses for finished runs
 // Each eval doc is judged inside a batch of real feed arrivals (from data/feed-backlog.json),
 // because the prompt calibrates scores relative to the batch. Runs land in data/eval-runs/,
@@ -49,6 +51,20 @@ export function capRows(rows: EvalRow[], max = MAX_DOCS): EvalRow[] {
     out.push(...rs.sort((a, b) => hash(a.id) - hash(b.id)).slice(0, n));
   }
   return out;
+}
+
+/**
+ * Feed arrivals only, every like against an equal number of negatives picked by id hash:
+ * dislikes first, weak dislikes (mostly read-to-the-end with no highlight) only to fill.
+ * All time, not since SINCE: from 2025 on there are too few feed likes to measure.
+ */
+export function balancedFeedRows(rows: EvalRow[]): EvalRow[] {
+  const byHash = (rs: EvalRow[]) => rs.sort((a, b) => hash(a.id) - hash(b.id));
+  const feed = rows.filter((r) => r.source === "Reader RSS");
+  const pos = byHash(feed.filter((r) => POSITIVE.includes(r.label)));
+  const neg = [...byHash(feed.filter((r) => r.label === "dislike")), ...byHash(feed.filter((r) => r.label === "weak_dislike"))];
+  const n = Math.min(pos.length, neg.length);
+  return [...pos.slice(0, n), ...neg.slice(0, n)];
 }
 
 export interface Scored {
@@ -107,13 +123,14 @@ const toDoc = (r: EvalRow): Doc => ({
   saved_at: "",
 });
 
-async function judgeSet(promptName: string, root: string) {
+async function judgeSet(promptName: string, root: string, feedBalanced: boolean) {
   const build = PROMPTS[promptName];
   if (!build) throw new Error(`No prompt ${promptName}; have ${Object.keys(PROMPTS).join(", ")}`);
   const taste = loadTaste(process.env.TASTE_PATH ?? DEFAULT_TASTE_PATH);
   if (!taste) throw new Error("No taste");
 
-  const rows = capRows(readJsonl<EvalRow>(path.join(root, "data/eval-set.jsonl")).filter((r) => r.metrics.saved_at >= SINCE));
+  const all = readJsonl<EvalRow>(path.join(root, "data/eval-set.jsonl"));
+  const rows = feedBalanced ? balancedFeedRows(all) : capRows(all.filter((r) => r.metrics.saved_at >= SINCE));
   const evalIds = new Set(rows.map((r) => r.id));
   const snap: { docs: ReaderDoc[] } = JSON.parse(fs.readFileSync(path.join(root, "data/reader-snapshot.json"), "utf8"));
   // The same 40 latest hand saves the filter would show, minus anything being graded.
@@ -126,7 +143,7 @@ async function judgeSet(promptName: string, root: string) {
     .filter((d) => !evalIds.has(d.id) && !isShort(d) && !d.first_opened_at)
     .sort((a, b) => hash(a.id) - hash(b.id));
 
-  const outPath = path.join(root, `data/eval-runs/${promptName}.jsonl`);
+  const outPath = path.join(root, `data/eval-runs/${feedBalanced ? "feed-balanced-" : ""}${promptName}.jsonl`);
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   const done = new Set(fs.existsSync(outPath) ? readJsonl<Scored>(outPath).map((s) => s.id) : []);
 
@@ -222,13 +239,15 @@ async function main() {
   const args = process.argv.slice(2);
   const root = path.join(import.meta.dir, "..");
   const pi = args.indexOf("--prompt");
-  if (pi >= 0) return judgeSet(args[pi + 1]!, root);
+  const feedBalanced = args.includes("--feed-only") && args.includes("--balanced");
+  if (args.includes("--feed-only") !== args.includes("--balanced")) throw new Error("--feed-only and --balanced go together");
+  if (pi >= 0) return judgeSet(args[pi + 1]!, root, feedBalanced);
   const ri = args.indexOf("--report");
   if (ri >= 0) {
     for (const name of args.slice(ri + 1)) console.log(report(name, readJsonl<Scored>(path.join(root, `data/eval-runs/${name}.jsonl`))) + "\n");
     return;
   }
-  console.error("Usage: bun run src/eval.ts --prompt <name> | --report <name>...");
+  console.error("Usage: bun run src/eval.ts --prompt <name> [--feed-only --balanced] | --report <name>...");
   process.exit(2);
 }
 
