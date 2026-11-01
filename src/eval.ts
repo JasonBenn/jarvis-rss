@@ -20,7 +20,8 @@ export const HOLDOUT = 0.3;
 const SEED = 7;
 const EVAL_PER_BATCH = 5;
 const BATCH = 20;
-const CONCURRENCY = 4;
+// The API key is shared with other services on nose and caps concurrent connections.
+const CONCURRENCY = Number(process.env.EVAL_CONCURRENCY ?? 2);
 
 export const POSITIVE: Label[] = ["strong_like", "like"];
 export const NEGATIVE: Label[] = ["dislike", "weak_dislike"];
@@ -158,9 +159,9 @@ async function judgeSet(promptName: string, root: string) {
           fs.appendFileSync(outPath, lines.join("\n") + "\n");
           break;
         } catch (err) {
-          if (attempt >= 3) throw err;
+          if (attempt >= 8) throw err;
           console.error(`retry after ${err}`);
-          await new Promise((r) => setTimeout(r, 20000 * (attempt + 1)));
+          await new Promise((r) => setTimeout(r, 15000 * (attempt + 1)));
         }
       }
     }
