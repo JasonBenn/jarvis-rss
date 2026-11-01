@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
 import { buildRows, exclusion, label, type ReaderDoc } from "./eval-set";
-import { capRows, metrics, split, type Scored } from "./eval";
+import { auc, capRows, metrics, split, type Scored } from "./eval";
 
 const NOW = new Date("2026-10-31T12:00:00Z");
 const none = { highlights: 0, highlightNotes: 0 };
@@ -123,6 +123,11 @@ describe("eval metrics", () => {
   test("precision and recall of keep against likes and dislikes; ", () => {
     const m = metrics([s("like", 8), s("strong_like", 2), s("dislike", 6), s("weak_dislike", 1)]);
     expect(m).toMatchObject({ tp: 1, fn: 1, fp: 1, tn: 1, precision: 0.5, recall: 0.5 });
+  });
+
+  test("auc is 1 when every like outscores every dislike, 0.5 on ties", () => {
+    expect(auc([s("like", 8), s("dislike", 2), s("weak_dislike", 3)])).toBe(1);
+    expect(auc([s("like", 4), s("dislike", 4)])).toBe(0.5);
   });
 
   test("split is stable and roughly 30% holdout", () => {

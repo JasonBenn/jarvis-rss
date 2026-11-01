@@ -172,14 +172,30 @@ async function judgeSet(promptName: string, root: string) {
 
 const f2 = (x: number) => x.toFixed(2);
 
+/** Chance that a random liked doc outscores a random disliked one (ties count half): ranking quality, free of the threshold. */
+export function auc(rows: Scored[]): number {
+  const pos = rows.filter((r) => POSITIVE.includes(r.label)).map((r) => r.score);
+  const neg = rows.filter((r) => NEGATIVE.includes(r.label)).map((r) => r.score);
+  let s = 0;
+  for (const p of pos) for (const n of neg) s += p > n ? 1 : p === n ? 0.5 : 0;
+  return s / (pos.length * neg.length || 1);
+}
+
 export function report(name: string, scored: Scored[]): string {
   const out: string[] = [`## ${name}`];
-  out.push("| split | n | P | R | F1 | P (strict) | R (strict) | F1 (strict) |", "|---|---|---|---|---|---|---|---|");
-  for (const s of ["train", "holdout", "all", "holdout rss-only"] as const) {
-    const rs = s === "all" ? scored : s === "holdout rss-only" ? scored.filter((r) => r.split === "holdout" && r.rss) : scored.filter((r) => r.split === s);
+  out.push("| split | n | P | R | F1 | AUC | P (strict) | R (strict) | F1 (strict) |", "|---|---|---|---|---|---|---|---|---|");
+  const slices: [string, Scored[]][] = [
+    ["train", scored.filter((r) => r.split === "train")],
+    ["holdout", scored.filter((r) => r.split === "holdout")],
+    ["all", scored],
+    ["holdout, feed arrivals", scored.filter((r) => r.split === "holdout" && r.rss)],
+    ["all, feed arrivals", scored.filter((r) => r.rss)],
+    ["all, hand saves", scored.filter((r) => !r.rss)],
+  ];
+  for (const [s, rs] of slices) {
     const m = metrics(rs);
     const strict = metrics(rs, ["dislike"]);
-    out.push(`| ${s} | ${m.n} | ${f2(m.precision)} | ${f2(m.recall)} | ${f2(m.f1)} | ${f2(strict.precision)} | ${f2(strict.recall)} | ${f2(strict.f1)} |`);
+    out.push(`| ${s} | ${m.n} | ${f2(m.precision)} | ${f2(m.recall)} | ${f2(m.f1)} | ${f2(auc(rs))} | ${f2(strict.precision)} | ${f2(strict.recall)} | ${f2(strict.f1)} |`);
   }
   out.push("", "Score distribution per label (count at each score 0..10, mean, share kept):", "");
   for (const l of [...POSITIVE, ...NEGATIVE]) {
