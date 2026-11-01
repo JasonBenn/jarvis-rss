@@ -22,4 +22,12 @@ health:
 ssh:
 	ssh nose
 
-.PHONY: deploy restart install logs health ssh
+# Refresh data/eval-set.jsonl from Reader (reads only) and print counts
+eval-set:
+	set -a; . ~/.claude/skills/readwise/.env; set +a; bun run src/eval-set.ts --summary
+
+# Judge the eval set with a prompt from src/eval-prompts.ts (P=baseline), then report it
+eval:
+	bun run src/eval.ts --prompt $(or $(P),baseline) && bun run src/eval.ts --report $(or $(P),baseline)
+
+.PHONY: deploy restart install logs health ssh eval-set eval
