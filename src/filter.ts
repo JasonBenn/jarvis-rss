@@ -164,7 +164,7 @@ export interface LedgerEntry {
   score: number | null;
   why: string;
   decision: "keep" | "drop";
-  action: "keep" | "delete" | "dry-run" | "sweep-delete" | "sweep-gone";
+  action: "keep" | "delete" | "dry-run" | "sweep-delete" | "sweep-gone" | "paywall-delete" | "paywall-gone";
   model: string | null;
   reader_url?: string;
 }
