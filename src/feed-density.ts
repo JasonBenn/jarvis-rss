@@ -1,5 +1,5 @@
 // Feed density: how much of what each feed sends Jason ends up liked, and how much is stubs.
-// Reads data/feed-backlog.json (the feed location as of the 10-27 sweep), data/reader-snapshot.json
+// Counts docs saved since WINDOW_SINCE. Reads data/feed-backlog.json (the feed location as of the 10-27 sweep), data/reader-snapshot.json
 // and data/eval-set.jsonl (from eval-set.ts), data/filter-ledger.jsonl and data/feed-classes.json.
 // Usage: bun run src/feed-density.ts [--json]
 import * as fs from "fs";
@@ -12,6 +12,8 @@ import { readJsonl } from "./eval";
 export const ENRICHED = new Set(["foreignaffairs.com", "economist.com"]);
 const LEDGER_SINCE = "2026-10-27";
 const STUB_WORDS = 300;
+// Reader kept untouched feed docs only from about March 2026 on, so every count starts there.
+export const WINDOW_SINCE = "2026-03-01";
 
 export interface FeedStats {
   feed: string;
@@ -21,24 +23,25 @@ export interface FeedStats {
   keeps: number;
   openedKeeps: number;
   opened: number;
-  strongLikes: number;
+  strongLikes: number; // labels count every feed doc ever saved; the window is too young for likes alone
+  windowLikes: number;
   likes: number;
   dislikes: number;
   weakDislikes: number;
   stubRate: number | null; // share of text arrivals under 300 words; null for video feeds
-  density: number; // (strong likes + likes) / arrivals
+  density: number; // likes since WINDOW_SINCE / arrivals
 }
 
 export function feedStats(backlog: Doc[], current: ReaderDoc[], ledger: LedgerEntry[], evalRows: EvalRow[], classes: Record<string, { class: string }>): FeedStats[] {
   const docs = new Map<string, ReaderDoc>();
-  const fromFeed = (d: Doc) => d.source === "Reader RSS" && !d.parent_id;
+  const fromFeed = (d: Doc) => d.source === "Reader RSS" && !d.parent_id && d.saved_at >= WINDOW_SINCE;
   for (const d of backlog as ReaderDoc[]) if (fromFeed(d)) docs.set(d.id, d);
   for (const d of current) if (fromFeed(d)) docs.set(d.id, d);
   const stats = new Map<string, FeedStats>();
   const get = (feed: string) => {
     let s = stats.get(feed);
     if (!s) {
-      s = { feed, cls: classes[feed]?.class ?? "-", arrivals: 0, recent: 0, keeps: 0, openedKeeps: 0, opened: 0, strongLikes: 0, likes: 0, dislikes: 0, weakDislikes: 0, stubRate: null, density: 0 };
+      s = { feed, cls: classes[feed]?.class ?? "-", arrivals: 0, recent: 0, keeps: 0, openedKeeps: 0, opened: 0, strongLikes: 0, windowLikes: 0, likes: 0, dislikes: 0, weakDislikes: 0, stubRate: null, density: 0 };
       stats.set(feed, s);
     }
     return s;
@@ -65,6 +68,7 @@ export function feedStats(backlog: Doc[], current: ReaderDoc[], ledger: LedgerEn
     if (r.source !== "Reader RSS") continue; // hand saves and picks say nothing about the feed
     const s = get(r.feed);
     if (r.label === "strong_like") s.strongLikes++;
+    if (["strong_like", "like"].includes(r.label) && r.metrics.saved_at >= WINDOW_SINCE) s.windowLikes++;
     if (r.label === "like") s.likes++;
     if (r.label === "dislike") s.dislikes++;
     if (r.label === "weak_dislike") s.weakDislikes++;
@@ -73,7 +77,7 @@ export function feedStats(backlog: Doc[], current: ReaderDoc[], ledger: LedgerEn
     const ws = words.get(s.feed) ?? [];
     if (ws.length && !ENRICHED.has(s.feed)) s.stubRate = ws.filter((w) => w < STUB_WORDS).length / ws.length;
     if (ENRICHED.has(s.feed)) s.stubRate = 0;
-    s.density = s.arrivals ? (s.strongLikes + s.likes) / s.arrivals : 0;
+    s.density = s.arrivals ? s.windowLikes / s.arrivals : 0;
   }
   return [...stats.values()].sort((a, b) => b.arrivals - a.arrivals);
 }
@@ -86,7 +90,7 @@ if (import.meta.main) {
   const rows = feedStats(backlog.docs, snap.docs, readJsonl<LedgerEntry>(data("filter-ledger.jsonl")), readJsonl<EvalRow>(data("eval-set.jsonl")), loadFeedClasses(data("feed-classes.json")));
   if (process.argv.includes("--json")) console.log(JSON.stringify(rows));
   else {
-    console.log("feed\tclass\tarrivals\trecent\tkeeps\topenedKeeps\topened\tstrong\tlike\tdislike\tweak\tstub\tdensity");
-    for (const s of rows) console.log([s.feed, s.cls, s.arrivals, s.recent, s.keeps, s.openedKeeps, s.opened, s.strongLikes, s.likes, s.dislikes, s.weakDislikes, s.stubRate == null ? "-" : s.stubRate.toFixed(2), s.density.toFixed(3)].join("\t"));
+    console.log("feed\tclass\tarrivals\trecent\tkeeps\topenedKeeps\topened\tstrong\tlike\tdislike\tweak\tstub\twindowLikes\tdensity");
+    for (const s of rows) console.log([s.feed, s.cls, s.arrivals, s.recent, s.keeps, s.openedKeeps, s.opened, s.strongLikes, s.likes, s.dislikes, s.weakDislikes, s.stubRate == null ? "-" : s.stubRate.toFixed(2), s.windowLikes, s.density.toFixed(3)].join("\t"));
   }
 }
