@@ -429,7 +429,7 @@ export interface JudgeMessages {
 
 export type JudgePrompt = (docs: Doc[], exemplars: Doc[], taste: string) => JudgeMessages;
 
-export const judgePrompt: JudgePrompt = (docs, exemplars, taste) => {
+export const makeJudgePrompt = (guide: string): JudgePrompt => (docs, exemplars, taste) => {
   const items = docs.map((d, i) => ({
     i,
     title: d.title,
@@ -438,7 +438,7 @@ export const judgePrompt: JudgePrompt = (docs, exemplars, taste) => {
     url: d.source_url,
     blurb: (d.summary ?? "").slice(0, 500),
   }));
-  const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\n${SCORING_GUIDE}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
+  const system = `You filter Jason's RSS feed. Here is his taste:\n\n${taste}\n\n${guide}\n\nThings he recently chose himself (title — site), the strongest signal of what he wants:\n${exemplars.map((d) => `- ${line(d)}`).join("\n")}`;
   const prompt = `Score each item 0-10 for whether Jason should read it. Scores of ${KEEP_THRESHOLD}+ are kept. Calibrate so that roughly the best 1 in 5 items reach ${KEEP_THRESHOLD}: in a batch of 20, usually 4 or 5 items score ${KEEP_THRESHOLD}+, more on a rich batch; if fewer than 3 do, you are scoring too harshly. Score relative to the batch: its strongest few non-news essays or talks touching his questions even loosely reach ${KEEP_THRESHOLD}, unless every item is news, promo or noise. A short blurb or a familiar framing is not by itself a reason to score below ${KEEP_THRESHOLD}. For each item also write a one-line "why" (at most 140 characters, concrete, plain words): for a keep, which question it serves and what it offers; for a drop, why not.
 
 Items:
@@ -447,6 +447,8 @@ ${JSON.stringify(items, null, 1)}
 Reply with only a JSON array, one object per item in order: [{"i": 0, "score": 3, "why": "..."}, ...]`;
   return { system, prompt };
 };
+
+export const judgePrompt = makeJudgePrompt(SCORING_GUIDE);
 
 export function claudeJudge(client: Anthropic, build: JudgePrompt = judgePrompt): Judge {
   return async (docs, exemplars, taste) => {
