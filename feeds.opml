@@ -330,13 +330,6 @@
 
       <outline
         type="rss"
-        text="30 Second Drum Lessons"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFtzjlXAq5eTQuCTUXvZz9Eg"
-        htmlUrl="https://www.youtube.com/@30SecondDrumLessons"
-      />
-
-      <outline
-        type="rss"
         text="Adam McDonald"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFex0az211xl6U8dav4-beTg"
         htmlUrl="https://www.youtube.com/@AdamMc192"
@@ -622,20 +615,6 @@
 
       <outline
         type="rss"
-        text="Daily Drum Lesson"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFvlMCem-X4YjD_JMgGXm7YQ"
-        htmlUrl="https://www.youtube.com/@DailyDrumLesson"
-      />
-
-      <outline
-        type="rss"
-        text="Dan Csokmei Drummer"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFXsZlzbAFnPoSYEU8Uv9COw"
-        htmlUrl="https://www.youtube.com/@Daniel19800616"
-      />
-
-      <outline
-        type="rss"
         text="Don't Tell Comedy"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF7MgijK9WL_EqCo1juUERwg"
         htmlUrl="https://www.youtube.com/@DontTellComedy"
@@ -653,19 +632,6 @@
         text="Dropout"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFPDXXXJj9nax0fr0Wfc048g"
         htmlUrl="https://www.youtube.com/@dropout"
-      />
-
-      <outline
-        type="rss"
-        text="DRUMDEX"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFzWBspFXaesJaWSXM27anuQ"
-        htmlUrl="https://www.youtube.com/@drumdex"
-      />
-
-      <outline
-        type="rss"
-        text="Drumeo"
-        htmlUrl="https://www.youtube.com/@DrumeoOfficial"
       />
 
       <outline
@@ -840,13 +806,6 @@
         text="hemlocke springs"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFqO_Qz4No-tNuAQ0TyDe9Dg"
         htmlUrl="https://www.youtube.com/@hemlockespringsmusic"
-      />
-
-      <outline
-        type="rss"
-        text="Instadailydrum"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFKoR2jUl6fxjbpkV9l8lEBA"
-        htmlUrl="https://www.youtube.com/@Instadailydrum"
       />
 
       <outline
@@ -1167,12 +1126,6 @@
 
       <outline
         type="rss"
-        text="Mikey on Drums"
-        htmlUrl="https://www.youtube.com/@mikey-on-drums"
-      />
-
-      <outline
-        type="rss"
         text="mildlyoverfitted"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFYBSjwkGTK06NnDnFsOcR7g"
         htmlUrl="https://www.youtube.com/@mildlyoverfitted"
@@ -1217,12 +1170,6 @@
         text="Myq Kaplan"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFyqrJXaKnwxKe1RGClfUsKw"
         htmlUrl="https://www.youtube.com/@myqkaplan"
-      />
-
-      <outline
-        type="rss"
-        text="NateMuellerDrums"
-        htmlUrl="https://www.youtube.com/@natemuellerdrums"
       />
 
       <outline
@@ -1338,13 +1285,6 @@
 
       <outline
         type="rss"
-        text="Praha Drums Official"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF5VNN4Xo4QYnssBsJy3nAAg"
-        htmlUrl="https://www.youtube.com/@prahadrumsofficial"
-      />
-
-      <outline
-        type="rss"
         text="pwnisher"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFWIfzAYHyNSyHmT2AO-54yg"
         htmlUrl="https://www.youtube.com/@pwnisher"
@@ -1355,13 +1295,6 @@
         text="Rachel Thomas"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF_pSCYWbMn4JcsxbWOzkgEQ"
         htmlUrl="https://www.youtube.com/@math-rachel"
-      />
-
-      <outline
-        type="rss"
-        text="Rafael Silva"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFTVy4t9W7Bi-xFThz1cemWA"
-        htmlUrl="https://www.youtube.com/@rafaelsilvadrums"
       />
 
       <outline
@@ -1550,13 +1483,6 @@
         text="Stas Fedechkin"
         xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULF2VHrRKhUWtZw7Wq69_Irbg"
         htmlUrl="https://www.youtube.com/@Mindful.Attachment.Coaching"
-      />
-
-      <outline
-        type="rss"
-        text="Stephen Clark"
-        xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=UULFO3hCh7DsvuBO9mKp4YrtWg"
-        htmlUrl="https://www.youtube.com/@thenonglamorousdrummer"
       />
 
       <outline
@@ -1873,10 +1799,6 @@
       <outline type="rss" text="CollegeHumor" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCPDXXXJj9nax0fr0Wfc048g" />
       <outline type="rss" text="Obscurious" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UC_RovKmk0OCbuZjA8f08opw" />
       <outline type="rss" text="On This Day...1776" xmlUrl="https://www.youtube.com/feeds/videos.xml?playlist_id=PLYOGLpQQfhNIzsiXxPLUMwhBEunGH9bem" />
-    </outline>
-    <outline text="Engineering &amp; Systems" title="Engineering &amp; Systems">
-      <outline type="rss" text="Google SRE Prodcast" xmlUrl="https://feeds.libsyn.com/407036/rss" />
-      <outline type="rss" text="Servet Gulnaroglu" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCvPPXcl5dJiBgRKGTA8inPA" />
     </outline>
     <outline text="Other" title="Other">
       <outline type="rss" text="Anne selke" xmlUrl="https://anneselke.substack.com/feed" htmlUrl="https://anneselke.substack.com" />
