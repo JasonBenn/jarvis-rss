@@ -102,7 +102,15 @@ export function assertClassified(feeds: FeedSummary[], classes: FeedClasses) {
   }
 }
 
-export async function deleteAll(reader: Reader, docs: Doc[], listedAt: string, ledgerPath: string, log = console.log) {
+export async function deleteAll(
+  reader: Reader,
+  docs: Doc[],
+  listedAt: string,
+  ledgerPath: string,
+  log = console.log,
+  kind: "sweep" | "paywall" = "sweep",
+  why: (d: Doc) => string = (d) => `sweep: ${feedKey(d)}`,
+) {
   for (let i = 0; i < docs.length; i += 100) {
     // Drop anything that changed since the listing (opened, tagged, moved out of feed) before
     // deleting it. No location filter: Reader bumps updated_at on open, move and tag, but a
@@ -119,21 +127,21 @@ export async function deleteAll(reader: Reader, docs: Doc[], listedAt: string, l
         site: d.site_name,
         author: d.author,
         score: null,
-        why: `sweep: ${feedKey(d)}`,
+        why: why(d),
         decision: "drop" as const,
         model: null,
       };
-      appendLedger(ledgerPath, { ...row, action: "sweep-delete" });
+      appendLedger(ledgerPath, { ...row, action: `${kind}-delete` });
       try {
         await reader.delete(d.id);
       } catch (err) {
         if (err instanceof HttpError && err.status === 404) {
           // Already gone (Jason or Reader deleted it): mark the row above as not ours and go on.
-          appendLedger(ledgerPath, { ...row, ts: new Date().toISOString(), action: "sweep-gone" });
+          appendLedger(ledgerPath, { ...row, ts: new Date().toISOString(), action: `${kind}-gone` });
           log(`${d.id} already gone (404), continuing`);
           continue;
         }
-        throw new Error(`Sweep aborted at ${i + k + 1}/${docs.length}: DELETE ${d.id} failed: ${err}`);
+        throw new Error(`${kind} aborted at ${i + k + 1}/${docs.length}: DELETE ${d.id} failed: ${err}`);
       }
     }
     log(`${new Date().toISOString()} deleted through ${Math.min(i + 100, docs.length)}/${docs.length}`);
