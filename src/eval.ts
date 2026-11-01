@@ -206,7 +206,7 @@ export function report(name: string, scored: Scored[]): string {
     const kept = rs.filter((r) => r.score >= KEEP_THRESHOLD).length / rs.length;
     out.push(`- ${l} (n=${rs.length}): [${hist.join(" ")}] mean ${f2(mean)}, kept ${Math.round(kept * 100)}%`);
   }
-  const misses = (rs: Scored[]) => rs.slice(0, 15).map((r) => `| ${r.score} | ${r.label} | ${(r.title ?? "").replace(/\|/g, "/").slice(0, 70)} | ${r.feed} | ${r.why.replace(/\|/g, "/")} |`);
+  const misses = (rs: Scored[]) => rs.slice(0, 15).map((r) => `| ${r.score} | ${r.label} | ${(r.title ?? "").replace(/\s+/g, " ").replace(/\|/g, "/").slice(0, 70)} | ${r.feed} | ${r.why.replace(/\|/g, "/")} |`);
   const liked = scored.filter((r) => POSITIVE.includes(r.label) && r.score < KEEP_THRESHOLD).sort((a, b) => a.score - b.score);
   const disliked = scored.filter((r) => NEGATIVE.includes(r.label) && r.score >= KEEP_THRESHOLD).sort((a, b) => b.score - a.score || (a.label === "dislike" ? -1 : 1));
   out.push("", `Liked but scored low (${liked.length}; worst 15):`, "", "| score | label | title | feed | judge's why |", "|---|---|---|---|---|", ...misses(liked));
