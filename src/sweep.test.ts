@@ -128,7 +128,7 @@ describe("deleteAll", () => {
 
   test("a 403 aborts the whole run", async () => {
     const r = new MockReader([], { a: 403 });
-    await expect(run(r, [doc({ id: "a" }), doc({ id: "b" })])).rejects.toThrow(/Sweep aborted at 1\/2.*403/);
+    await expect(run(r, [doc({ id: "a" }), doc({ id: "b" })])).rejects.toThrow(/sweep aborted at 1\/2.*403/);
     expect(r.calls).toEqual(["a"]);
   });
 
