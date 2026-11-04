@@ -453,21 +453,34 @@ export const judgePrompt = makeJudgePrompt(SCORING_GUIDE);
 export function claudeJudge(client: Anthropic, build: JudgePrompt = judgePrompt): Judge {
   return async (docs, exemplars, taste) => {
     const { system, prompt } = build(docs, exemplars, taste);
-    const res = await client.messages.create({
-      model: MODEL,
-      max_tokens: 4096,
-      system,
-      messages: [{ role: "user", content: prompt }],
-    });
-    const text = res.content.map((c) => (c.type === "text" ? c.text : "")).join("");
-    return parseJudgments(text, docs.length);
+    // Parse errors come back as values so only they are retried; API errors reject (the SDK
+    // retries those), and so does a reply cut off at max_tokens, which would cut off again.
+    const ask = async () => {
+      const res = await client.messages.create({
+        model: MODEL,
+        max_tokens: 4096,
+        system,
+        messages: [{ role: "user", content: prompt }],
+      });
+      const text = res.content.map((c) => (c.type === "text" ? c.text : "")).join("");
+      const detail = `(stop_reason ${res.stop_reason}, ${text.length} chars; start: ${text.slice(0, 300)} ... end: ${text.slice(-300)})`;
+      if (res.stop_reason === "max_tokens") throw new Error(`Model reply cut off at max_tokens ${detail}`);
+      try {
+        return { judgments: parseJudgments(text, docs.length) };
+      } catch (e) {
+        return { error: new Error(`${(e as Error).message} ${detail}`) };
+      }
+    };
+    let result = await ask();
+    if ("error" in result) result = await ask(); // one retry: a malformed reply is usually a one-off
+    if ("error" in result) throw result.error;
+    return result.judgments;
   };
 }
 
 export function parseJudgments(text: string, n: number): Judgment[] {
-  const match = text.match(/\[[\s\S]*\]/);
-  if (!match) throw new Error(`No JSON array in model reply: ${text.slice(0, 200)}`);
-  const arr = JSON.parse(match[0]) as { i: number; score: number; why: string }[];
+  const arr = findArray(text);
+  if (!arr) throw new Error("No parseable JSON array in model reply");
   const out: Judgment[] = [];
   for (let i = 0; i < n; i++) {
     const j = arr.find((x) => x.i === i);
@@ -477,6 +490,37 @@ export function parseJudgments(text: string, n: number): Judgment[] {
     out.push({ score: j.score, why: j.why.trim() });
   }
   return out;
+}
+
+type RawJudgment = { i: number; score: number; why: string };
+
+function parseArray(s: string): RawJudgment[] | undefined {
+  try {
+    const v = JSON.parse(s);
+    return Array.isArray(v) ? v : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+// Prose around the array may hold brackets, so try each "[{" start against each
+// later "]". Any "[{" after the array found (a draft then a revision, parseable
+// or not) is ambiguous: acting on the wrong one could delete a document.
+function findArray(text: string): RawJudgment[] | undefined {
+  let found: RawJudgment[] | undefined;
+  let from = 0;
+  for (const start of text.matchAll(/\[\s*\{/g)) {
+    if (start.index < from) continue;
+    if (found) throw new Error("Ambiguous reply: more than one JSON array");
+    for (let end = text.indexOf("]", start.index); end >= 0; end = text.indexOf("]", end + 1)) {
+      found = parseArray(text.slice(start.index, end + 1));
+      if (found) {
+        from = end + 1;
+        break;
+      }
+    }
+  }
+  return found;
 }
 
 // --- CLI ------------------------------------------------------------------

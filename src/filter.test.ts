@@ -282,6 +282,27 @@ describe("rule 7: model failure skips the batch", () => {
     expect(() => parseJudgments("no json", 1)).toThrow();
     expect(parseJudgments('ok [{"i":0,"score":8,"why":" y "}]', 1)).toEqual([{ score: 8, why: "y" }]);
   });
+
+  test("finds the array amid prose that has brackets of its own", () => {
+    const text = 'Scores [see below]:\n[{"i":0,"score":7,"why":"a [b]"}]\nNote: item [0] is strong.';
+    expect(parseJudgments(text, 1)).toEqual([{ score: 7, why: "a [b]" }]);
+  });
+
+  test("an unparseable reply throws", () => {
+    expect(() => parseJudgments('[{"i":0,"score":7,"why":"cut off]', 1)).toThrow();
+  });
+
+  test("a reply with two parseable arrays is ambiguous", () => {
+    const text = 'Draft: [{"i":0,"score":3,"why":"a"}]\nWait, revised: [{"i":0,"score":8,"why":"b"}]';
+    expect(() => parseJudgments(text, 1)).toThrow(/ambiguous/i);
+  });
+
+  test("a later array is ambiguous even when it does not parse", () => {
+    const quoted = 'Draft: [{"i":0,"score":9,"why":"keep"}]\nRevised: [{"i":0,"score":1,"why":"he said "no""}]';
+    const cutOff = 'Draft: [{"i":0,"score":9,"why":"k"}]\nWait, revised: [{"i":0,"score":1,"why":"actually wea';
+    expect(() => parseJudgments(quoted, 1)).toThrow(/ambiguous/i);
+    expect(() => parseJudgments(cutOff, 1)).toThrow(/ambiguous/i);
+  });
 });
 
 describe("thresholds and exemplars", () => {
@@ -475,5 +496,71 @@ describe("judge prompt", () => {
     await claudeJudge(client as never)([doc()], [], "TASTE TEXT");
     expect(system).toContain("TASTE TEXT\n\nScoring guide. Judge the piece, not the blurb");
     for (const band of ["9-10:", "5-8:", "2-4:", "0-1:"]) expect(SCORING_GUIDE).toContain(band);
+  });
+
+  test("a malformed reply is retried once", async () => {
+    const replies = ["[{garbage]", '[{"i":0,"score":6,"why":"w"}]'];
+    const client = {
+      messages: { create: async () => ({ content: [{ type: "text", text: replies.shift() }] }) },
+    };
+    expect(await claudeJudge(client as never)([doc()], [], "T")).toEqual([{ score: 6, why: "w" }]);
+    expect(replies).toEqual([]);
+  });
+
+  test("a second malformed reply propagates", async () => {
+    const client = { messages: { create: async () => ({ content: [{ type: "text", text: "[{garbage]" }] }) } };
+    await expect(claudeJudge(client as never)([doc()], [], "T")).rejects.toThrow(/garbage/);
+  });
+
+  test("a parse failure reports stop_reason, length and the end of the reply", async () => {
+    const text = '[{"i":0,"score":6,"why":"' + "x".repeat(400) + 'TAIL}]';
+    const client = { messages: { create: async () => ({ stop_reason: "end_turn", content: [{ type: "text", text }] }) } };
+    const err = await claudeJudge(client as never)([doc()], [], "T").catch((e: Error) => e);
+    expect(String(err)).toContain("end_turn");
+    expect(String(err)).toContain(String(text.length));
+    expect(String(err)).toContain("TAIL}]");
+    expect(String(err).split('[{"i":0').length - 1).toBe(1); // the reply start appears once
+  });
+
+  test("an API error is not retried", async () => {
+    let calls = 0;
+    const client = {
+      messages: {
+        create: async () => {
+          calls++;
+          throw new Error("overloaded");
+        },
+      },
+    };
+    await expect(claudeJudge(client as never)([doc()], [], "T")).rejects.toThrow(/overloaded/);
+    expect(calls).toBe(1);
+  });
+
+  test("a reply cut off at max_tokens is not retried", async () => {
+    let calls = 0;
+    const client = {
+      messages: {
+        create: async () => {
+          calls++;
+          return { stop_reason: "max_tokens", content: [{ type: "text", text: '[{"i":0,"score":6,"why":"w]' }] };
+        },
+      },
+    };
+    await expect(claudeJudge(client as never)([doc()], [], "T")).rejects.toThrow(/max_tokens/);
+    expect(calls).toBe(1);
+  });
+
+  test("a parseable reply cut off at max_tokens is rejected without retry", async () => {
+    let calls = 0;
+    const client = {
+      messages: {
+        create: async () => {
+          calls++;
+          return { stop_reason: "max_tokens", content: [{ type: "text", text: '[{"i":0,"score":6,"why":"w"}]' }] };
+        },
+      },
+    };
+    await expect(claudeJudge(client as never)([doc()], [], "T")).rejects.toThrow(/max_tokens/);
+    expect(calls).toBe(1);
   });
 });
