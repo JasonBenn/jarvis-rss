@@ -481,10 +481,13 @@ export function claudeJudge(client: Anthropic, build: JudgePrompt = judgePrompt)
 export function parseJudgments(text: string, n: number): Judgment[] {
   const arr = findArray(text);
   if (!arr) throw new Error("No parseable JSON array in model reply");
+  // One judgment per item, in order: a model that lost count must not score the wrong item.
+  if (arr.length !== n) throw new Error(`Model reply has ${arr.length} judgments for ${n} items`);
   const out: Judgment[] = [];
   for (let i = 0; i < n; i++) {
-    const j = arr.find((x) => x.i === i);
-    if (!j || typeof j.score !== "number" || typeof j.why !== "string") {
+    const j = arr[i];
+    const scoreOk = Number.isInteger(j?.score) && j!.score >= 0 && j!.score <= 10;
+    if (!j || j.i !== i || !scoreOk || typeof j.why !== "string") {
       throw new Error(`Model reply missing a valid judgment for item ${i}`);
     }
     out.push({ score: j.score, why: j.why.trim() });

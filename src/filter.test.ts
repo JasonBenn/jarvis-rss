@@ -297,6 +297,23 @@ describe("rule 7: model failure skips the batch", () => {
     expect(() => parseJudgments(text, 1)).toThrow(/ambiguous/i);
   });
 
+  test("a reply must hold exactly one judgment per item, in order", () => {
+    const j = (i: number, score = 5) => ({ i, score, why: "w" });
+    const reply = (arr: object[]) => JSON.stringify(arr);
+    expect(() => parseJudgments(reply([j(0, 9), j(1, 1), j(2, 8)]), 2)).toThrow(); // extra
+    expect(() => parseJudgments(reply([j(0, 1), j(0, 9), j(1)]), 2)).toThrow(); // duplicate
+    expect(() => parseJudgments(reply([j(0), j(2)]), 2)).toThrow(); // gap
+    expect(() => parseJudgments(reply([j(1), j(0)]), 2)).toThrow(); // reordered
+    expect(parseJudgments(reply([j(0, 9), j(1, 1)]), 2).map((x) => x.score)).toEqual([9, 1]);
+  });
+
+  test("scores must be integers from 0 to 10", () => {
+    const reply = (score: number) => `[{"i":0,"score":${score},"why":"w"}]`;
+    for (const bad of [0.8, -1, 11]) expect(() => parseJudgments(reply(bad), 1)).toThrow();
+    expect(parseJudgments(reply(0), 1)).toEqual([{ score: 0, why: "w" }]);
+    expect(parseJudgments(reply(10), 1)).toEqual([{ score: 10, why: "w" }]);
+  });
+
   test("a later array is ambiguous even when it does not parse", () => {
     const quoted = 'Draft: [{"i":0,"score":9,"why":"keep"}]\nRevised: [{"i":0,"score":1,"why":"he said "no""}]';
     const cutOff = 'Draft: [{"i":0,"score":9,"why":"k"}]\nWait, revised: [{"i":0,"score":1,"why":"actually wea';
