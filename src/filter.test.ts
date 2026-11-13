@@ -232,20 +232,39 @@ describe("rule 5: YouTube Shorts", () => {
 describe("rule 6: rate limits", () => {
   test("honors 429 Retry-After then succeeds", async () => {
     const realFetch = globalThis.fetch;
-    const hits: number[] = [];
+    let hits = 0;
+    const slept: number[] = [];
     globalThis.fetch = (async () => {
-      hits.push(Date.now());
-      if (hits.length === 1) return new Response("slow down", { status: 429, headers: { "Retry-After": "1" } });
+      hits++;
+      if (hits === 1) return new Response("slow down", { status: 429, headers: { "Retry-After": "30" } });
       return new Response(JSON.stringify({ results: [doc()], nextPageCursor: null }), { status: 200 });
     }) as unknown as typeof fetch;
     try {
-      const docs = await readwiseClient("t").list({ location: "feed" });
+      const docs = await readwiseClient("t", async (ms) => void slept.push(ms)).list({ location: "feed" });
       expect(docs.length).toBe(1);
-      expect(hits[1]! - hits[0]!).toBeGreaterThanOrEqual(1000);
+      expect(slept).toContain(30_000);
     } finally {
       globalThis.fetch = realFetch;
     }
-  }, 15000);
+  });
+
+  test("outlasts a competing client that keeps the budget spent", async () => {
+    const realFetch = globalThis.fetch;
+    let hits = 0;
+    const slept: number[] = [];
+    globalThis.fetch = (async () => {
+      hits++;
+      if (hits <= 5) return new Response("slow down", { status: 429, headers: { "Retry-After": "1" } });
+      return new Response(JSON.stringify({ results: [doc()], nextPageCursor: null }), { status: 200 });
+    }) as unknown as typeof fetch;
+    try {
+      const docs = await readwiseClient("t", async (ms) => void slept.push(ms)).list({ location: "feed" });
+      expect(docs.length).toBe(1);
+      expect(slept.filter((ms) => ms >= 5000).reduce((a, b) => a + b, 0)).toBeGreaterThanOrEqual(120_000);
+    } finally {
+      globalThis.fetch = realFetch;
+    }
+  });
 
   test("pages with pageCursor", async () => {
     const realFetch = globalThis.fetch;

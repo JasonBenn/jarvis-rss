@@ -367,13 +367,13 @@ export class HttpError extends Error {
   }
 }
 
-export function readwiseClient(token: string): Reader {
+export function readwiseClient(token: string, wait = sleep): Reader {
   let last = 0;
   const request = async (method: string, url: string, body?: unknown): Promise<Response> => {
     for (let attempt = 0; ; attempt++) {
       // 20 req/min is the tightest per-endpoint limit; space every call to stay under it.
-      const wait = last + 3100 - Date.now();
-      if (wait > 0) await sleep(wait);
+      const gap = last + 3100 - Date.now();
+      if (gap > 0) await wait(gap);
       last = Date.now();
       const res = await fetch(url, {
         method,
@@ -381,7 +381,8 @@ export function readwiseClient(token: string): Reader {
         body: body ? JSON.stringify(body) : undefined,
       });
       if (res.status === 429 && attempt < 5) {
-        await sleep((Number(res.headers.get("Retry-After")) || 60) * 1000);
+        // Back off exponentially (5s..80s) so a competing client sharing the limit can't exhaust our retries.
+        await wait(Math.max((Number(res.headers.get("Retry-After")) || 60) * 1000, 5000 * 2 ** attempt));
         continue;
       }
       if (!res.ok) throw new HttpError(`${method} ${url}: ${res.status} ${await res.text()}`, res.status);
